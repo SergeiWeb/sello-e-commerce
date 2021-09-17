@@ -453,22 +453,16 @@ button {
 }
 
 @media screen and (max-width: 576px) {
-  .home {
-    background: green;
-  }
   .home__wrapper {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
   .home__img {
-    right: -380px;
+    right: -240px;
   }
 }
 
 @media screen and (max-width: 340px) {
-  .home {
-    background: red;
-  }
   .home__img {
     right: -200px;
   }

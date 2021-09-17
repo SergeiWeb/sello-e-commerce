@@ -27,20 +27,18 @@
 
 @media screen and (max-width: 576px) {
 	.home {
-		background: green;
 		&__wrapper {
 			grid-template-columns: 1fr;
 		}
 
 		&__img {
-			right: -380px;
+			right: -240px;
 		}
 	}
 }
 
 @media screen and (max-width: 340px) {
 	.home {
-		background: red;
 		&__img {
 			right: -200px;
 		}
