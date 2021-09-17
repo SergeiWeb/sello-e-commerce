@@ -27,6 +27,7 @@
 
 @media screen and (max-width: 576px) {
 	.home {
+		background: green;
 		&__wrapper {
 			grid-template-columns: 1fr;
 		}
@@ -39,6 +40,7 @@
 
 @media screen and (max-width: 340px) {
 	.home {
+		background: red;
 		&__img {
 			right: -200px;
 		}
