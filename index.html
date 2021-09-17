@@ -96,58 +96,6 @@
 			<i class="bx bx-up-arrow-alt scroll-up__icon"></i>
 		</a>
 
-		<script>
-			// let scripts = document.getElementsByTagName('script')
-			// let torefreshs = ['main.js'] // list of js to be refresh
-			// let key = 1 // change this key every time you want force a refresh
-
-			// for (let i = 0; i < scripts.length; i++) {
-			// 	for (let j = 0; j < torefreshs.length; j++) {
-			// 		if (scripts[i].src && scripts[i].src.indexOf(torefreshs[j]) > -1) {
-			// 			new_src = scripts[i].src.replace(
-			// 				torefreshs[j],
-			// 				`${torefreshs[j]}?v=${key}`
-			// 			)
-			// 			scripts[i].src = new_src // change src in order to refresh js
-			// 		}
-			// 	}
-			// }
-
-			const cacheName = (tagname, filename = []) => {
-				let tag = document.getElementsByTagName(tagname)
-				let torefreshs = filename // list of js to be refresh
-				let key = 1 // change this key every time you want force a refresh
-
-				if (tagname === 'script') {
-					for (let i = 0; i < tag.length; i++) {
-						for (let j = 0; j < torefreshs.length; j++) {
-							if (tag[i].src && tag[i].src.indexOf(torefreshs[j]) > -1) {
-								console.log(torefreshs[j])
-
-								new_src = tag[i].src.replace(
-									torefreshs[j],
-									`${torefreshs[j]}?v=${key}`
-								)
-								tag[i].src = new_src // change src in order to refresh js
-							}
-						}
-					}
-				} else if (tagname === 'link') {
-					for (let i = 0; i < tag.length; i++) {
-						if (tag[i].id === 'styles') {
-							console.log(torefreshs)
-							new_href = tag[i].href.replace(
-								torefreshs[0],
-								`${torefreshs[0]}?v=${key}`
-							)
-							tag[i].href = new_href
-						}
-					}
-				}
-			}
-
-			cacheName('script', ['main.js'])
-			cacheName('link', ['main.css'])
-		</script>
+		
 	</body>
 </html>
