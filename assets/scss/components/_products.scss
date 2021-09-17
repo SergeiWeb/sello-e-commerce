@@ -1,0 +1,49 @@
+/* product */
+.tranding {
+	padding-top: 9.375rem;
+
+	&__content {
+		margin-top: 3.125rem;
+	}
+
+	&__nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&__list {
+		@media screen and (max-width: 768px) {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			display: flex;
+			padding: 0.5rem;
+			z-index: var(--z-fixed);
+			transition: 0.4s;
+			box-shadow: 0 0 4px rgba(#222222, 0.15);
+			align-items: center;
+			pointer-events: none;
+			justify-content: center;
+			background-color: var(--white-color);
+
+			&.show-list {
+				top: 30px;
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	&__link {
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&-all {
+			margin-left: auto;
+		}
+	}
+}

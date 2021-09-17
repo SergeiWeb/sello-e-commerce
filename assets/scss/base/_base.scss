@@ -20,7 +20,6 @@ body {
 	background-color: var(--white-color);
 	overflow-x: hidden;
 
-	//!
 	min-height: 5000px;
 }
 
@@ -56,10 +55,11 @@ button {
 	cursor: pointer;
 }
 
+/* base classes */
 .link-label {
 	position: relative;
 	color: var(--body-color);
-	font-size: var(--h4-font-size);
+	font-size: var(--h3-font-size);
 	transition: 0.4s;
 	font-weight: var(--font-light);
 	text-transform: uppercase;
@@ -84,13 +84,16 @@ button {
 }
 
 .section {
+	position: relative;
+	padding: 4.688rem 0;
+
 	&__navigation {
 		display: flex;
 		align-items: center;
 		transition: 0.3s;
 
 		@media screen and (max-width: 1200px) {
-			margin-bottom: 1rem;
+			margin-bottom: 1.25rem;
 
 			&-count {
 				margin-right: 0.625rem;
@@ -137,7 +140,7 @@ button {
 
 		&-count,
 		&-name {
-			font-size: var(--big-font-size);
+			font-size: var(--h4-font-size);
 		}
 
 		&-count {
@@ -153,6 +156,44 @@ button {
 		&-name {
 			font-weight: var(--font-bold);
 			text-transform: uppercase;
+		}
+	}
+}
+
+.menu {
+	&__list {
+		display: flex;
+		column-gap: 1rem;
+		align-items: center;
+	}
+
+	&__link {
+		color: var(--text-color);
+		padding: 0.625rem;
+		transition: 0.4s;
+		font-weight: var(--font-light);
+
+		&:hover {
+			color: var(--body-color);
+		}
+
+		&.active-link {
+			color: var(--body-color);
+			text-decoration: underline;
+		}
+	}
+
+	&__toggle {
+		color: var(--body-color);
+		display: none;
+		padding: 0.3rem;
+		font-size: 1.3rem;
+		transition: 0.4s;
+		align-items: center;
+		justify-content: center;
+
+		@media screen and (max-width: 768px) {
+			display: flex;
 		}
 	}
 }

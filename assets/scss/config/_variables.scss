@@ -16,25 +16,23 @@
 	/* font and typography */
 	--body-font: 'Poppins', sans-serif;
 
-	--big-font-size: 1.25rem;
 	--biggest-font-size: 2.125rem;
-	--h4-font-size: 1rem;
+	--big-font-size: 1.5rem;
+	--h4-font-size: 1.25rem;
+	--h3-font-size: 1rem;
 	--normal-font-size: 0.938rem;
-
-	--h3-font-size: 1.25rem;
 	--small-font-size: 0.813rem;
-	--smaller-font-size: 0.75rem;
+	--smaller-font-size: 0.5rem;
 
 	// responsive typography
 	@media screen and (min-width: 968px) {
-		--big-font-size: 1.5rem;
-		--biggest-font-size: 3.125rem;
-		--h4-font-size: 1.125rem;
+		--biggest-font-size: 3.125rem; // 50px
+		--big-font-size: 1.875rem; // 30px
+		--h4-font-size: 1.25rem; // 24px
+		--h3-font-size: 1.125rem; // 18px
 		--normal-font-size: 1rem;
-
-		--h3-font-size: 1.75rem;
 		--small-font-size: 0.875rem;
-		--smaller-font-size: 0.813rem;
+		--smaller-font-size: 0.625rem;
 	}
 
 	/* font weight */

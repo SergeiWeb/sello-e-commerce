@@ -50,29 +50,29 @@
 	<body>
 		<!-- header -->
 		<header class="header" id="header">
-			<nav class="nav container">
+			<nav class="nav menu container">
 				<a href="#" class="nav__logo show-logo" id="nav-logo">
 					<img src="./assets/img/logo.svg" alt="img: logo" />
 				</a>
 
-				<div class="nav__menu show-menu" id="nav-menu">
-					<ul class="nav__list">
-						<li class="nav__item">
-							<a href="#home" class="nav__link active-link">Home</a>
+				<div class="nav__menu" id="nav-menu">
+					<ul class="nav__list menu__list">
+						<li class="nav__item menu__iten">
+							<a href="#home" class="nav__link menu__link active-link">Home</a>
 						</li>
-						<li class="nav__item">
-							<a href="#product" class="nav__link">Product</a>
+						<li class="nav__item menu__iten">
+							<a href="#products" class="nav__link menu__link">Product</a>
 						</li>
-						<li class="nav__item">
-							<a href="#blog" class="nav__link">Blog</a>
+						<li class="nav__item menu__iten">
+							<a href="#blog" class="nav__link menu__link">Blog</a>
 						</li>
-						<li class="nav__item">
-							<a href="#contact" class="nav__link">Contact</a>
+						<li class="nav__item menu__iten">
+							<a href="#contact" class="nav__link menu__link">Contact</a>
 						</li>
 					</ul>
 				</div>
 
-				<button class="nav__toggle" id="nav-toggle">
+				<button class="nav__toggle menu__toggle" id="nav-toggle">
 					<i class="bx bx-menu nav__toggle-icon"></i>
 				</button>
 			</nav>
@@ -105,7 +105,76 @@
 					</div>
 				</div>
 			</section>
-		</mai>
+
+			<!-- products -->
+			<div class="products" id="products">
+				<!-- tranding -->
+				<section class="tranding section">
+					<div class="tranding__container container">
+						<div class="section__navigation">
+							<h5 class="section__navigation-count">02</h5>
+							<span class="section__navigation-line"></span>
+							<h5 class="section__navigation-name">Tranding</h5>
+						</div>
+
+						<div class="tranding__wrapper menu">
+							<div class="tranding__nav">
+								<button
+									class="tranding__toggle menu__toggle"
+									id="tranding-toggle"
+								>
+									<i class="bx bx-menu-alt-left tranding__toggle-icon"></i>
+								</button>
+
+								<ul class="tranding__list menu__list" id="tranding-list">
+									<li class="tranding__item menu__item">
+										<a href="#" class="tranding__link menu__link active-link">
+											T-Shirt
+										</a>
+									</li>
+									<li class="tranding__item menu__item">
+										<a href="#" class="tranding__link menu__link">Pants</a>
+									</li>
+									<li class="tranding__item menu__item">
+										<a href="#" class="tranding__link menu__link">Shoe</a>
+									</li>
+									<li class="tranding__item menu__item">
+										<a href="#" class="tranding__link menu__link">Jacket</a>
+									</li>
+									<li class="tranding__item menu__item">
+										<a href="#" class="tranding__link menu__link">Fashion</a>
+									</li>
+								</ul>
+
+								<a href="#" class="link-label tranding__link-all">All Products</a>
+							</div>
+
+							<div class="tranding__content products__wrapper"></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- offer -->
+				<section class="offer section">
+					<div class="offer__container container"></div>
+				</section>
+
+				<!-- featured -->
+				<section class="featured section">
+					<div class="featured__container container"></div>
+				</section>
+
+				<!-- subscribe -->
+				<section class="subscribe section">
+					<div class="subscribe__container container"></div>
+				</section>
+
+				<!-- blog -->
+				<section class="blog section">
+					<div class="blog__container container"></div>
+				</section>
+			</div>
+		</main>
 
 		<a href="#" class="scroll-up" id="scroll-up">
 			<i class="bx bx-up-arrow-alt scroll-up__icon"></i>

@@ -8,6 +8,10 @@ const sections = document.querySelectorAll('section[id]')
 
 const scrollUpLink = document.getElementById('scroll-up')
 
+const trandingList = document.getElementById('tranding-list')
+const trandingToggle = document.getElementById('tranding-toggle')
+const trandingIcon = trandingToggle.querySelector('.tranding__toggle-icon')
+
 /* secondary functions */
 const changesClasses = (el, method, className) => {
 	if (Array.isArray(className)) {
@@ -109,6 +113,24 @@ if (navLink) {
 			}
 		})
 	)
+}
+
+/* tranding list */
+if (trandingList && trandingToggle && trandingIcon) {
+	if (trandingList.classList.contains('show-list')) {
+		changesClasses(trandingList, 'remove', 'show-list')
+		changesClasses(trandingIcon, 'remove', 'bx-x')
+	}
+
+	trandingToggle.addEventListener('click', () => {
+		if (!trandingList.classList.contains('show-list')) {
+			changesClasses(trandingList, 'add', 'show-list')
+			changesClasses(trandingIcon, 'add', 'bx-x')
+		} else {
+			changesClasses(trandingList, 'remove', 'show-list')
+			changesClasses(trandingIcon, 'remove', 'bx-x')
+		}
+	})
 }
 
 /* scroll up */
