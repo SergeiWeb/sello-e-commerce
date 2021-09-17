@@ -441,6 +441,7 @@ button {
   .home__img {
     width: 100%;
     right: -450px;
+    display: none;
   }
 }
 
