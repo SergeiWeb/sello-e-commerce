@@ -1,11 +1,17 @@
-/* For small devices */
-@media screen and (max-width: 340px) {
+@media screen and (min-width: 1900px) {
+	.home__img {
+		width: 40%;
+	}
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 767px) {
+	.container {
+		max-width: 100%;
+	}
+
 	.home {
 		&__wrapper {
 			grid-template-columns: 90% 1fr;
@@ -14,19 +20,31 @@
 		&__img {
 			width: 100%;
 			right: -450px;
-			display: none;
+			// display: none;
 		}
 	}
 }
 
-@media screen and (max-width: 1024px) {
-}
+@media screen and (max-width: 576px) {
+	.home {
+		&__wrapper {
+			grid-template-columns: 1fr;
+		}
 
-@media screen and (min-width: 1900px) {
-	.home__img {
-		width: 40%;
+		&__img {
+			right: -380px;
+		}
 	}
 }
+
+@media screen and (max-width: 340px) {
+	.home {
+		&__img {
+			right: -200px;
+		}
+	}
+}
+
 
 /* For tall screens on mobiles y desktop */
 @media screen and (min-height: 721px) {

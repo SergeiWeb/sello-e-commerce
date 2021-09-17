@@ -2,10 +2,10 @@
 .home {
 	position: relative;
 	height: 100vh;
-	padding: 2rem;
 	background-color: var(--bg-color);
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 
 	&__wrapper {
 		display: grid;

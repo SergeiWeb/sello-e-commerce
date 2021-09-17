@@ -372,7 +372,6 @@ button {
 .home {
   position: relative;
   height: 100vh;
-  padding: 2rem;
   background-color: var(--bg-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -380,6 +379,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .home__wrapper {
@@ -432,8 +432,16 @@ button {
   height: 100%;
 }
 
-/* For small devices */
+@media screen and (min-width: 1900px) {
+  .home__img {
+    width: 40%;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
   .home__wrapper {
     -ms-grid-columns: 90% 1fr;
         grid-template-columns: 90% 1fr;
@@ -441,13 +449,22 @@ button {
   .home__img {
     width: 100%;
     right: -450px;
-    display: none;
   }
 }
 
-@media screen and (min-width: 1900px) {
+@media screen and (max-width: 576px) {
+  .home__wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
   .home__img {
-    width: 40%;
+    right: -380px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .home__img {
+    right: -200px;
   }
 }
 
