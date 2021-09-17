@@ -1,0 +1,14 @@
+/* layout */
+.container {
+	width: 100%;
+	padding: 0 1rem;
+	max-width: 1142px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (max-width: 1024px) {
+		max-width: 968px;
+		margin-left: var(--mb-1-5);
+		margin-right: var(--mb-1-5);
+	}
+}

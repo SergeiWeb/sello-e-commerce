@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- normalize -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- boxicons -->
+		<link
+			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- styles -->
+		<link rel="stylesheet" href="./assets/css/main.css" />
+
+		<!-- scripts -->
+		<script defer src="./assets/js/main.js"></script>
+
+		<title>E-Commerce Sello</title>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="header" id="header">
+			<nav class="nav container">
+				<a href="#" class="nav__logo show-logo" id="nav-logo">
+					<img src="./assets/img/logo.svg" alt="img: logo" />
+				</a>
+
+				<div class="nav__menu show-menu" id="nav-menu">
+					<ul class="nav__list">
+						<li class="nav__item">
+							<a href="#home" class="nav__link active-link">Home</a>
+						</li>
+						<li class="nav__item">
+							<a href="#product" class="nav__link">Product</a>
+						</li>
+						<li class="nav__item">
+							<a href="#blog" class="nav__link">Blog</a>
+						</li>
+						<li class="nav__item">
+							<a href="#contact" class="nav__link">Contact</a>
+						</li>
+					</ul>
+				</div>
+
+				<button class="nav__toggle" id="nav-toggle">
+					<i class="bx bx-menu nav__toggle-icon"></i>
+				</button>
+			</nav>
+		</header>
+
+		<main class="main">
+			<!-- home -->
+			<section class="home section" id="home">
+				<div class="home__container container swiper">
+					<div class="home__wrapper swiper-wrapper">
+						<div class="home__content">
+							<h2 class="home__title">SALE OFF! UP TO 70%</h2>
+							<p class="home__description">
+								Lorem Ipsum is simply dummy text of the printing and typesetting
+								industry. Lorem Ipsum has been the industry's standard dummy
+								text ever since the 1500s, when an unknown printer took a galley
+								of type and scrambled it to make a type specimen book.
+							</p>
+							<a href="#" class="link-label home__link">Shop Now</a>
+						</div>
+						<div class="home__img">
+							<img src="./assets/img/home.png" alt="img: home" />
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<a href="#" class="scroll-up" id="scroll-up">
+			<i class="bx bx-up-arrow-alt scroll-up__icon"></i>
+		</a>
+	</body>
+</html>

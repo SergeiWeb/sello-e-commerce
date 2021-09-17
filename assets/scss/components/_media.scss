@@ -1,0 +1,35 @@
+/* For small devices */
+@media screen and (max-width: 340px) {
+}
+
+@media screen and (max-width: 576px) {
+}
+
+@media screen and (max-width: 767px) {
+	.home {
+		&__wrapper {
+			grid-template-columns: 90% 1fr;
+		}
+
+		&__img {
+			width: 100%;
+			right: -450px;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 1900px) {
+	.home__img {
+		width: 40%;
+	}
+}
+
+/* For tall screens on mobiles y desktop */
+@media screen and (min-height: 721px) {
+	.home {
+		height: 640px;
+	}
+}
