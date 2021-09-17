@@ -452,7 +452,7 @@ button {
 
 @media screen and (max-width: 576px) {
   .home {
-    background: green;
+    background: red;
   }
   .home__wrapper {
     -ms-grid-columns: 1fr;
