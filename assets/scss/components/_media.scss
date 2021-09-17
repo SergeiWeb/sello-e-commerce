@@ -20,14 +20,12 @@
 		&__img {
 			width: 100%;
 			right: -450px;
-			// display: none;
 		}
 	}
 }
 
 @media screen and (max-width: 576px) {
 	.home {
-		background: blueviolet;
 		&__wrapper {
 			grid-template-columns: 1fr;
 		}
