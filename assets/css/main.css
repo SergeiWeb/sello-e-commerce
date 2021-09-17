@@ -148,8 +148,6 @@ button {
 @media screen and (max-width: 1024px) {
   .container {
     max-width: 968px;
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
   }
 }
 
@@ -453,6 +451,9 @@ button {
 }
 
 @media screen and (max-width: 576px) {
+  .home {
+    background: red;
+  }
   .home__wrapper {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
