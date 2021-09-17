@@ -16,19 +16,23 @@
 	/* font and typography */
 	--body-font: 'Poppins', sans-serif;
 
+	--big-font-size: 1.25rem;
 	--biggest-font-size: 2.125rem;
-	--h3-font-size: 1.25rem;
 	--h4-font-size: 1rem;
 	--normal-font-size: 0.938rem;
+
+	--h3-font-size: 1.25rem;
 	--small-font-size: 0.813rem;
 	--smaller-font-size: 0.75rem;
 
 	// responsive typography
 	@media screen and (min-width: 968px) {
+		--big-font-size: 1.5rem;
 		--biggest-font-size: 3.125rem;
-		--h3-font-size: 1.75rem;
 		--h4-font-size: 1.125rem;
 		--normal-font-size: 1rem;
+
+		--h3-font-size: 1.75rem;
 		--small-font-size: 0.875rem;
 		--smaller-font-size: 0.813rem;
 	}

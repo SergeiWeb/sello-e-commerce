@@ -1,4 +1,3 @@
-
 const navMenu = document.getElementById('nav-menu')
 const navLogo = document.getElementById('nav-logo')
 const navToggle = document.getElementById('nav-toggle')
@@ -9,7 +8,7 @@ const sections = document.querySelectorAll('section[id]')
 
 const scrollUpLink = document.getElementById('scroll-up')
 
-// secondary functions
+/* secondary functions */
 const changesClasses = (el, method, className) => {
 	if (Array.isArray(className)) {
 		return el.classList[method](...className)
@@ -20,7 +19,7 @@ const changesClasses = (el, method, className) => {
 
 const getId = link => link.getAttribute('href').replace('#', '')
 
-// additional functions
+/* additional functions */
 function scrollActive() {
 	const scrollY = window.pageYOffset
 
@@ -63,7 +62,7 @@ function scrollUp() {
 	}
 }
 
-// navbar
+/* navbar */
 if (navMenu && navToggle && navLogo) {
 	if (
 		navMenu.classList.contains('show-menu') ||
@@ -87,6 +86,7 @@ if (navMenu && navToggle && navLogo) {
 	})
 }
 
+/* navlink */
 if (navLink) {
 	navLink.forEach(link =>
 		link.addEventListener('click', event => {
@@ -111,33 +111,25 @@ if (navLink) {
 	)
 }
 
-// if (navLink) {
-// 	navLink.forEach(link => {
-// 		link.addEventListener('click', event => {
-// 			event.preventDefault()
-
-// 			const scrollTarget = document.getElementById(getId(link))
-
-// 			const topOffset = 0
-// 			const elementPosition = scrollTarget.getBoundingClientRect().top
-// 			const offsetPosition = elementPosition - topOffset
-
-// 			window.scrollBy({
-// 				top: offsetPosition,
-// 				behavior: 'smooth',
-// 			})
-// 		})
-// 	})
-// }
-
-// scroll up
+/* scroll up */
 scrollUpLink.addEventListener('click', event => {
 	event.preventDefault()
 
 	window.scrollTo({ top: 0, behavior: 'smooth' })
 })
 
-// scroll
+/* slider */
+// new Swiper('.swiper', {
+// 	direction: 'vertical',
+// 	slidesPerView: 1,
+// 	loop: true,
+// 	navigation: {
+// 		nextEl: '.swiper-button-next',
+// 		prevEl: '.swiper-button-prev',
+// 	},
+// })
+
+/* scroll */
 window.addEventListener('scroll', () => {
 	scrollActive()
 	scrollHeader()

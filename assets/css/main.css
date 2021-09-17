@@ -12,10 +12,11 @@
   --white-color: #fff;
   /* font and typography */
   --body-font: 'Poppins', sans-serif;
+  --big-font-size: 1.25rem;
   --biggest-font-size: 2.125rem;
-  --h3-font-size: 1.25rem;
   --h4-font-size: 1rem;
   --normal-font-size: 0.938rem;
+  --h3-font-size: 1.25rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
   /* font weight */
@@ -39,10 +40,11 @@
 
 @media screen and (min-width: 968px) {
   :root {
+    --big-font-size: 1.5rem;
     --biggest-font-size: 3.125rem;
-    --h3-font-size: 1.75rem;
     --h4-font-size: 1.125rem;
     --normal-font-size: 1rem;
+    --h3-font-size: 1.75rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
   }
@@ -134,6 +136,97 @@ button {
   -o-transition: 0.4s;
   transition: 0.4s;
   background-color: var(--secondary-color-alpha);
+}
+
+.section__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 1200px) {
+  .section__navigation {
+    margin-bottom: 1rem;
+  }
+  .section__navigation-count {
+    margin-right: 0.625rem;
+  }
+  .section__navigation-line {
+    width: 150px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (max-width: 576px) {
+  .section__navigation-line {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section__navigation-name {
+    margin-left: 1.875rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section__navigation {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    -webkit-transform: rotate(180deg) translateY(50%);
+        -ms-transform: rotate(180deg) translateY(50%);
+            transform: rotate(180deg) translateY(50%);
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+  }
+  .section__navigation-count {
+    margin-bottom: 0.625rem;
+  }
+  .section__navigation-line {
+    width: 1px;
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 576px) {
+  .section__navigation-line {
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section__navigation-name {
+    margin-top: 1.875rem;
+  }
+}
+
+.section__navigation-count, .section__navigation-name {
+  font-size: var(--big-font-size);
+}
+
+.section__navigation-count {
+  font-weight: var(--font-light);
+}
+
+.section__navigation-line {
+  opacity: 0.6;
+  background: var(--border-color);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.section__navigation-name {
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
 }
 
 /* layout */
