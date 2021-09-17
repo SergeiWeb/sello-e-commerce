@@ -27,7 +27,6 @@
 
 @media screen and (max-width: 576px) {
 	.home {
-		background: red;
 		&__wrapper {
 			grid-template-columns: 1fr;
 		}
