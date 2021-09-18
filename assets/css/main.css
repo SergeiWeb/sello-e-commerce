@@ -413,10 +413,6 @@ button {
   overflow: hidden;
 }
 
-.products__card:hover .products__blank.category {
-  bottom: 0;
-}
-
 .products__card:hover .products__img img {
   opacity: 0.8;
 }
@@ -480,7 +476,7 @@ button {
 
 .products__blank.category {
   left: 1.25rem;
-  bottom: -10%;
+  bottom: 0;
   background: var(--white-color);
 }
 

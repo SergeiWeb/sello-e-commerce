@@ -13,12 +13,6 @@
 
 		&:hover {
 			& .products {
-				&__blank {
-					&.category {
-						bottom: 0;
-					}
-				}
-
 				&__img {
 					& img {
 						opacity: 0.8;
@@ -76,7 +70,7 @@
 
 		&.category {
 			left: 1.25rem;
-			bottom: -10%;
+			bottom: 0;
 			background: var(--white-color);
 
 			&:hover {
