@@ -309,7 +309,7 @@ button {
   right: 2rem;
   bottom: -20%;
   border: 2px solid transparent;
-  padding: 0.5rem;
+  padding: 0.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,7 +322,7 @@ button {
 }
 
 .scroll-up.show-scroll-link {
-  bottom: 5rem;
+  bottom: 4rem;
 }
 
 .scroll-up__icon {
@@ -594,7 +594,7 @@ button {
 @media screen and (max-width: 768px) {
   .tranding__list {
     position: absolute;
-    top: 100%;
+    top: 120%;
     left: 0;
     width: 100%;
     opacity: 0;
@@ -624,8 +624,22 @@ button {
   }
 }
 
-.tranding__link:first-child {
-  padding-left: 0;
+@media screen and (max-width: 460px) {
+  .tranding__list {
+    overflow-x: auto;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .tranding__list::-webkit-scrollbar {
+    height: 0.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tranding__item:first-child .tranding__link {
+    padding-left: 0;
+  }
 }
 
 .tranding__link-all {

@@ -15,7 +15,7 @@
 	&__list {
 		@media screen and (max-width: 768px) {
 			position: absolute;
-			top: 100%;
+			top: 120%;
 			left: 0;
 			width: 100%;
 			opacity: 0;
@@ -35,13 +35,28 @@
 				pointer-events: auto;
 			}
 		}
+
+		@media screen and (max-width: 460px) {
+			overflow-x: auto;
+			justify-content: flex-start;
+
+			&::-webkit-scrollbar {
+				height: 0.2rem;
+			}
+		}
+	}
+
+	&__item {
+		@media screen and (min-width: 768px) {
+			&:first-child {
+				.tranding__link {
+					padding-left: 0;
+				}
+			}
+		}
 	}
 
 	&__link {
-		&:first-child {
-			padding-left: 0;
-		}
-
 		&-all {
 			margin-left: auto;
 		}
