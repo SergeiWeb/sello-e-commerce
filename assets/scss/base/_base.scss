@@ -92,52 +92,6 @@ button {
 		align-items: center;
 		transition: 0.3s;
 
-		@media screen and (max-width: 1200px) {
-			margin-bottom: 1.25rem;
-
-			&-count {
-				margin-right: 0.625rem;
-			}
-
-			&-line {
-				width: 150px;
-				height: 1px;
-
-				@media screen and (max-width: 576px) {
-					width: 80px;
-				}
-			}
-
-			&-name {
-				margin-left: 1.875rem;
-			}
-		}
-
-		@media screen and (min-width: 1200px) {
-			position: absolute;
-			top: 50%;
-			left: 4%;
-			transform: rotate(180deg) translateY(50%);
-			writing-mode: vertical-rl;
-
-			&-count {
-				margin-bottom: 0.625rem;
-			}
-
-			&-line {
-				width: 1px;
-				height: 150px;
-
-				@media screen and (max-width: 576px) {
-					height: 80px;
-				}
-			}
-
-			&-name {
-				margin-top: 1.875rem;
-			}
-		}
-
 		&-count,
 		&-name {
 			font-size: var(--h4-font-size);
@@ -191,9 +145,5 @@ button {
 		transition: 0.4s;
 		align-items: center;
 		justify-content: center;
-
-		@media screen and (max-width: 768px) {
-			display: flex;
-		}
 	}
 }
