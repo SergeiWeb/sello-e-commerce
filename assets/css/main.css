@@ -631,7 +631,7 @@ button {
 @media screen and (min-width: 1200px) {
   .section__navigation {
     position: absolute;
-    top: 0;
+    top: 230px;
     left: 4%;
     -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
