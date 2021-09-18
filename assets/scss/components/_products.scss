@@ -47,6 +47,8 @@
 	}
 
 	&__item {
+		white-space: nowrap;
+		
 		@media screen and (min-width: 768px) {
 			&:first-child {
 				.tranding__link {
