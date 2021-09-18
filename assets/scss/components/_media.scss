@@ -4,6 +4,12 @@
 	}
 }
 
+@media screen and (max-width: 1100px) {
+	.products__wrapper {
+		justify-content: center;
+	}
+}
+
 @media screen and (max-width: 1024px) {
 }
 
@@ -34,6 +40,12 @@
 			right: -240px;
 		}
 	}
+
+	.products {
+		&__wrapper {
+			// grid-template-columns: 1fr;
+		}
+	}
 }
 
 @media screen and (max-width: 340px) {
@@ -43,7 +55,6 @@
 		}
 	}
 }
-
 
 /* For tall screens on mobiles y desktop */
 @media screen and (min-height: 721px) {
