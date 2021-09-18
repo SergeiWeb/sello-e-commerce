@@ -602,7 +602,7 @@ button {
     display: -ms-flexbox;
     display: flex;
     padding: 0.5rem;
-    z-index: var(--z-fixed);
+    z-index: var(--z-tooltip);
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
@@ -618,7 +618,7 @@ button {
     background-color: var(--white-color);
   }
   .tranding__list.show-list {
-    top: 30px;
+    top: 100%;
     opacity: 1;
     pointer-events: auto;
   }
