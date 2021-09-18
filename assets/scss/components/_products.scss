@@ -60,7 +60,6 @@
 	&__blank {
 		position: absolute;
 		width: 75px;
-		color: var(--body-color);
 		height: 30px;
 		display: flex;
 		font-size: var(--small-font-size);
@@ -70,6 +69,7 @@
 
 		&.category {
 			left: 1.25rem;
+			color: var(--body-color);
 			bottom: 0;
 			background: var(--white-color);
 
@@ -77,6 +77,14 @@
 				color: var(--white-color);
 				background-color: var(--body-color);
 			}
+		}
+
+		&.sale {
+			top: 1.25rem;
+			right: 1.25rem;
+			color: var(--white-color);
+			background: var(--body-color);
+			text-transform: uppercase;
 		}
 	}
 
@@ -96,6 +104,7 @@
 	&-prices {
 		display: flex;
 		align-items: center;
+		column-gap: 0.625rem;
 	}
 
 	&__price {
@@ -124,45 +133,31 @@
 		column-gap: 0.625rem;
 		font-size: var(--smaller-font-size);
 		font-weight: var(--font-light);
+		transition: 0.4s;
 
-		& .icon {
+		&-icon {
 			font-size: 0.75rem;
 		}
 
 		&-like {
+			& .products__btn-icon {
+				transition: 0.4s;
+			}
+
+			&:hover,
+			&.in-liked {
+				& .products__btn-icon {
+					color: #ff2600;
+				}
+			}
 		}
 
 		&-buy {
 			text-transform: uppercase;
-		}
-	}
-}
 
-/* tranding */
-.tranding {
-	padding-top: 9.375rem;
-
-	&__navigation {
-		top: 230px;
-	}
-
-	&__content {
-		margin-top: 3.125rem;
-	}
-
-	&__nav {
-		position: relative;
-		display: flex;
-		align-items: center;
-	}
-
-	&__item {
-		white-space: nowrap;
-	}
-
-	&__link {
-		&-all {
-			margin-left: auto;
+			&:hover {
+				color: var(--border-color);
+			}
 		}
 	}
 }

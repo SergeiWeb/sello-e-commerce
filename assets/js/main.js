@@ -10,7 +10,9 @@ const scrollUpLink = document.getElementById('scroll-up')
 
 const trandingList = document.getElementById('tranding-list')
 const trandingToggle = document.getElementById('tranding-toggle')
-const trandingIcon = trandingToggle.querySelector('.tranding__toggle-icon')
+
+const productsLikeBtn = document.querySelectorAll('.products__btn-like')
+const productsBuyBtn = document.querySelectorAll('.products__btn-buy')
 
 /* secondary functions */
 const changesClasses = (el, method, className) => {
@@ -116,7 +118,9 @@ if (navLink) {
 }
 
 /* tranding list */
-if (trandingList && trandingToggle && trandingIcon) {
+if (trandingList && trandingToggle) {
+	const trandingIcon = trandingToggle.querySelector('.tranding__toggle-icon')
+
 	if (trandingList.classList.contains('show-list')) {
 		changesClasses(trandingList, 'remove', 'show-list')
 		changesClasses(trandingIcon, 'remove', 'bx-x')
@@ -131,6 +135,43 @@ if (trandingList && trandingToggle && trandingIcon) {
 			changesClasses(trandingIcon, 'remove', 'bx-x')
 		}
 	})
+}
+
+/* products button */
+if (productsLikeBtn && productsBuyBtn) {
+	const productsBtnChange = (btns, iconClass, activeClass, iconClassChange) => {
+		btns.forEach(btn => {
+			const icon = btn.querySelector(iconClass)
+
+			btn.addEventListener('click', event => {
+				event.preventDefault()
+
+				if (!btn.classList.contains(activeClass)) {
+					changesClasses(btn, 'add', activeClass)
+					changesClasses(icon, 'remove', `bx-${iconClassChange}`)
+					changesClasses(icon, 'add', `bxs-${iconClassChange}`)
+				} else {
+					changesClasses(btn, 'remove', activeClass)
+					changesClasses(icon, 'add', `bx-${iconClassChange}`)
+					changesClasses(icon, 'remove', `bxs-${iconClassChange}`)
+				}
+			})
+		})
+	}
+
+	productsBtnChange(
+		productsLikeBtn,
+		'.products-liked',
+		'in-liked', // if there is this class, then the product should be added to Favorites
+		'heart'
+	)
+
+	productsBtnChange(
+		productsBuyBtn,
+		'.products-shop-bag',
+		'in-shop-bag', // if there is this class, then the product should be added to the Shopping cart
+		'shopping-bag'
+	)
 }
 
 /* scroll up */

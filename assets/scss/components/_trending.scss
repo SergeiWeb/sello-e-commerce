@@ -1,0 +1,28 @@
+/* tranding */
+.tranding {
+	padding-top: 9.375rem;
+
+	&__navigation {
+		top: 230px;
+	}
+
+	&__content {
+		margin-top: 3.125rem;
+	}
+
+	&__nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+
+	&__item {
+		white-space: nowrap;
+	}
+
+	&__link {
+		&-all {
+			margin-left: auto;
+		}
+	}
+}

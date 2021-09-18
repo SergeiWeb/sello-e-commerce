@@ -457,7 +457,6 @@ button {
 .products__blank {
   position: absolute;
   width: 75px;
-  color: var(--body-color);
   height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,6 +475,7 @@ button {
 
 .products__blank.category {
   left: 1.25rem;
+  color: var(--body-color);
   bottom: 0;
   background: var(--white-color);
 }
@@ -483,6 +483,14 @@ button {
 .products__blank.category:hover {
   color: var(--white-color);
   background-color: var(--body-color);
+}
+
+.products__blank.sale {
+  top: 1.25rem;
+  right: 1.25rem;
+  color: var(--white-color);
+  background: var(--body-color);
+  text-transform: uppercase;
 }
 
 .products__content {
@@ -506,6 +514,8 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 0.625rem;
+          column-gap: 0.625rem;
 }
 
 .products__price {
@@ -545,14 +555,31 @@ button {
           column-gap: 0.625rem;
   font-size: var(--smaller-font-size);
   font-weight: var(--font-light);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.products__btn .icon {
+.products__btn-icon {
   font-size: 0.75rem;
+}
+
+.products__btn-like .products__btn-icon {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.products__btn-like:hover .products__btn-icon, .products__btn-like.in-liked .products__btn-icon {
+  color: #ff2600;
 }
 
 .products__btn-buy {
   text-transform: uppercase;
+}
+
+.products__btn-buy:hover {
+  color: var(--border-color);
 }
 
 /* tranding */
