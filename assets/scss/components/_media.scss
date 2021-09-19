@@ -40,7 +40,7 @@
 	.section {
 		&__navigation {
 			position: absolute;
-			top: 230px;
+			top: 240px;
 			left: 4%;
 			writing-mode: vertical-rl;
 			transform: rotate(180deg);
@@ -64,6 +64,11 @@
 		}
 	}
 
+	.featured__navigation,
+	.blog__navigation {
+		top: 80px;
+	}
+
 	.home__navigation {
 		top: 50%;
 		transform: rotate(180deg) translateY(50%);
@@ -82,7 +87,8 @@
 		}
 	}
 
-	.products__wrapper {
+	.products__wrapper,
+	.blog__wrapper {
 		justify-content: center;
 		grid-template-columns: repeat(2, minmax(150px, 45%));
 	}
@@ -96,6 +102,10 @@
 				background-position: right 0 top 50%;
 			}
 		}
+	}
+
+	.blog__wrapper {
+		row-gap: 2.5rem;
 	}
 }
 
@@ -300,13 +310,18 @@
 			}
 		}
 	}
+
+	.blog {
+		&__wrapper {
+			grid-template-columns: 0.9fr;
+		}
+	}
 }
 
 @media screen and (max-width: 460px) {
-	.products {
-		&__wrapper {
-			grid-template-columns: 1fr;
-		}
+	.products__wrapper,
+	.blog__wrapper {
+		grid-template-columns: 1fr;
 	}
 
 	.tranding {
@@ -338,7 +353,7 @@
 
 	.subscribe {
 		&__wrapper {
-			padding: 1.5rem 1rem
+			padding: 1.5rem 1rem;
 		}
 	}
 }

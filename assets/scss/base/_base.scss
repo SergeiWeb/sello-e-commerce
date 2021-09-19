@@ -118,6 +118,7 @@ button {
 		}
 
 		&-name {
+			white-space: nowrap;
 			font-weight: var(--font-bold);
 			text-transform: uppercase;
 		}
