@@ -17,8 +17,8 @@
   --h4-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
-  --small-font-size: 0.85rem;
-  --smaller-font-size: 0.675rem;
+  --small-font-size: 0.9rem;
+  --smaller-font-size: 0.75rem;
   /* font weight */
   --font-light: 300;
   --font-regular: 400;
@@ -787,7 +787,7 @@ button {
 
 @media screen and (max-width: 968px) {
   .products__btn-icon {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
   .offer__wrapper {
     -webkit-box-pack: center;

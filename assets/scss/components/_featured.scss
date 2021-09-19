@@ -1,2 +1,6 @@
 /* featured */
-.featured {}
+.featured {
+	&__navigation {
+		top: 80px;
+	}
+}
