@@ -17,8 +17,8 @@
   --h4-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.5rem;
+  --small-font-size: 0.85rem;
+  --smaller-font-size: 0.675rem;
   /* font weight */
   --font-light: 300;
   --font-regular: 400;
@@ -240,7 +240,7 @@ button {
   position: fixed;
   right: 2rem;
   bottom: -20%;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 0.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -785,7 +785,10 @@ button {
   }
 }
 
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 968px) {
+  .products__btn-icon {
+    font-size: 0.85rem;
+  }
   .offer__wrapper {
     -webkit-box-pack: center;
         -ms-flex-pack: center;

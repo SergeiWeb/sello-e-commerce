@@ -105,7 +105,15 @@
 	}
 }
 
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 968px) {
+	.products {
+		&__btn {
+			&-icon {
+				font-size: 0.85rem;
+			}
+		}
+	}
+
 	.offer {
 		&__wrapper {
 			justify-content: center;
