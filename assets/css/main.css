@@ -1,6 +1,6 @@
 /* variables */
 :root {
-  --header-height: 6rem;
+  --header-height: 5rem;
   /* colors */
   --hue: 0;
   --sat: 0%;
@@ -40,6 +40,7 @@
 
 @media screen and (min-width: 968px) {
   :root {
+    --header-height: 6rem;
     --biggest-font-size: 3.125rem;
     --big-font-size: 1.875rem;
     --h4-font-size: 1.25rem;

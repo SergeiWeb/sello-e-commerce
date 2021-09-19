@@ -1,6 +1,6 @@
 /* variables */
 :root {
-	--header-height: 6rem;
+	--header-height: 5rem;
 
 	/* colors */
 	--hue: 0; // Yellow: 45 | Red: 4 | Orange: 18 | Green: 118
@@ -24,8 +24,10 @@
 	--small-font-size: 0.813rem;
 	--smaller-font-size: 0.5rem;
 
-	// responsive typography
+	// responsive variables
 	@media screen and (min-width: 968px) {
+		--header-height: 6rem;
+
 		--biggest-font-size: 3.125rem; // 50px
 		--big-font-size: 1.875rem; // 30px
 		--h4-font-size: 1.25rem; // 24px
