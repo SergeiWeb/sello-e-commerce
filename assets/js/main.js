@@ -77,6 +77,8 @@ if (navMenu && navToggle && navLogo) {
 		changesClasses(navMenu, 'remove', 'show-menu')
 		changesClasses(navLogo, 'remove', 'show-logo')
 		changesClasses(toggleIcon, 'remove', 'bx-x')
+
+		changesClasses(document.body, 'remove', 'no-scroll')
 	}
 
 	navToggle.addEventListener('click', () => {
@@ -84,10 +86,14 @@ if (navMenu && navToggle && navLogo) {
 			changesClasses(navMenu, 'add', 'show-menu')
 			changesClasses(navLogo, 'add', 'show-logo')
 			changesClasses(toggleIcon, 'add', 'bx-x')
+
+			changesClasses(document.body, 'add', 'no-scroll')
 		} else {
 			changesClasses(navMenu, 'remove', 'show-menu')
 			setTimeout(() => changesClasses(navLogo, 'remove', 'show-logo'), 300)
 			changesClasses(toggleIcon, 'remove', 'bx-x')
+
+			changesClasses(document.body, 'remove', 'no-scroll')
 		}
 	})
 }
@@ -100,6 +106,8 @@ if (navLink) {
 			changesClasses(navMenu, 'remove', 'show-menu')
 			changesClasses(navLogo, 'remove', 'show-logo')
 			changesClasses(toggleIcon, 'remove', 'bx-x')
+
+			changesClasses(document.body, 'remove', 'no-scroll')
 
 			const scrollTarget = document.getElementById(getId(link))
 
@@ -162,14 +170,14 @@ if (productsLikeBtn && productsBuyBtn) {
 	productsBtnChange(
 		productsLikeBtn,
 		'.products-liked',
-		'in-liked', // if there is this class, then the product should be added to Favorites
+		'in-liked', //! if there is this class, then the product should be added to Favorites
 		'heart'
 	)
 
 	productsBtnChange(
 		productsBuyBtn,
 		'.products-shop-bag',
-		'in-shop-bag', // if there is this class, then the product should be added to the Shopping cart
+		'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
 		'shopping-bag'
 	)
 }

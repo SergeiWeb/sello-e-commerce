@@ -20,7 +20,9 @@ body {
 	background-color: var(--white-color);
 	overflow-x: hidden;
 
-	min-height: 5000px;
+	&.no-scroll {
+		overflow: hidden;
+	}
 }
 
 h1,

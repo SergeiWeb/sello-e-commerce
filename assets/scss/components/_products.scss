@@ -85,6 +85,11 @@
 			color: var(--white-color);
 			background: var(--body-color);
 			text-transform: uppercase;
+
+			&:hover {
+				color: var(--body-color);
+				background-color: var(--white-color);
+			}
 		}
 	}
 

@@ -73,7 +73,10 @@ body {
   font-family: var(--body-font);
   background-color: var(--white-color);
   overflow-x: hidden;
-  min-height: 5000px;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 h1,
@@ -308,7 +311,7 @@ button {
 }
 
 .header.scroll-header .nav {
-  height: calc(var(--header-height) - 1rem);
+  height: calc(var(--header-height) - 2rem);
 }
 
 /* nav */
@@ -493,6 +496,11 @@ button {
   text-transform: uppercase;
 }
 
+.products__blank.sale:hover {
+  color: var(--body-color);
+  background-color: var(--white-color);
+}
+
 .products__content {
   padding: 1.25rem;
   display: -ms-grid;
@@ -580,6 +588,63 @@ button {
 
 .products__btn-buy:hover {
   color: var(--border-color);
+}
+
+/* offer */
+.offer__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-rows: 300px;
+      grid-template-rows: 300px;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+}
+
+.offer__card {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  padding: 2.813rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--bg-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.offer__card-left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -ms-grid-columns: 250px max-content;
+      grid-template-columns: 250px -webkit-max-content;
+      grid-template-columns: 250px max-content;
+  background-position: left 3rem top 50%;
+}
+
+.offer__card-right {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  background-position: right 3rem top 50%;
+}
+
+.offer__subtitle {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-light);
+}
+
+.offer__title {
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1.875rem;
 }
 
 /* tranding */
@@ -702,14 +767,38 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-grid-columns: (minmax(150px, 40%))[2];
-        grid-template-columns: repeat(2, minmax(150px, 40%));
+    -ms-grid-columns: (minmax(150px, 45%))[2];
+        grid-template-columns: repeat(2, minmax(150px, 45%));
+  }
+  .offer__card-left {
+    background-position: left -1.75rem top 50%;
+  }
+  .offer__card-right {
+    background-position: right 0 top 50%;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 956px) {
   .container {
     max-width: 968px;
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .offer__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-rows: (200px)[2];
+        grid-template-rows: repeat(2, 200px);
+    -ms-grid-columns: 500px;
+        grid-template-columns: 500px;
+  }
+  .offer__card-left {
+    background-position: left 0rem top 50%;
+  }
+  .offer__card-right {
+    background-position: right 0rem top 50%;
   }
 }
 
@@ -825,6 +914,15 @@ button {
   .products__img {
     height: 380px;
   }
+  .offer__wrapper {
+    -ms-grid-columns: 0.9fr;
+        grid-template-columns: 0.9fr;
+  }
+  .offer__card-left {
+    -ms-grid-columns: 210px max-content;
+        grid-template-columns: 210px -webkit-max-content;
+        grid-template-columns: 210px max-content;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -841,11 +939,33 @@ button {
   .tranding__list::-webkit-scrollbar {
     height: 0.2rem;
   }
+  .offer__wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (max-content)[2];
+        grid-template-rows: repeat(2, -webkit-max-content);
+        grid-template-rows: repeat(2, max-content);
+  }
+  .offer__card {
+    padding: 1.5rem;
+  }
+  .offer__title {
+    margin-bottom: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 340px) {
   .home__img {
     right: -200px;
+  }
+  .offer__card {
+    padding: 1rem;
+  }
+  .offer__card-left {
+    background-position: left -2rem top 50%;
+  }
+  .offer__card-right {
+    background-position: right -2rem top 50%;
   }
 }
 

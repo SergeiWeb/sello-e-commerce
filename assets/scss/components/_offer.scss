@@ -1,2 +1,44 @@
 /* offer */
-.offer {}
+.offer {
+	&__wrapper {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-template-rows: 300px;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.875rem;
+	}
+
+	&__card {
+		height: 100%;
+		display: grid;
+		padding: 2.813rem;
+		align-items: center;
+		background-color: var(--bg-color);
+
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		&-left {
+			justify-content: end;
+			grid-template-columns: 250px max-content;
+			background-position: left 3rem top 50%;
+		}
+
+		&-right {
+			grid-template-columns: 1fr;//max-content;
+			background-position: right 3rem top 50%;
+		}
+	}
+
+	&__subtitle {
+		font-size: var(--normal-font-size);
+		font-weight: var(--font-light);
+	}
+
+	&__title {
+		font-size: var(--h4-font-size);
+		font-weight: var(--font-semi-bold);
+		margin-bottom: 1.875rem;
+	}
+}
