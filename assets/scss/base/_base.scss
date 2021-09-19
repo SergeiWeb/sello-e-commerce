@@ -69,7 +69,7 @@ button {
 .link-label {
 	position: relative;
 	color: var(--body-color);
-	font-size: var(--h3-font-size);
+	font-size: var(--h4-font-size);
 	transition: 0.4s;
 	font-weight: var(--font-light);
 	text-transform: uppercase;
@@ -104,7 +104,7 @@ button {
 
 		&-count,
 		&-name {
-			font-size: var(--h4-font-size);
+			font-size: var(--h3-font-size);
 		}
 
 		&-count {
