@@ -313,7 +313,7 @@ button {
 }
 
 .header.scroll-header .nav {
-  height: calc(var(--header-height) - 2rem);
+  height: calc(var(--header-height) - 1rem);
 }
 
 /* nav */
