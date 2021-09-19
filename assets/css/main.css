@@ -868,7 +868,9 @@ button {
     position: absolute;
     top: 120%;
     left: 0;
-    width: 100%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -931,6 +933,7 @@ button {
         grid-template-columns: 1fr;
   }
   .tranding__list {
+    width: 100%;
     overflow-x: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;

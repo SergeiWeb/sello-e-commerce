@@ -193,7 +193,7 @@
 			position: absolute;
 			top: 120%;
 			left: 0;
-			width: 100%;
+			width: max-content;
 			opacity: 0;
 			display: flex;
 			padding: 0.5rem;
@@ -261,6 +261,7 @@
 
 	.tranding {
 		&__list {
+			width: 100%;
 			overflow-x: auto;
 			justify-content: flex-start;
 
