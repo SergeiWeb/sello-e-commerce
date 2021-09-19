@@ -1,2 +1,119 @@
 /* subscribe */
-.subscribe {}
+.subscribe {
+	&__container {
+		display: grid;
+		grid-template-rows: minmax(max-content, 300px);
+	}
+
+	&__wrapper {
+		position: relative;
+		padding: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--bg-color);
+		overflow: hidden;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		max-width: 200px;
+
+		&-left {
+			left: 3.125rem;
+		}
+
+		&-right {
+			right: 3.75rem;
+		}
+	}
+
+	&__title {
+		font-size: var(--h4-font-size);
+		font-weight: var(--font-medium);
+		text-transform: uppercase;
+		margin-bottom: 0.625rem;
+
+		&--light {
+			font-weight: var(--font-light);
+		}
+	}
+
+	&__description {
+		max-width: 25.75rem;
+		font-style: var(--small-font-size);
+		font-weight: var(--font-light);
+	}
+
+	&__form {
+		display: grid;
+		align-items: center;
+		justify-content: space-between;
+		grid-template-columns: minmax(200px, 350px) minmax(100px, max-content);
+		grid-template-rows: 60px;
+		column-gap: 1.875rem;
+		margin-top: 2.5rem;
+	}
+
+	&__input,
+	&__submit {
+		height: 100%;
+		padding: 0.5rem 1.875rem;
+	}
+
+	&__input {
+		display: inline-flex;
+		background-color: var(--white-color);
+		font-weight: var(--font-light);
+		border: 1px solid transparent;
+
+		&::placeholder {
+			color: var(--text-color);
+			font-size: var(--small-font-size);
+			font-weight: var(--font-light);
+		}
+
+		&:active,
+		&:focus {
+			border-color: var(--border-color)
+		}
+
+		&.invalid {
+			border-color: var(--invalid-color)
+		}
+
+		&.success {
+			border-color: var(--success-color)
+		}
+	}
+
+	&__submit {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 1.25rem;
+		color: var(--white-color);
+		font-size: var(--normal-font-size);
+		background-color: var(--body-color);
+		font-weight: var(--font-light);
+		transition: 0.4s;
+		border: 1px solid transparent;
+
+		&:hover {
+			color: var(--body-color);
+			background-color: var(--white-color);
+			border-color: var(--body-color);
+		}
+	}
+}

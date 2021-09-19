@@ -14,7 +14,10 @@ const trandingToggle = document.getElementById('tranding-toggle')
 const productsLikeBtn = document.querySelectorAll('.products__btn-like')
 const productsBuyBtn = document.querySelectorAll('.products__btn-buy')
 
+const subscribeEmailInput = document.getElementById('subscribe-email-input')
+
 /* secondary functions */
+// changes classes
 const changesClasses = (el, method, className) => {
 	if (Array.isArray(className)) {
 		return el.classList[method](...className)
@@ -23,9 +26,11 @@ const changesClasses = (el, method, className) => {
 	}
 }
 
+// get id
 const getId = link => link.getAttribute('href').replace('#', '')
 
 /* additional functions */
+// scroll active
 function scrollActive() {
 	const scrollY = window.pageYOffset
 
@@ -50,6 +55,7 @@ function scrollActive() {
 	})
 }
 
+// scroll header
 function scrollHeader() {
 	const header = document.getElementById('header')
 
@@ -60,12 +66,20 @@ function scrollHeader() {
 	}
 }
 
+// scroll up
 function scrollUp() {
 	if (this.scrollY >= 200) {
 		changesClasses(scrollUpLink, 'add', 'show-scroll-link')
 	} else {
 		changesClasses(scrollUpLink, 'remove', 'show-scroll-link')
 	}
+}
+
+// validate email
+const validateEmail = email => {
+	const regular = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+	return regular.test(String(email).toLowerCase())
 }
 
 /* navbar */
@@ -142,7 +156,6 @@ if (trandingList && trandingToggle) {
 			changesClasses(trandingIcon, 'add', 'bx-x')
 
 			console.log(event.target)
-
 		} else {
 			changesClasses(trandingList, 'remove', 'show-list')
 			changesClasses(trandingIcon, 'remove', 'bx-x')
@@ -185,6 +198,30 @@ if (productsLikeBtn && productsBuyBtn) {
 		'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
 		'shopping-bag'
 	)
+}
+
+/* subscribe email */
+if (subscribeEmailInput) {
+	subscribeEmailInput.addEventListener('input', () => {
+		const emailValue = subscribeEmailInput.value
+
+		if (emailValue.length <= 0) {
+			changesClasses(subscribeEmailInput, 'remove', ['success', 'invalid'])
+		} else {
+			if (validateEmail(emailValue)) {
+				changesClasses(subscribeEmailInput, 'remove', 'invalid')
+				changesClasses(subscribeEmailInput, 'add', 'success')
+
+				setTimeout(
+					() => changesClasses(subscribeEmailInput, 'remove', 'success'),
+					1500
+				)
+			} else if (!validateEmail(emailValue)) {
+				changesClasses(subscribeEmailInput, 'remove', 'success')
+				changesClasses(subscribeEmailInput, 'add', 'invalid')
+			}
+		}
+	})
 }
 
 /* scroll up */

@@ -52,8 +52,16 @@ img {
 	object-fit: cover;
 }
 
+input {
+	border: none;
+	outline: none;
+	background: none;
+}
+
 button {
-	all: unset;
+	border: none;
+	outline: none;
+	background: none;
 	cursor: pointer;
 }
 

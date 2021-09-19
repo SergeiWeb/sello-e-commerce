@@ -4,31 +4,26 @@
 	right: 2rem;
 	bottom: -20%;
 	border: 1px solid transparent;
-	padding: 0.3rem;
+	padding: 0.4rem;
 	display: flex;
 	opacity: 0.9;
+	color: var(--white-color);
 	z-index: var(--z-tooltip);
+	font-size: var(--normal-font-size);
 	transition: 0.4s;
 	background-color: var(--body-color);
+
 
 	&.show-scroll-link {
 		bottom: 4rem;
 	}
 
-	&__icon {
-		font-size: 1.3rem;
-		color: var(--white-color);
-		transition: 0.4s;
-	}
-
 	&:hover {
 		opacity: 1;
+		color: var(--body-color);
 		border-color: var(--body-color);
 		background-color: var(--white-color);
 
-		& .scroll-up__icon {
-			color: var(--body-color);
-		}
 	}
 }
 
