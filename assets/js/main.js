@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
 	const navToggle = document.getElementById('nav-toggle')
 	const toggleIcon = navToggle.querySelector('.nav__toggle-icon')
 
-	const navLink = document.querySelectorAll('.nav__link')
+	const navLinks = document.querySelectorAll('.nav__link')
 	const sections = document.querySelectorAll('section[id]')
 
 	const scrollUpLink = document.getElementById('scroll-up')
@@ -12,14 +12,17 @@ window.addEventListener('load', () => {
 	const trandingList = document.getElementById('tranding-list')
 	const trandingToggle = document.getElementById('tranding-toggle')
 
-	const productsLikeBtn = document.querySelectorAll('.products__btn-like')
-	const productsBuyBtn = document.querySelectorAll('.products__btn-buy')
+	const productsLikeBtns = document.querySelectorAll('.products__btn-like')
+	const productsBuyBtns = document.querySelectorAll('.products__btn-buy')
 
 	const subscribeEmailInput = document.getElementById('subscribe-email-input')
 
 	const preloader = document.getElementById('preloader')
 
 	const catalogItems = document.querySelectorAll('.catalog__menu')
+
+	const footerNavLinks = document.querySelectorAll('.footer__nav-link')
+	const footerItems = document.querySelectorAll('.footer__data-item')
 
 	/* preloader */
 	if (preloader) {
@@ -77,6 +80,47 @@ window.addEventListener('load', () => {
 		}
 	}
 
+	// scroll to section
+	const scrollToSection = target => {
+		const topOffset = 0
+		const elementPosition = target.getBoundingClientRect().top
+		const offsetPosition = elementPosition - topOffset
+
+		window.scrollBy({
+			top: offsetPosition,
+			behavior: 'smooth',
+		})
+	}
+
+	// accordion
+	const toggleAccordionItem = (item, listClass, activeClass) => {
+		const list = item.querySelector(listClass)
+
+		if (item.classList.contains(activeClass)) {
+			list.removeAttribute('style')
+			changesClasses(item, 'remove', activeClass)
+		} else {
+			list.style.height = list.scrollHeight + 'px'
+			changesClasses(item, 'add', activeClass)
+		}
+	}
+
+	const accordionItems = (items, headerClass, activeClass, listClass) => {
+		items.forEach(item => {
+			const catalogHeader = item.querySelector(headerClass)
+
+			catalogHeader.addEventListener('click', () => {
+				const openItem = document.querySelector(activeClass)
+
+				toggleAccordionItem(item, listClass, activeClass.replace('.', ''))
+
+				if (openItem && openItem !== item) {
+					toggleAccordionItem(openItem, listClass, activeClass.replace('.', ''))
+				}
+			})
+		})
+	}
+
 	// scroll up
 	function scrollUp() {
 		if (this.scrollY >= 200) {
@@ -123,9 +167,9 @@ window.addEventListener('load', () => {
 		})
 	}
 
-	/* navlink */
-	if (navLink) {
-		navLink.forEach(link =>
+	/* nav links */
+	if (navLinks) {
+		navLinks.forEach(link =>
 			link.addEventListener('click', event => {
 				event.preventDefault()
 				changesClasses(navMenu, 'remove', 'show-menu')
@@ -137,14 +181,7 @@ window.addEventListener('load', () => {
 				const scrollTarget = document.getElementById(getId(link))
 
 				if (scrollTarget) {
-					const topOffset = 0
-					const elementPosition = scrollTarget.getBoundingClientRect().top
-					const offsetPosition = elementPosition - topOffset
-
-					window.scrollBy({
-						top: offsetPosition,
-						behavior: 'smooth',
-					})
+					scrollToSection(scrollTarget)
 				}
 			})
 		)
@@ -173,7 +210,7 @@ window.addEventListener('load', () => {
 	}
 
 	/* products button */
-	if (productsLikeBtn && productsBuyBtn) {
+	if (productsLikeBtns && productsBuyBtns) {
 		const productsBtnChange = (
 			btns,
 			iconClass,
@@ -200,14 +237,14 @@ window.addEventListener('load', () => {
 		}
 
 		productsBtnChange(
-			productsLikeBtn,
+			productsLikeBtns,
 			'.products-liked',
 			'in-liked', //! if there is this class, then the product should be added to Favorites
 			'heart'
 		)
 
 		productsBtnChange(
-			productsBuyBtn,
+			productsBuyBtns,
 			'.products-shop-bag',
 			'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
 			'shopping-bag'
@@ -239,31 +276,39 @@ window.addEventListener('load', () => {
 	}
 
 	/* catalog accordion */
-	const toggleItem = item => {
-		const catalogList = item.querySelector('.catalog__list')
-
-		if (item.classList.contains('catalog-open')) {
-			catalogList.removeAttribute('style')
-			changesClasses(item, 'remove', 'catalog-open')
-		} else {
-			catalogList.style.height = catalogList.scrollHeight + 'px'
-			changesClasses(item, 'add', 'catalog-open')
-		}
+	if (catalogItems) {
+		accordionItems(
+			catalogItems,
+			'.catalog__header',
+			'.catalog-open',
+			'.catalog__list'
+		)
 	}
 
-	catalogItems.forEach(item => {
-		const catalogHeader = item.querySelector('.catalog__header')
+	/* footer accordion */
+	if (footerItems) {
+		accordionItems(
+			footerItems,
+			'.footer__header',
+			'.footer-open',
+			'.footer__list'
+		)
+	}
 
-		catalogHeader.addEventListener('click', () => {
-			const openItem = document.querySelector('.catalog-open')
+	/* footer links */
+	if (footerNavLinks) {
+		footerNavLinks.forEach(link => {
+			link.addEventListener('click', event => {
+				event.preventDefault()
 
-			toggleItem(item)
+				const scrollTarget = document.getElementById(getId(link))
 
-			if (openItem && openItem !== item) {
-				toggleItem(openItem)
-			}
+				if (scrollTarget) {
+					scrollToSection(scrollTarget)
+				}
+			})
 		})
-	})
+	}
 
 	/* scroll up */
 	scrollUpLink.addEventListener('click', event => {

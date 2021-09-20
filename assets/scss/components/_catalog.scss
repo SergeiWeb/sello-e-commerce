@@ -1,8 +1,9 @@
 /* catalog */
 .catalog {
+	padding-bottom: 9.375rem;
+
 	&__wrapper {
 		display: grid;
-		align-items: center;
 		justify-content: space-between;
 		grid-template-columns: repeat(6, 1fr);
 		gap: 1.875rem;
@@ -40,7 +41,7 @@
 		transition: 0.4s;
 
 		&:hover {
-			color: var(--border-color);
+			color: var(--text-color);
 		}
 	}
 }
