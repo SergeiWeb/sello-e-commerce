@@ -157,6 +157,13 @@
 			}
 		}
 	}
+
+	.catalog {
+		&__wrapper {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -371,6 +378,37 @@
 		&__link {
 			width: 230px;
 			height: 60px;
+		}
+	}
+
+	.catalog {
+		&__wrapper {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			row-gap: 0.875rem;
+		}
+
+		&__menu {
+			&.catalog-open {
+				.catalog__icon {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		&__header {
+			padding: 1rem 0;
+		}
+
+		&__list {
+			height: 0;
+			margin: 0;
+			overflow: hidden;
+			transition: 0.4s;
+		}
+
+		&__icon {
+			display: inline-block;
 		}
 	}
 }

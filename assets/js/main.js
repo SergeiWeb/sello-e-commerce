@@ -1,248 +1,292 @@
-const navMenu = document.getElementById('nav-menu')
-const navLogo = document.getElementById('nav-logo')
-const navToggle = document.getElementById('nav-toggle')
-const toggleIcon = navToggle.querySelector('.nav__toggle-icon')
+window.addEventListener('load', () => {
+	const navMenu = document.getElementById('nav-menu')
+	const navLogo = document.getElementById('nav-logo')
+	const navToggle = document.getElementById('nav-toggle')
+	const toggleIcon = navToggle.querySelector('.nav__toggle-icon')
 
-const navLink = document.querySelectorAll('.nav__link')
-const sections = document.querySelectorAll('section[id]')
+	const navLink = document.querySelectorAll('.nav__link')
+	const sections = document.querySelectorAll('section[id]')
 
-const scrollUpLink = document.getElementById('scroll-up')
+	const scrollUpLink = document.getElementById('scroll-up')
 
-const trandingList = document.getElementById('tranding-list')
-const trandingToggle = document.getElementById('tranding-toggle')
+	const trandingList = document.getElementById('tranding-list')
+	const trandingToggle = document.getElementById('tranding-toggle')
 
-const productsLikeBtn = document.querySelectorAll('.products__btn-like')
-const productsBuyBtn = document.querySelectorAll('.products__btn-buy')
+	const productsLikeBtn = document.querySelectorAll('.products__btn-like')
+	const productsBuyBtn = document.querySelectorAll('.products__btn-buy')
 
-const subscribeEmailInput = document.getElementById('subscribe-email-input')
+	const subscribeEmailInput = document.getElementById('subscribe-email-input')
 
-/* secondary functions */
-// changes classes
-const changesClasses = (el, method, className) => {
-	if (Array.isArray(className)) {
-		return el.classList[method](...className)
-	} else {
-		return el.classList[method](className)
+	const preloader = document.getElementById('preloader')
+
+	const catalogItems = document.querySelectorAll('.catalog__menu')
+
+	/* preloader */
+	if (preloader) {
+		setTimeout(() => changesClasses(preloader, 'add', 'hide'), 1000)
+		setTimeout(() => preloader.remove(), 1200)
 	}
-}
 
-// get id
-const getId = link => link.getAttribute('href').replace('#', '')
-
-/* additional functions */
-// scroll active
-function scrollActive() {
-	const scrollY = window.pageYOffset
-
-	sections.forEach(current => {
-		const sectionHeight = current.offsetHeight
-		const sectionTop = current.offsetTop - 50
-		let sectionId = current.getAttribute('id')
-
-		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-			changesClasses(
-				document.querySelector(`.nav__menu a[href*=${sectionId}]`),
-				'add',
-				'active-link'
-			)
+	/* secondary functions */
+	// changes classes
+	const changesClasses = (el, method, className) => {
+		if (Array.isArray(className)) {
+			return el.classList[method](...className)
 		} else {
-			changesClasses(
-				document.querySelector(`.nav__menu a[href*=${sectionId}]`),
-				'remove',
-				'active-link'
-			)
+			return el.classList[method](className)
 		}
-	})
-}
-
-// scroll header
-function scrollHeader() {
-	const header = document.getElementById('header')
-
-	if (this.scrollY >= 100) {
-		changesClasses(header, 'add', 'scroll-header')
-	} else {
-		changesClasses(header, 'remove', 'scroll-header')
-	}
-}
-
-// scroll up
-function scrollUp() {
-	if (this.scrollY >= 200) {
-		changesClasses(scrollUpLink, 'add', 'show-scroll-link')
-	} else {
-		changesClasses(scrollUpLink, 'remove', 'show-scroll-link')
-	}
-}
-
-// validate email
-const validateEmail = email => {
-	const regular = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-	return regular.test(String(email).toLowerCase())
-}
-
-/* navbar */
-if (navMenu && navToggle && navLogo) {
-	if (
-		navMenu.classList.contains('show-menu') ||
-		navLogo.classList.contains('show-logo')
-	) {
-		changesClasses(navMenu, 'remove', 'show-menu')
-		changesClasses(navLogo, 'remove', 'show-logo')
-		changesClasses(toggleIcon, 'remove', 'bx-x')
-
-		changesClasses(document.body, 'remove', 'no-scroll')
 	}
 
-	navToggle.addEventListener('click', () => {
-		if (!navMenu.classList.contains('show-menu')) {
-			changesClasses(navMenu, 'add', 'show-menu')
-			changesClasses(navLogo, 'add', 'show-logo')
-			changesClasses(toggleIcon, 'add', 'bx-x')
+	// get id
+	const getId = link => link.getAttribute('href').replace('#', '')
 
-			changesClasses(document.body, 'add', 'no-scroll')
+	/* additional functions */
+	// scroll active
+	function scrollActive() {
+		const scrollY = window.pageYOffset
+
+		sections.forEach(current => {
+			const sectionHeight = current.offsetHeight
+			const sectionTop = current.offsetTop - 50
+			let sectionId = current.getAttribute('id')
+
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				changesClasses(
+					document.querySelector(`.nav__menu a[href*=${sectionId}]`),
+					'add',
+					'active-link'
+				)
+			} else {
+				changesClasses(
+					document.querySelector(`.nav__menu a[href*=${sectionId}]`),
+					'remove',
+					'active-link'
+				)
+			}
+		})
+	}
+
+	// scroll header
+	function scrollHeader() {
+		const header = document.getElementById('header')
+
+		if (this.scrollY >= 100) {
+			changesClasses(header, 'add', 'scroll-header')
 		} else {
-			changesClasses(navMenu, 'remove', 'show-menu')
-			setTimeout(() => changesClasses(navLogo, 'remove', 'show-logo'), 300)
-			changesClasses(toggleIcon, 'remove', 'bx-x')
-
-			changesClasses(document.body, 'remove', 'no-scroll')
+			changesClasses(header, 'remove', 'scroll-header')
 		}
-	})
-}
+	}
 
-/* navlink */
-if (navLink) {
-	navLink.forEach(link =>
-		link.addEventListener('click', event => {
-			event.preventDefault()
+	// scroll up
+	function scrollUp() {
+		if (this.scrollY >= 200) {
+			changesClasses(scrollUpLink, 'add', 'show-scroll-link')
+		} else {
+			changesClasses(scrollUpLink, 'remove', 'show-scroll-link')
+		}
+	}
+
+	// validate email
+	const validateEmail = email => {
+		const regular = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+		return regular.test(String(email).toLowerCase())
+	}
+
+	/* navbar */
+	if (navMenu && navToggle && navLogo) {
+		if (
+			navMenu.classList.contains('show-menu') ||
+			navLogo.classList.contains('show-logo')
+		) {
 			changesClasses(navMenu, 'remove', 'show-menu')
 			changesClasses(navLogo, 'remove', 'show-logo')
 			changesClasses(toggleIcon, 'remove', 'bx-x')
 
 			changesClasses(document.body, 'remove', 'no-scroll')
+		}
 
-			const scrollTarget = document.getElementById(getId(link))
+		navToggle.addEventListener('click', () => {
+			if (!navMenu.classList.contains('show-menu')) {
+				changesClasses(navMenu, 'add', 'show-menu')
+				changesClasses(navLogo, 'add', 'show-logo')
+				changesClasses(toggleIcon, 'add', 'bx-x')
 
-			if (scrollTarget) {
-				const topOffset = 0
-				const elementPosition = scrollTarget.getBoundingClientRect().top
-				const offsetPosition = elementPosition - topOffset
+				changesClasses(document.body, 'add', 'no-scroll')
+			} else {
+				changesClasses(navMenu, 'remove', 'show-menu')
+				setTimeout(() => changesClasses(navLogo, 'remove', 'show-logo'), 300)
+				changesClasses(toggleIcon, 'remove', 'bx-x')
 
-				window.scrollBy({
-					top: offsetPosition,
-					behavior: 'smooth',
-				})
+				changesClasses(document.body, 'remove', 'no-scroll')
 			}
 		})
-	)
-}
-
-/* tranding list */
-if (trandingList && trandingToggle) {
-	const trandingIcon = trandingToggle.querySelector('.tranding__toggle-icon')
-
-	if (trandingList.classList.contains('show-list')) {
-		changesClasses(trandingList, 'remove', 'show-list')
-		changesClasses(trandingIcon, 'remove', 'bx-x')
 	}
 
-	trandingToggle.addEventListener('click', event => {
-		event.preventDefault()
+	/* navlink */
+	if (navLink) {
+		navLink.forEach(link =>
+			link.addEventListener('click', event => {
+				event.preventDefault()
+				changesClasses(navMenu, 'remove', 'show-menu')
+				changesClasses(navLogo, 'remove', 'show-logo')
+				changesClasses(toggleIcon, 'remove', 'bx-x')
 
-		if (!trandingList.classList.contains('show-list')) {
-			changesClasses(trandingList, 'add', 'show-list')
-			changesClasses(trandingIcon, 'add', 'bx-x')
-		} else {
+				changesClasses(document.body, 'remove', 'no-scroll')
+
+				const scrollTarget = document.getElementById(getId(link))
+
+				if (scrollTarget) {
+					const topOffset = 0
+					const elementPosition = scrollTarget.getBoundingClientRect().top
+					const offsetPosition = elementPosition - topOffset
+
+					window.scrollBy({
+						top: offsetPosition,
+						behavior: 'smooth',
+					})
+				}
+			})
+		)
+	}
+
+	/* tranding list */
+	if (trandingList && trandingToggle) {
+		const trandingIcon = trandingToggle.querySelector('.tranding__toggle-icon')
+
+		if (trandingList.classList.contains('show-list')) {
 			changesClasses(trandingList, 'remove', 'show-list')
 			changesClasses(trandingIcon, 'remove', 'bx-x')
 		}
-	})
-}
 
-/* products button */
-if (productsLikeBtn && productsBuyBtn) {
-	const productsBtnChange = (btns, iconClass, activeClass, iconClassChange) => {
-		btns.forEach(btn => {
-			const icon = btn.querySelector(iconClass)
+		trandingToggle.addEventListener('click', event => {
+			event.preventDefault()
 
-			btn.addEventListener('click', event => {
-				event.preventDefault()
-
-				if (!btn.classList.contains(activeClass)) {
-					changesClasses(btn, 'add', activeClass)
-					changesClasses(icon, 'remove', `bx-${iconClassChange}`)
-					changesClasses(icon, 'add', `bxs-${iconClassChange}`)
-				} else {
-					changesClasses(btn, 'remove', activeClass)
-					changesClasses(icon, 'add', `bx-${iconClassChange}`)
-					changesClasses(icon, 'remove', `bxs-${iconClassChange}`)
-				}
-			})
+			if (!trandingList.classList.contains('show-list')) {
+				changesClasses(trandingList, 'add', 'show-list')
+				changesClasses(trandingIcon, 'add', 'bx-x')
+			} else {
+				changesClasses(trandingList, 'remove', 'show-list')
+				changesClasses(trandingIcon, 'remove', 'bx-x')
+			}
 		})
 	}
 
-	productsBtnChange(
-		productsLikeBtn,
-		'.products-liked',
-		'in-liked', //! if there is this class, then the product should be added to Favorites
-		'heart'
-	)
+	/* products button */
+	if (productsLikeBtn && productsBuyBtn) {
+		const productsBtnChange = (
+			btns,
+			iconClass,
+			activeClass,
+			iconClassChange
+		) => {
+			btns.forEach(btn => {
+				const icon = btn.querySelector(iconClass)
 
-	productsBtnChange(
-		productsBuyBtn,
-		'.products-shop-bag',
-		'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
-		'shopping-bag'
-	)
-}
+				btn.addEventListener('click', event => {
+					event.preventDefault()
 
-/* subscribe email */
-if (subscribeEmailInput) {
-	subscribeEmailInput.addEventListener('input', () => {
-		const emailValue = subscribeEmailInput.value
-
-		if (emailValue.length <= 0) {
-			changesClasses(subscribeEmailInput, 'remove', ['success', 'invalid'])
-		} else {
-			if (validateEmail(emailValue)) {
-				changesClasses(subscribeEmailInput, 'remove', 'invalid')
-				changesClasses(subscribeEmailInput, 'add', 'success')
-
-				setTimeout(
-					() => changesClasses(subscribeEmailInput, 'remove', 'success'),
-					1500
-				)
-			} else if (!validateEmail(emailValue)) {
-				changesClasses(subscribeEmailInput, 'remove', 'success')
-				changesClasses(subscribeEmailInput, 'add', 'invalid')
-			}
+					if (!btn.classList.contains(activeClass)) {
+						changesClasses(btn, 'add', activeClass)
+						changesClasses(icon, 'remove', `bx-${iconClassChange}`)
+						changesClasses(icon, 'add', `bxs-${iconClassChange}`)
+					} else {
+						changesClasses(btn, 'remove', activeClass)
+						changesClasses(icon, 'add', `bx-${iconClassChange}`)
+						changesClasses(icon, 'remove', `bxs-${iconClassChange}`)
+					}
+				})
+			})
 		}
+
+		productsBtnChange(
+			productsLikeBtn,
+			'.products-liked',
+			'in-liked', //! if there is this class, then the product should be added to Favorites
+			'heart'
+		)
+
+		productsBtnChange(
+			productsBuyBtn,
+			'.products-shop-bag',
+			'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
+			'shopping-bag'
+		)
+	}
+
+	/* subscribe email */
+	if (subscribeEmailInput) {
+		subscribeEmailInput.addEventListener('input', () => {
+			const emailValue = subscribeEmailInput.value
+
+			if (emailValue.length <= 0) {
+				changesClasses(subscribeEmailInput, 'remove', ['success', 'invalid'])
+			} else {
+				if (validateEmail(emailValue)) {
+					changesClasses(subscribeEmailInput, 'remove', 'invalid')
+					changesClasses(subscribeEmailInput, 'add', 'success')
+
+					setTimeout(
+						() => changesClasses(subscribeEmailInput, 'remove', 'success'),
+						1500
+					)
+				} else if (!validateEmail(emailValue)) {
+					changesClasses(subscribeEmailInput, 'remove', 'success')
+					changesClasses(subscribeEmailInput, 'add', 'invalid')
+				}
+			}
+		})
+	}
+
+	/* catalog accordion */
+	const toggleItem = item => {
+		const catalogList = item.querySelector('.catalog__list')
+
+		if (item.classList.contains('catalog-open')) {
+			catalogList.removeAttribute('style')
+			changesClasses(item, 'remove', 'catalog-open')
+		} else {
+			catalogList.style.height = catalogList.scrollHeight + 'px'
+			changesClasses(item, 'add', 'catalog-open')
+		}
+	}
+
+	catalogItems.forEach(item => {
+		const catalogHeader = item.querySelector('.catalog__header')
+
+		catalogHeader.addEventListener('click', () => {
+			const openItem = document.querySelector('.catalog-open')
+
+			toggleItem(item)
+
+			if (openItem && openItem !== item) {
+				toggleItem(openItem)
+			}
+		})
 	})
-}
 
-/* scroll up */
-scrollUpLink.addEventListener('click', event => {
-	event.preventDefault()
+	/* scroll up */
+	scrollUpLink.addEventListener('click', event => {
+		event.preventDefault()
 
-	window.scrollTo({ top: 0, behavior: 'smooth' })
-})
+		window.scrollTo({ top: 0, behavior: 'smooth' })
+	})
 
-/* slider */
-// new Swiper('.swiper', {
-// 	direction: 'vertical',
-// 	slidesPerView: 1,
-// 	loop: true,
-// 	navigation: {
-// 		nextEl: '.swiper-button-next',
-// 		prevEl: '.swiper-button-prev',
-// 	},
-// })
+	/* slider */
+	// new Swiper('.swiper', {
+	// 	direction: 'vertical',
+	// 	slidesPerView: 1,
+	// 	loop: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+	// })
 
-/* scroll */
-window.addEventListener('scroll', () => {
-	scrollActive()
-	scrollHeader()
-	scrollUp()
+	/* scroll */
+	window.addEventListener('scroll', () => {
+		scrollActive()
+		scrollHeader()
+		scrollUp()
+	})
 })

@@ -69,7 +69,40 @@ button {
 	cursor: pointer;
 }
 
+/* preloader */
+.preloader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	pointer-events: none;
+	color: var(--body-color);
+	background-color: var(--white-color);
+	transition: var(--transition-3);
+	z-index: 999;
+
+	&.hide {
+		opacity: 0;
+	}
+
+	&__icon {
+		font-size: 2rem;
+		animation: loader 1.2s linear infinite;
+	}
+}
+
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 /* base classes */
+// links
 .link-label {
 	position: relative;
 	color: var(--body-color);
@@ -97,6 +130,7 @@ button {
 	}
 }
 
+// section
 .section {
 	position: relative;
 	padding: 4.688rem 0;
@@ -129,6 +163,7 @@ button {
 	}
 }
 
+// menu
 .menu {
 	&__list {
 		display: flex;
