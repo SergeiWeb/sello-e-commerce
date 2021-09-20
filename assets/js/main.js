@@ -154,8 +154,6 @@ if (trandingList && trandingToggle) {
 		if (!trandingList.classList.contains('show-list')) {
 			changesClasses(trandingList, 'add', 'show-list')
 			changesClasses(trandingIcon, 'add', 'bx-x')
-
-			console.log(event.target)
 		} else {
 			changesClasses(trandingList, 'remove', 'show-list')
 			changesClasses(trandingIcon, 'remove', 'bx-x')

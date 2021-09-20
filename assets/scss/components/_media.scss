@@ -87,6 +87,10 @@
 		}
 	}
 
+	.tranding {
+		padding: 7rem 0;
+	}
+
 	.products__wrapper,
 	.blog__wrapper {
 		justify-content: center;
@@ -248,11 +252,22 @@
 			display: none;
 		}
 	}
+
+	.gallery {
+		&__container {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 200px);
+		}
+
+		&__link {
+			width: 270px;
+		}
+	}
 }
 
 @media screen and (max-width: 576px) {
 	.section {
-		padding: 3rem 0;
+		padding: 2rem 0;
 	}
 
 	.home {
@@ -260,19 +275,32 @@
 			grid-template-columns: 1fr;
 		}
 
+		&__description {
+			margin-bottom: 2.75rem;
+		}
+
 		&__img {
 			right: -240px;
 		}
 	}
 
+	.tranding {
+		padding: 4rem 0;
+	}
+
 	.products {
 		&__wrapper {
 			grid-template-columns: 0.9fr;
+			row-gap: 1.875rem;
 		}
 
 		&__img {
 			height: 380px;
 		}
+	}
+
+	.tranding__content {
+		margin-top: 2.75rem;
 	}
 
 	.offer {
@@ -285,6 +313,10 @@
 				grid-template-columns: 210px max-content;
 			}
 		}
+
+		&__title {
+			margin-bottom: 0.75rem;
+		}
 	}
 
 	.subscribe {
@@ -295,6 +327,7 @@
 		&__form {
 			grid-template-columns: minmax(200px, 350px) minmax(50px, max-content);
 			grid-template-rows: 50px;
+			margin-top: 1.57rem;
 		}
 
 		&__input {
@@ -314,6 +347,30 @@
 	.blog {
 		&__wrapper {
 			grid-template-columns: 0.9fr;
+			row-gap: 1.875rem;
+		}
+
+		&__content {
+			margin-top: 1.5rem;
+		}
+
+		&__title {
+			margin-bottom: 0.875rem;
+		}
+
+		&__description {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.gallery {
+		&__container {
+			grid-template-rows: repeat(2, 130px);
+		}
+
+		&__link {
+			width: 230px;
+			height: 60px;
 		}
 	}
 }
@@ -395,6 +452,10 @@
 				display: inline-block;
 			}
 		}
+	}
+
+	.gallery__container {
+		grid-template-rows: repeat(2, 100px);
 	}
 }
 
