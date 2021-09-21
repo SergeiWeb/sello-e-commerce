@@ -20,6 +20,7 @@
 
 /* nav */
 .nav {
+	position: relative;
 	height: var(--header-height);
 	display: flex;
 	transition: 0.4s;
@@ -53,6 +54,27 @@
 
 		&:hover {
 			color: var(--body-color);
+		}
+	}
+
+	&__shopcart {
+		&.active-cart {
+			color: var(--body-color);
+			position: relative;
+
+			&::after {
+				content: '';
+				left: 50%;
+				bottom: -0.125rem;
+				width: 0.25rem;
+				height: 0.25rem;
+				display: inline-block;
+				position: absolute;
+				border-radius: 50%;
+				background-color: var(--body-color);
+				transform: translateX(-50%);
+				transition: 0.4s;
+			}
 		}
 	}
 }

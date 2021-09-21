@@ -26,6 +26,9 @@ window.addEventListener('load', () => {
 
 	const footerPhoneNumber = document.getElementById('footer-phone')
 
+	const cartToggle = document.getElementById('cart-toggle')
+	const modalCart = document.getElementById('modal-cart')
+
 	/* preloader */
 	if (preloader) {
 		setTimeout(() => {
@@ -136,9 +139,8 @@ window.addEventListener('load', () => {
 		const results = phoneTest.exec(phoneNumberString)
 		if (results !== null && results.length > 8) {
 			const intlCode = results[1] ? '+1 ' : ''
-			return `${intlCode} (${results[3]}) ${results[4]}-${results[5]}${
-				typeof results[8] !== 'undefined' ? ' x' + results[8] : ''
-			}`
+			return `${intlCode} (${results[3]}) ${results[4]}-${results[5]}${typeof results[8] !== 'undefined' ? ' x' + results[8] : ''
+				}`
 		} else {
 			return phoneNumberString
 		}
@@ -208,6 +210,29 @@ window.addEventListener('load', () => {
 				}
 			})
 		)
+	}
+
+	/* modal cart */
+	console.log(cartToggle)
+	console.log(modalCart)
+
+	if (cartToggle && modalCart) {
+		if (modalCart.classList.contains('open-cart')) {
+			changesClasses(modalCart, 'remove', 'open-cart')
+			changesClasses(cartToggle, 'remove', 'active-cart')
+		}
+
+		cartToggle.addEventListener('click', event => {
+			event.preventDefault()
+
+			if (!modalCart.classList.contains('open-cart')) {
+				changesClasses(modalCart, 'add', 'open-cart')
+				changesClasses(cartToggle, 'add', 'active-cart')
+			} else {
+				changesClasses(modalCart, 'remove', 'open-cart')
+				changesClasses(cartToggle, 'remove', 'active-cart')
+			}
+		})
 	}
 
 	/* tranding list */
