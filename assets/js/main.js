@@ -24,9 +24,14 @@ window.addEventListener('load', () => {
 	const footerNavLinks = document.querySelectorAll('.footer__nav-link')
 	const footerItems = document.querySelectorAll('.footer__data-item')
 
+	const footerPhoneNumber = document.getElementById('footer-phone')
+
 	/* preloader */
 	if (preloader) {
-		setTimeout(() => changesClasses(preloader, 'add', 'hide'), 1000)
+		setTimeout(() => {
+			changesClasses(document.body, 'remove', 'no-scroll')
+			changesClasses(preloader, 'add', 'hide')
+		}, 1000)
 		setTimeout(() => preloader.remove(), 1200)
 	}
 
@@ -119,6 +124,24 @@ window.addEventListener('load', () => {
 				}
 			})
 		})
+	}
+
+	// format phone number
+	function formatPhoneNumber(phoneNumberString = '') {
+		const phoneTest = new RegExp(
+			/^((\+1)|1)? ?\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})( ?(ext\.? ?|x)(\d*))?$/
+		)
+
+		phoneNumberString = phoneNumberString.trim()
+		const results = phoneTest.exec(phoneNumberString)
+		if (results !== null && results.length > 8) {
+			const intlCode = results[1] ? '+1 ' : ''
+			return `${intlCode} (${results[3]}) ${results[4]}-${results[5]}${
+				typeof results[8] !== 'undefined' ? ' x' + results[8] : ''
+			}`
+		} else {
+			return phoneNumberString
+		}
 	}
 
 	// scroll up
@@ -282,6 +305,13 @@ window.addEventListener('load', () => {
 			'.catalog__header',
 			'.catalog-open',
 			'.catalog__list'
+		)
+	}
+
+	/* format footer phone */
+	if (footerPhoneNumber) {
+		footerPhoneNumber.textContent = formatPhoneNumber(
+			footerPhoneNumber.textContent
 		)
 	}
 

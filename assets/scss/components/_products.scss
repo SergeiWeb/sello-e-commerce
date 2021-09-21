@@ -126,16 +126,16 @@
 	&__footer {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		border-top: 1px solid rgba(#707070, 0.1);
 		padding-top: 0.75rem;
 		margin-top: 0.625rem;
+		column-gap: 1.25rem;
 	}
 
 	&__btn {
 		display: flex;
 		align-items: center;
-		column-gap: 0.625rem;
+		column-gap: 0.5rem;
 		font-size: var(--smaller-font-size);
 		font-weight: var(--font-light);
 		transition: 0.4s;
@@ -158,6 +158,7 @@
 		}
 
 		&-buy {
+			margin-left: auto;
 			text-transform: uppercase;
 
 			&:hover {

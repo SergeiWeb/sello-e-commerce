@@ -183,6 +183,10 @@
 }
 
 @media screen and (min-width: 768px) {
+	.nav {
+		justify-content: space-between;
+	}
+
 	.tranding {
 		&__item {
 			&:first-child {
@@ -206,7 +210,8 @@
 	}
 
 	.nav {
-		justify-content: space-between;
+		justify-content: normal;
+		column-gap: 15%;
 
 		&__menu {
 			position: fixed;
@@ -231,6 +236,13 @@
 		&__list {
 			row-gap: 1rem;
 			flex-direction: column;
+		}
+
+		&__actions {
+			margin-left: auto;
+		}
+
+		&__toggle {
 		}
 	}
 
@@ -485,6 +497,10 @@
 }
 
 @media screen and (max-width: 460px) {
+	.nav {
+		column-gap: 5%;
+	}
+
 	.products__wrapper,
 	.blog__wrapper {
 		grid-template-columns: 1fr;

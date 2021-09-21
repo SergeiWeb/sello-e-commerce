@@ -48,7 +48,7 @@
 
 		<title>E-Commerce Sello</title>
 	</head>
-	<body>
+	<body class="no-scroll">
 		<!-- preloader -->
 		<div class="preloader" id="preloader">
 			<i class="bx bx-loader-alt preloader__icon"></i>
@@ -76,6 +76,16 @@
 							<a href="#contact" class="nav__link menu__link">Contact</a>
 						</li>
 					</ul>
+				</div>
+
+				<div class="nav__actions">
+					<button class="nav__btn nav__shopcart">
+						<i class="bx bxs-shopping-bag-alt"></i>
+					</button>
+
+					<button class="nav__btn nav__favorites">
+						<i class="bx bxs-heart"></i>
+					</button>
 				</div>
 
 				<button class="nav__toggle menu__toggle" id="nav-toggle">
@@ -377,13 +387,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -420,13 +433,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -460,13 +476,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -500,13 +519,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -543,13 +565,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -580,13 +605,16 @@
 												<i
 													class="bx bx-heart products__btn-icon products-liked"
 												></i>
-												1250
 											</button>
+											<span class="products__btn products__btn-rating">
+												<i class="bx bxs-star products__btn-icon"></i>
+												<span class="products__btn-text">1250</span>
+											</span>
 											<button class="products__btn products__btn-buy">
 												<i
 													class="bx bx-shopping-bag products__btn-icon products-shop-bag"
 												></i>
-												Add to cart
+												<span class="products__btn-text">Add to cart</span>
 											</button>
 										</div>
 									</div>
@@ -907,15 +935,17 @@
 						<div class="info__contact">
 							<a href="" class="info__link">
 								<i class="bx bx-map info__icon"></i>
-								184 Main Rd E, St Albans VIC 3021, Australia
+								<span class="info__text">
+									184 Main Rd E, St Albans VIC 3021, Australia
+								</span>
 							</a>
 							<a href="mailto:contact@company.com" class="info__link">
 								<i class="bx bx-envelope info__icon"></i>
-								contact@company.com
+								<span class="info__text">contact@company.com</span>
 							</a>
 							<a href="tel:+0012233456" class="info__link">
 								<i class="bx bx-phone info__icon"></i>
-								+001 2233 456
+								<span class="info__text" id="footer-phone">+12345678900</span>
 							</a>
 						</div>
 						<div class="info__social">
