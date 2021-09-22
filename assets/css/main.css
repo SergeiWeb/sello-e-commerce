@@ -1342,7 +1342,7 @@ button {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
-  z-index: var(--z-fixed);
+  z-index: var(--z-tooltip);
 }
 
 .modal-cart::-webkit-scrollbar {
@@ -1694,6 +1694,9 @@ button {
 }
 
 @media screen and (max-width: 968px) {
+  .modal-cart {
+    right: 1rem;
+  }
   .products__btn-icon {
     font-size: 0.9rem;
   }
@@ -1793,6 +1796,18 @@ button {
   }
   .nav__actions {
     margin-left: auto;
+  }
+  .modal-cart {
+    top: 140%;
+    right: auto;
+    left: 50%;
+    width: 95%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .modal-cart.open-cart {
+    top: 100%;
   }
   .home__wrapper {
     -ms-grid-columns: 90% 1fr;

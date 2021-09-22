@@ -31,11 +31,14 @@ window.addEventListener('load', () => {
 
 	const counterAction = document.querySelectorAll('.counter-action')
 
+	let load = true
+
 	/* preloader */
 	if (preloader) {
 		setTimeout(() => {
 			changesClasses(document.body, 'remove', 'no-scroll')
 			changesClasses(preloader, 'add', 'hide')
+			load = false
 		}, 1000)
 		setTimeout(() => preloader.remove(), 1200)
 	}
@@ -167,16 +170,16 @@ window.addEventListener('load', () => {
 
 	/* navbar */
 	if (navMenu && navToggle && navLogo) {
-		if (
-			navMenu.classList.contains('show-menu') ||
-			navLogo.classList.contains('show-logo')
-		) {
-			changesClasses(navMenu, 'remove', 'show-menu')
-			changesClasses(navLogo, 'remove', 'show-logo')
-			changesClasses(toggleIcon, 'remove', 'bx-x')
+		// if (
+		// 	navMenu.classList.contains('show-menu') ||
+		// 	navLogo.classList.contains('show-logo')
+		// ) {
+		// 	changesClasses(navMenu, 'remove', 'show-menu')
+		// 	changesClasses(navLogo, 'remove', 'show-logo')
+		// 	changesClasses(toggleIcon, 'remove', 'bx-x')
 
-			changesClasses(document.body, 'remove', 'no-scroll')
-		}
+		// 	changesClasses(document.body, 'remove', 'no-scroll')
+		// }
 
 		navToggle.addEventListener('click', () => {
 			if (!navMenu.classList.contains('show-menu')) {
@@ -217,10 +220,11 @@ window.addEventListener('load', () => {
 
 	/* modal cart */
 	if (cartToggle && modalCart) {
-		if (modalCart.classList.contains('open-cart')) {
-			changesClasses(modalCart, 'remove', 'open-cart')
-			changesClasses(cartToggle, 'remove', 'active-nav-btn')
-		}
+		// if (modalCart.classList.contains('open-cart')) {
+		// 	changesClasses(modalCart, 'remove', 'open-cart')
+		// 	changesClasses(cartToggle, 'remove', 'active-nav-btn')
+		// 	changesClasses(document.body, 'remove', 'no-scroll')
+		// }
 
 		cartToggle.addEventListener('click', event => {
 			event.preventDefault()
@@ -228,9 +232,12 @@ window.addEventListener('load', () => {
 			if (!modalCart.classList.contains('open-cart')) {
 				changesClasses(modalCart, 'add', 'open-cart')
 				changesClasses(cartToggle, 'add', 'active-nav-btn')
+				changesClasses(document.body, 'add', 'no-scroll')
+
 			} else {
 				changesClasses(modalCart, 'remove', 'open-cart')
 				changesClasses(cartToggle, 'remove', 'active-nav-btn')
+				changesClasses(document.body, 'remove', 'no-scroll')
 			}
 		})
 	}

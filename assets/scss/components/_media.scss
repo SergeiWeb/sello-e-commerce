@@ -136,6 +136,10 @@
 }
 
 @media screen and (max-width: 968px) {
+	.modal-cart {
+		right: 1rem;
+	}
+
 	.products {
 		&__btn {
 			&-icon {
@@ -240,6 +244,18 @@
 
 		&__actions {
 			margin-left: auto;
+		}
+	}
+
+	.modal-cart {
+		top: 140%;
+		right: auto;
+		left: 50%;
+		width: 95%;
+		transform: translateX(-50%);
+
+		&.open-cart {
+			top: 100%;
 		}
 	}
 
