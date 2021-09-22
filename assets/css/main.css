@@ -1491,6 +1491,7 @@ button {
   height: 100%;
   max-width: 2rem;
   text-align: center;
+  -moz-appearance: textfield;
 }
 
 .modal-cart__counter-input::-webkit-outer-spin-button, .modal-cart__counter-input::-webkit-inner-spin-button {

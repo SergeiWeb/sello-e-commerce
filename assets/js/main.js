@@ -237,27 +237,31 @@ window.addEventListener('load', () => {
 
 	if (counterAction) {
 		counterAction.forEach(item => {
-			item.querySelector('.counter-minus').addEventListener('click', () => {
-				item.querySelector('.counter-input').stepDown()
+			const itemPlus = item.querySelector('.counter-plus')
+			const itemMinus = item.querySelector('.counter-minus')
+			const itemInput = item.querySelector('.counter-input')
 
-				if (item.querySelector('.counter-input').value <= 20) {
-					item.querySelector('.counter-plus').removeAttribute('disabled')
+			itemMinus.addEventListener('click', () => {
+				itemInput.stepDown()
+
+				if (itemInput.value <= 20) {
+					itemPlus.removeAttribute('disabled')
 				}
 
-				if (item.querySelector('.counter-input').value <= 1) {
-					item.querySelector('.counter-minus').setAttribute('disabled', true)
+				if (itemInput.value <= 1) {
+					itemMinus.setAttribute('disabled', true)
 				}
 			})
 
-			item.querySelector('.counter-plus').addEventListener('click', () => {
-				item.querySelector('.counter-input').stepUp()
+			itemPlus.addEventListener('click', () => {
+				itemInput.stepUp()
 
-				if (item.querySelector('.counter-input').value >= 1) {
-					item.querySelector('.counter-minus').removeAttribute('disabled')
+				if (itemInput.value >= 1) {
+					itemMinus.removeAttribute('disabled')
 				}
 
-				if (item.querySelector('.counter-input').value >= 20) {
-					item.querySelector('.counter-plus').setAttribute('disabled', true)
+				if (itemInput.value >= 20) {
+					itemPlus.setAttribute('disabled', true)
 				}
 			})
 		})

@@ -126,6 +126,7 @@
 				height: 100%;
 				max-width: 2rem;
 				text-align: center;
+				-moz-appearance: textfield;
 
 				&::-webkit-outer-spin-button,
 				&::-webkit-inner-spin-button {
