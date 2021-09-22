@@ -29,6 +29,8 @@ window.addEventListener('load', () => {
 	const cartToggle = document.getElementById('cart-toggle')
 	const modalCart = document.getElementById('modal-cart')
 
+	const counterAction = document.querySelectorAll('.counter-action')
+
 	/* preloader */
 	if (preloader) {
 		setTimeout(() => {
@@ -139,8 +141,9 @@ window.addEventListener('load', () => {
 		const results = phoneTest.exec(phoneNumberString)
 		if (results !== null && results.length > 8) {
 			const intlCode = results[1] ? '+1 ' : ''
-			return `${intlCode} (${results[3]}) ${results[4]}-${results[5]}${typeof results[8] !== 'undefined' ? ' x' + results[8] : ''
-				}`
+			return `${intlCode} (${results[3]}) ${results[4]}-${results[5]}${
+				typeof results[8] !== 'undefined' ? ' x' + results[8] : ''
+			}`
 		} else {
 			return phoneNumberString
 		}
@@ -213,13 +216,10 @@ window.addEventListener('load', () => {
 	}
 
 	/* modal cart */
-	console.log(cartToggle)
-	console.log(modalCart)
-
 	if (cartToggle && modalCart) {
 		if (modalCart.classList.contains('open-cart')) {
 			changesClasses(modalCart, 'remove', 'open-cart')
-			changesClasses(cartToggle, 'remove', 'active-cart')
+			changesClasses(cartToggle, 'remove', 'active-nav-btn')
 		}
 
 		cartToggle.addEventListener('click', event => {
@@ -227,11 +227,39 @@ window.addEventListener('load', () => {
 
 			if (!modalCart.classList.contains('open-cart')) {
 				changesClasses(modalCart, 'add', 'open-cart')
-				changesClasses(cartToggle, 'add', 'active-cart')
+				changesClasses(cartToggle, 'add', 'active-nav-btn')
 			} else {
 				changesClasses(modalCart, 'remove', 'open-cart')
-				changesClasses(cartToggle, 'remove', 'active-cart')
+				changesClasses(cartToggle, 'remove', 'active-nav-btn')
 			}
+		})
+	}
+
+	if (counterAction) {
+		counterAction.forEach(item => {
+			item.querySelector('.counter-minus').addEventListener('click', () => {
+				item.querySelector('.counter-input').stepDown()
+
+				if (item.querySelector('.counter-input').value <= 20) {
+					item.querySelector('.counter-plus').removeAttribute('disabled', true)
+				}
+
+				if (item.querySelector('.counter-input').value <= 1) {
+					item.querySelector('.counter-minus').setAttribute('disabled', true)
+				}
+			})
+
+			item.querySelector('.counter-plus').addEventListener('click', () => {
+				item.querySelector('.counter-input').stepUp()
+
+				if (item.querySelector('.counter-input').value >= 1) {
+					item.querySelector('.counter-minus').removeAttribute('disabled')
+				}
+
+				if (item.querySelector('.counter-input').value >= 20) {
+					item.querySelector('.counter-plus').setAttribute('disabled', true)
+				}
+			})
 		})
 	}
 
