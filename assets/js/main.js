@@ -241,7 +241,7 @@ window.addEventListener('load', () => {
 				item.querySelector('.counter-input').stepDown()
 
 				if (item.querySelector('.counter-input').value <= 20) {
-					item.querySelector('.counter-plus').removeAttribute('disabled', true)
+					item.querySelector('.counter-plus').removeAttribute('disabled')
 				}
 
 				if (item.querySelector('.counter-input').value <= 1) {
