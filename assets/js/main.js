@@ -6,6 +6,9 @@ window.addEventListener('load', () => {
 	const navToggle = document.getElementById('nav-toggle')
 	const toggleIcon = navToggle.querySelector('.nav__toggle-icon')
 
+	const modalItems = header.querySelectorAll('.modal__window')
+	const buttonNavItems = header.querySelectorAll('.nav__btn')
+
 	const navLinks = document.querySelectorAll('.nav__link')
 	const sections = document.querySelectorAll('section[id]')
 
@@ -28,12 +31,7 @@ window.addEventListener('load', () => {
 
 	const footerPhoneNumber = document.getElementById('footer-phone')
 
-	const cartToggle = document.getElementById('cart-toggle')
-	const modalCart = document.getElementById('modal-cart')
-
 	const counterAction = document.querySelectorAll('.counter-action')
-
-	let load = true
 
 	/* preloader */
 	if (preloader) {
@@ -134,6 +132,14 @@ window.addEventListener('load', () => {
 		})
 	}
 
+	// modal
+	const closeModal = () => {
+		modalItems.forEach(modal => changesClasses(modal, 'remove', 'open-modal'))
+		buttonNavItems.forEach(button =>
+			changesClasses(button, 'remove', 'active-nav-btn')
+		)
+	}
+
 	// format phone number
 	function formatPhoneNumber(phoneNumberString = '') {
 		const phoneTest = new RegExp(
@@ -176,6 +182,7 @@ window.addEventListener('load', () => {
 				changesClasses(navLogo, 'add', 'show-logo')
 				changesClasses(toggleIcon, 'add', 'bx-x')
 
+				closeModal()
 				changesClasses(document.body, 'add', 'no-scroll')
 			} else {
 				changesClasses(navMenu, 'remove', 'show-menu')
@@ -197,6 +204,7 @@ window.addEventListener('load', () => {
 				changesClasses(toggleIcon, 'remove', 'bx-x')
 
 				changesClasses(document.body, 'remove', 'no-scroll')
+				closeModal()
 
 				const scrollTarget = document.getElementById(getId(link))
 
@@ -209,14 +217,10 @@ window.addEventListener('load', () => {
 
 	if (header) {
 		/* modal cart && modal favorites */
-		const actionModal = (modalClass, btnClass) => {
-			const modals = header.querySelectorAll(modalClass)
-
-			if (modals) {
-				const btns = header.querySelectorAll(btnClass)
-
-				btns.forEach(btn => {
-					modals.forEach(modal => {
+		if (modalItems) {
+			const actionModal = () => {
+				buttonNavItems.forEach(btn => {
+					modalItems.forEach(modal => {
 						btn.addEventListener('click', event => {
 							const openBtn = document.querySelector('.active-nav-btn')
 							const openModal = document.querySelector('.open-modal')
@@ -268,9 +272,9 @@ window.addEventListener('load', () => {
 					})
 				})
 			}
-		}
 
-		actionModal('.modal__window', '.nav__btn')
+			actionModal()
+		}
 	}
 
 	if (counterAction) {
