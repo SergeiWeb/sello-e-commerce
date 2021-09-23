@@ -1369,15 +1369,16 @@ button {
 }
 
 .modal-cart__list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (5rem)[auto-fit];
-      grid-template-rows: repeat(auto-fit, 5rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 1.25rem;
   max-height: 280px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
 }
 
@@ -1386,13 +1387,13 @@ button {
 }
 
 .modal-cart__item {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-columns: 5rem 1fr 0.5fr 0.2fr;
-      grid-template-columns: 5rem 1fr 0.5fr 0.2fr;
+  min-height: 5rem;
   -webkit-column-gap: 0.938rem;
           column-gap: 0.938rem;
   background-color: rgba(239, 239, 239, 0.2);
@@ -1401,7 +1402,7 @@ button {
 }
 
 .modal-cart__img {
-  width: 100%;
+  width: 5rem;
   height: 5rem;
 }
 
@@ -2063,16 +2064,21 @@ button {
     padding: 1.25rem;
   }
   .modal-cart__list {
-    -ms-grid-rows: (4rem)[auto-fit];
-        grid-template-rows: repeat(auto-fit, 4rem);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .modal-cart__item {
     padding-right: 0.25rem;
-    -ms-grid-columns: 3rem 1fr 0.5fr 0.2fr;
-        grid-template-columns: 3rem 1fr 0.5fr 0.2fr;
+    min-height: 4rem;
   }
   .modal-cart__img {
-    height: 100%;
+    width: 4rem;
+    height: 4rem;
   }
   .modal-cart__content {
     padding: 0;
@@ -2085,6 +2091,7 @@ button {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    row-gap: 0.25rem;
   }
   .modal-cart__counter-input {
     min-width: 1.5rem;
@@ -2129,9 +2136,8 @@ button {
   .modal-cart {
     padding: 0.625rem;
   }
-  .modal-cart__item {
-    -ms-grid-columns: 2rem 1fr 0.5fr 0.2fr;
-        grid-template-columns: 2rem 1fr 0.5fr 0.2fr;
+  .modal-cart__img {
+    width: 3rem;
   }
   .offer__card {
     padding: 1rem;

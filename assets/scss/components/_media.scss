@@ -518,16 +518,20 @@
 		padding: 1.25rem;
 
 		&__list {
-			grid-template-rows: repeat(auto-fit, 4rem);
+			// grid-template-rows: repeat(auto-fit, 4rem);
+			display: flex;
+			flex-direction: column;
 		}
 
 		&__item {
 			padding-right: 0.25rem;
-			grid-template-columns: 3rem 1fr 0.5fr 0.2fr;
+			// grid-template-columns: 3rem 1fr 0.5fr 0.2fr;
+			min-height: 4rem;
 		}
 
 		&__img {
-			height: 100%;
+			width: 4rem;
+			height: 4rem;
 		}
 
 		&__content {
@@ -537,6 +541,7 @@
 		&__prices {
 			flex-direction: column-reverse;
 			align-items: flex-start;
+			row-gap: 0.25rem;
 		}
 
 		&__counter {
@@ -596,7 +601,11 @@
 		padding: 0.625rem;
 
 		&__item {
-			grid-template-columns: 2rem 1fr 0.5fr 0.2fr;
+			// grid-template-columns: 2rem 1fr 0.5fr 0.2fr;
+		}
+
+		&__img {
+			width: 3rem;
 		}
 	}
 
