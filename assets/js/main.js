@@ -1,4 +1,6 @@
 window.addEventListener('load', () => {
+	const header = document.getElementById('header')
+
 	const navMenu = document.getElementById('nav-menu')
 	const navLogo = document.getElementById('nav-logo')
 	const navToggle = document.getElementById('nav-toggle')
@@ -84,8 +86,6 @@ window.addEventListener('load', () => {
 
 	// scroll header
 	function scrollHeader() {
-		const header = document.getElementById('header')
-
 		if (this.scrollY >= 100) {
 			changesClasses(header, 'add', 'scroll-header')
 		} else {
@@ -113,7 +113,7 @@ window.addEventListener('load', () => {
 			list.removeAttribute('style')
 			changesClasses(item, 'remove', activeClass)
 		} else {
-			list.style.height = list.scrollHeight + 'px'
+			list.style.height = `${list.scrollHeight}px`
 			changesClasses(item, 'add', activeClass)
 		}
 	}
@@ -170,17 +170,6 @@ window.addEventListener('load', () => {
 
 	/* navbar */
 	if (navMenu && navToggle && navLogo) {
-		// if (
-		// 	navMenu.classList.contains('show-menu') ||
-		// 	navLogo.classList.contains('show-logo')
-		// ) {
-		// 	changesClasses(navMenu, 'remove', 'show-menu')
-		// 	changesClasses(navLogo, 'remove', 'show-logo')
-		// 	changesClasses(toggleIcon, 'remove', 'bx-x')
-
-		// 	changesClasses(document.body, 'remove', 'no-scroll')
-		// }
-
 		navToggle.addEventListener('click', () => {
 			if (!navMenu.classList.contains('show-menu')) {
 				changesClasses(navMenu, 'add', 'show-menu')
@@ -218,28 +207,70 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* modal cart */
-	if (cartToggle && modalCart) {
-		// if (modalCart.classList.contains('open-cart')) {
-		// 	changesClasses(modalCart, 'remove', 'open-cart')
-		// 	changesClasses(cartToggle, 'remove', 'active-nav-btn')
-		// 	changesClasses(document.body, 'remove', 'no-scroll')
-		// }
+	if (header) {
+		/* modal cart && modal favorites */
+		const actionModal = (modalClass, btnClass) => {
+			const modals = header.querySelectorAll(modalClass)
 
-		cartToggle.addEventListener('click', event => {
-			event.preventDefault()
+			if (modals) {
+				const btns = header.querySelectorAll(btnClass)
 
-			if (!modalCart.classList.contains('open-cart')) {
-				changesClasses(modalCart, 'add', 'open-cart')
-				changesClasses(cartToggle, 'add', 'active-nav-btn')
-				changesClasses(document.body, 'add', 'no-scroll')
+				btns.forEach(btn => {
+					modals.forEach(modal => {
+						btn.addEventListener('click', event => {
+							const openBtn = document.querySelector('.active-nav-btn')
+							const openModal = document.querySelector('.open-modal')
 
-			} else {
-				changesClasses(modalCart, 'remove', 'open-cart')
-				changesClasses(cartToggle, 'remove', 'active-nav-btn')
-				changesClasses(document.body, 'remove', 'no-scroll')
+							if (
+								btn.classList.contains('favorites-toggle') &&
+								modal.classList.contains('modal-favorites')
+							) {
+								if (openBtn && openModal) {
+									changesClasses(openModal, 'remove', 'open-modal')
+									changesClasses(openBtn, 'remove', 'active-nav-btn')
+									changesClasses(document.body, 'remove', 'no-scroll')
+								}
+
+								if (openBtn !== btn) {
+									if (!modal.classList.contains('open-modal')) {
+										changesClasses(modal, 'add', 'open-modal')
+										changesClasses(btn, 'add', 'active-nav-btn')
+										changesClasses(document.body, 'add', 'no-scroll')
+									} else {
+										changesClasses(modal, 'remove', 'open-modal')
+										changesClasses(btn, 'remove', 'active-nav-btn')
+										changesClasses(document.body, 'remove', 'no-scroll')
+									}
+								}
+							} else if (
+								btn.classList.contains('cart-toggle') &&
+								modal.classList.contains('modal-cart')
+							) {
+								if (openBtn && openModal) {
+									changesClasses(openModal, 'remove', 'open-modal')
+									changesClasses(openBtn, 'remove', 'active-nav-btn')
+									changesClasses(document.body, 'remove', 'no-scroll')
+								}
+
+								if (openBtn !== btn) {
+									if (!modal.classList.contains('open-modal')) {
+										changesClasses(modal, 'add', 'open-modal')
+										changesClasses(btn, 'add', 'active-nav-btn')
+										changesClasses(document.body, 'add', 'no-scroll')
+									} else {
+										changesClasses(modal, 'remove', 'open-modal')
+										changesClasses(btn, 'remove', 'active-nav-btn')
+										changesClasses(document.body, 'remove', 'no-scroll')
+									}
+								}
+							}
+						})
+					})
+				})
 			}
-		})
+		}
+
+		actionModal('.modal__window', '.nav__btn')
 	}
 
 	if (counterAction) {

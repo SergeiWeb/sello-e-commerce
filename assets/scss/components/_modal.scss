@@ -1,6 +1,7 @@
 /* modal */
 .modal {
 	/* modal shopping cart */
+	&-favorites,
 	&-cart {
 		position: absolute;
 		top: 110%;
@@ -8,18 +9,31 @@
 		width: 30rem;
 		opacity: 0;
 		pointer-events: none;
-		padding: 1.875rem; //1.25rem;
-		// max-height: 30rem;
+		padding: 1.875rem;
 		border: 0.5px solid rgba(#222222, 0.1);
 		background-color: var(--white-color);
 		transition: 0.4s;
 		z-index: var(--z-tooltip);
 
-		&.open-cart {
+		&.open-modal {
 			top: 80%;
 			opacity: 1;
 			pointer-events: auto;
 		}
+	}
+
+	&-cart {
+		position: absolute;
+		top: 110%;
+		right: 0;
+		width: 30rem;
+		opacity: 0;
+		pointer-events: none;
+		padding: 1.875rem;
+		border: 0.5px solid rgba(#222222, 0.1);
+		background-color: var(--white-color);
+		transition: 0.4s;
+		z-index: var(--z-tooltip);
 
 		&__wrapper {
 			display: flex;

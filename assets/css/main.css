@@ -1330,7 +1330,7 @@ button {
   /* modal shopping cart */
 }
 
-.modal-cart {
+.modal-favorites, .modal-cart {
   position: absolute;
   top: 110%;
   right: 0;
@@ -1346,10 +1346,26 @@ button {
   z-index: var(--z-tooltip);
 }
 
-.modal-cart.open-cart {
+.modal-favorites.open-modal, .modal-cart.open-modal {
   top: 80%;
   opacity: 1;
   pointer-events: auto;
+}
+
+.modal-cart {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 30rem;
+  opacity: 0;
+  pointer-events: none;
+  padding: 1.875rem;
+  border: 0.5px solid rgba(34, 34, 34, 0.1);
+  background-color: var(--white-color);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  z-index: var(--z-tooltip);
 }
 
 .modal-cart__wrapper {
