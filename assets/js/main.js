@@ -132,7 +132,7 @@ window.addEventListener('load', () => {
 		})
 	}
 
-	// modal
+	// close modal window
 	const closeModal = () => {
 		modalItems.forEach(modal => changesClasses(modal, 'remove', 'open-modal'))
 		buttonNavItems.forEach(button =>
@@ -443,19 +443,11 @@ window.addEventListener('load', () => {
 	scrollUpLink.addEventListener('click', event => {
 		event.preventDefault()
 
-		window.scrollTo({ top: 0, behavior: 'smooth' })
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
 	})
-
-	/* slider */
-	// new Swiper('.swiper', {
-	// 	direction: 'vertical',
-	// 	slidesPerView: 1,
-	// 	loop: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-	// })
 
 	/* scroll */
 	window.addEventListener('scroll', () => {
