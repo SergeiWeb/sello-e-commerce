@@ -514,6 +514,38 @@
 		column-gap: 5%;
 	}
 
+	.modal-cart {
+		padding: 1.25rem;
+
+		&__list {
+			grid-template-rows: repeat(auto-fit, 4rem);
+		}
+
+		&__item {
+			padding-right: 0.25rem;
+			grid-template-columns: 3rem 1fr 0.5fr 0.2fr;
+		}
+
+		&__img {
+			height: 100%;
+		}
+
+		&__content {
+			padding: 0;
+		}
+
+		&__prices {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
+
+		&__counter {
+			&-input {
+				min-width: 1.5rem;
+			}
+		}
+	}
+
 	.products__wrapper,
 	.blog__wrapper {
 		grid-template-columns: 1fr;
@@ -557,6 +589,14 @@
 	.home {
 		&__img {
 			right: -200px;
+		}
+	}
+
+	.modal-cart {
+		padding: 0.625rem;
+
+		&__item {
+			grid-template-columns: 2rem 1fr 0.5fr 0.2fr;
 		}
 	}
 

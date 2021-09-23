@@ -14,6 +14,8 @@
 
 html {
 	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: var(--body-color) var(--text-color);
 }
 
 body {
