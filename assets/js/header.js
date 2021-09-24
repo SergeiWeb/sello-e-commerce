@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
 					changesClasses(logo, 'add', 'show-logo')
 					changesClasses(icon, 'add', 'bx-x')
 
-					closeModal()
+					closeModal(modalItems, buttonNavItems)
 					changesClasses(document.body, 'add', 'no-scroll')
 				} else {
 					changesClasses(menu, 'remove', 'show-menu')
@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
 				changesClasses(toggleIcon, 'remove', 'bx-x')
 
 				changesClasses(document.body, 'remove', 'no-scroll')
-				closeModal()
+				closeModal(modalItems, buttonNavItems)
 
 				const scrollTarget = document.getElementById(getId(link))
 

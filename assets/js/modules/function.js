@@ -95,9 +95,9 @@ const accordionItems = (items, headerClass, activeClass, listClass) => {
 }
 
 // close modal window
-const closeModal = () => {
-	modalItems.forEach(modal => changesClasses(modal, 'remove', 'open-modal'))
-	buttonNavItems.forEach(button =>
+const closeModal = (items, btns) => {
+	items.forEach(modal => changesClasses(modal, 'remove', 'open-modal'))
+	btns.forEach(button =>
 		changesClasses(button, 'remove', 'active-nav-btn')
 	)
 }
