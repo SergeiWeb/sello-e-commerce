@@ -44,141 +44,35 @@ window.addEventListener('load', () => {
 
 	/* navbar */
 	if (navMenu && navToggle && navLogo) {
-		const openCloseNavMenu = (menu, toggle, logo, icon) => {
-			toggle.addEventListener('click', () => {
-				if (!navMenu.classList.contains('show-menu')) {
-					changesClasses(menu, 'add', 'show-menu')
-					changesClasses(logo, 'add', 'show-logo')
-					changesClasses(icon, 'add', 'bx-x')
-
-					closeModal(modalItems, buttonNavItems)
-					changesClasses(document.body, 'add', 'no-scroll')
-				} else {
-					changesClasses(menu, 'remove', 'show-menu')
-					setTimeout(() => changesClasses(logo, 'remove', 'show-logo'), 300)
-					changesClasses(icon, 'remove', 'bx-x')
-
-					changesClasses(document.body, 'remove', 'no-scroll')
-				}
-			})
-		}
-
-		openCloseNavMenu(navMenu, navToggle, navLogo, toggleIcon)
+		openCloseNavMenu(
+			navMenu,
+			navToggle,
+			navLogo,
+			toggleIcon,
+			modalItems,
+			buttonNavItems
+		)
 	}
 
 	/* nav links */
 	if (navLinks) {
-		navLinks.forEach(link =>
-			link.addEventListener('click', event => {
-				event.preventDefault()
-				changesClasses(navMenu, 'remove', 'show-menu')
-				changesClasses(navLogo, 'remove', 'show-logo')
-				changesClasses(toggleIcon, 'remove', 'bx-x')
-
-				changesClasses(document.body, 'remove', 'no-scroll')
-				closeModal(modalItems, buttonNavItems)
-
-				const scrollTarget = document.getElementById(getId(link))
-
-				if (scrollTarget) {
-					scrollToSection(scrollTarget)
-				}
-			})
+		navLinksFunc(
+			navLinks,
+			navMenu,
+			navLogo,
+			toggleIcon,
+			modalItems,
+			buttonNavItems
 		)
 	}
 
-	if (header) {
-		/* modal cart && modal favorites */
-		if (modalItems) {
-			const actionModal = () => {
-				buttonNavItems.forEach(btn => {
-					modalItems.forEach(modal => {
-						btn.addEventListener('click', event => {
-							const openBtn = document.querySelector('.active-nav-btn')
-							const openModal = document.querySelector('.open-modal')
-
-							if (
-								btn.classList.contains('favorites-toggle') &&
-								modal.classList.contains('modal-favorites')
-							) {
-								if (openBtn && openModal) {
-									changesClasses(openModal, 'remove', 'open-modal')
-									changesClasses(openBtn, 'remove', 'active-nav-btn')
-									changesClasses(document.body, 'remove', 'no-scroll')
-								}
-
-								if (openBtn !== btn) {
-									if (!modal.classList.contains('open-modal')) {
-										changesClasses(modal, 'add', 'open-modal')
-										changesClasses(btn, 'add', 'active-nav-btn')
-										changesClasses(document.body, 'add', 'no-scroll')
-									} else {
-										changesClasses(modal, 'remove', 'open-modal')
-										changesClasses(btn, 'remove', 'active-nav-btn')
-										changesClasses(document.body, 'remove', 'no-scroll')
-									}
-								}
-							} else if (
-								btn.classList.contains('cart-toggle') &&
-								modal.classList.contains('modal-cart')
-							) {
-								if (openBtn && openModal) {
-									changesClasses(openModal, 'remove', 'open-modal')
-									changesClasses(openBtn, 'remove', 'active-nav-btn')
-									changesClasses(document.body, 'remove', 'no-scroll')
-								}
-
-								if (openBtn !== btn) {
-									if (!modal.classList.contains('open-modal')) {
-										changesClasses(modal, 'add', 'open-modal')
-										changesClasses(btn, 'add', 'active-nav-btn')
-										changesClasses(document.body, 'add', 'no-scroll')
-									} else {
-										changesClasses(modal, 'remove', 'open-modal')
-										changesClasses(btn, 'remove', 'active-nav-btn')
-										changesClasses(document.body, 'remove', 'no-scroll')
-									}
-								}
-							}
-						})
-					})
-				})
-			}
-
-			actionModal()
-		}
+	/* modal cart && modal favorites */
+	if (modalItems) {
+		actionsModal(buttonNavItems, modalItems, '.active-nav-btn', '.open-modal')
 	}
 
 	if (counterAction) {
-		counterAction.forEach(item => {
-			const itemPlus = item.querySelector('.counter-plus')
-			const itemMinus = item.querySelector('.counter-minus')
-			const itemInput = item.querySelector('.counter-input')
-
-			itemMinus.addEventListener('click', () => {
-				itemInput.stepDown()
-
-				if (itemInput.value <= 20) {
-					itemPlus.removeAttribute('disabled')
-				}
-
-				if (itemInput.value <= 1) {
-					itemMinus.setAttribute('disabled', true)
-				}
-			})
-
-			itemPlus.addEventListener('click', () => {
-				itemInput.stepUp()
-
-				if (itemInput.value >= 1) {
-					itemMinus.removeAttribute('disabled')
-				}
-
-				if (itemInput.value >= 20) {
-					itemPlus.setAttribute('disabled', true)
-				}
-			})
-		})
+		counterFunc(counterAction)
 	}
 
 	/* tranding list */
@@ -205,31 +99,6 @@ window.addEventListener('load', () => {
 
 	/* products button */
 	if (productsLikeBtns && productsBuyBtns) {
-		const productsBtnChange = (
-			btns,
-			iconClass,
-			activeClass,
-			iconClassChange
-		) => {
-			btns.forEach(btn => {
-				const icon = btn.querySelector(iconClass)
-
-				btn.addEventListener('click', event => {
-					event.preventDefault()
-
-					if (!btn.classList.contains(activeClass)) {
-						changesClasses(btn, 'add', activeClass)
-						changesClasses(icon, 'remove', `bx-${iconClassChange}`)
-						changesClasses(icon, 'add', `bxs-${iconClassChange}`)
-					} else {
-						changesClasses(btn, 'remove', activeClass)
-						changesClasses(icon, 'add', `bx-${iconClassChange}`)
-						changesClasses(icon, 'remove', `bxs-${iconClassChange}`)
-					}
-				})
-			})
-		}
-
 		productsBtnChange(
 			productsLikeBtns,
 			'.products-liked',
@@ -247,26 +116,7 @@ window.addEventListener('load', () => {
 
 	/* subscribe email */
 	if (subscribeEmailInput) {
-		subscribeEmailInput.addEventListener('input', () => {
-			const emailValue = subscribeEmailInput.value
-
-			if (emailValue.length <= 0) {
-				changesClasses(subscribeEmailInput, 'remove', ['success', 'invalid'])
-			} else {
-				if (validateEmail(emailValue)) {
-					changesClasses(subscribeEmailInput, 'remove', 'invalid')
-					changesClasses(subscribeEmailInput, 'add', 'success')
-
-					setTimeout(
-						() => changesClasses(subscribeEmailInput, 'remove', 'success'),
-						1500
-					)
-				} else if (!validateEmail(emailValue)) {
-					changesClasses(subscribeEmailInput, 'remove', 'success')
-					changesClasses(subscribeEmailInput, 'add', 'invalid')
-				}
-			}
-		})
+		subscribeEmail(subscribeEmailInput)
 	}
 
 	/* catalog accordion */
@@ -298,28 +148,13 @@ window.addEventListener('load', () => {
 
 	/* footer links */
 	if (footerNavLinks) {
-		footerNavLinks.forEach(link => {
-			link.addEventListener('click', event => {
-				event.preventDefault()
-
-				const scrollTarget = document.getElementById(getId(link))
-
-				if (scrollTarget) {
-					scrollToSection(scrollTarget)
-				}
-			})
-		})
+		footerNavLink(footerNavLinks)
 	}
 
 	/* scroll up */
-	scrollUpLink.addEventListener('click', event => {
-		event.preventDefault()
-
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',
-		})
-	})
+	if (scrollUpLink) {
+		scrollLink(scrollUpLink)
+	}
 
 	/* scroll */
 	window.addEventListener('scroll', () => {
