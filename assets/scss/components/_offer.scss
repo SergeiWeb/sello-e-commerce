@@ -40,4 +40,78 @@
 		font-weight: var(--font-semi-bold);
 		margin-bottom: 1.875rem;
 	}
+
+	@media screen and (max-width: 1100px) {
+		&__card {
+			&-left {
+				background-position: left -1.75rem top 50%;
+			}
+			&-right {
+				background-position: right 0 top 50%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 968px) {
+		&__wrapper {
+			justify-content: center;
+			grid-template-rows: repeat(2, 200px);
+			grid-template-columns: 500px;
+		}
+
+		&__card {
+			&-left {
+				background-position: left 0rem top 50%;
+			}
+
+			&-right {
+				background-position: right 0rem top 50%;
+			}
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		&__wrapper {
+			grid-template-columns: 0.9fr;
+		}
+
+		&__card {
+			&-left {
+				grid-template-columns: 210px max-content;
+			}
+		}
+
+		&__title {
+			margin-bottom: 0.75rem;
+		}
+	}
+
+	@media screen and (max-width: 460px) {
+		&__wrapper {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, max-content);
+		}
+
+		&__card {
+			padding: 1.5rem;
+		}
+
+		&__title {
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	@media screen and (max-width: 340px) {
+		&__card {
+			padding: 1rem;
+
+			&-left {
+				background-position: left -2rem top 50%;
+			}
+
+			&-right {
+				background-position: right -2rem top 50%;
+			}
+		}
+	}
 }

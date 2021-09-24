@@ -2,6 +2,10 @@
 .tranding {
 	padding-top: 9.375rem;
 
+	@media screen and (max-width: 1100px) {
+		padding-top: 7rem;
+	}
+
 	&__navigation {
 		top: 230px;
 	}
@@ -18,11 +22,64 @@
 
 	&__item {
 		white-space: nowrap;
+
+		@media screen and (min-width: 768px) {
+			&:first-child {
+				& .tranding__link {
+					padding-left: 0;
+				}
+			}
+		}
 	}
 
 	&__link {
 		&-all {
 			margin-left: auto;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		&__list {
+			position: absolute;
+			top: 120%;
+			left: 0;
+			width: max-content;
+			opacity: 0;
+			display: flex;
+			padding: 0.5rem;
+			z-index: var(--z-tooltip);
+			transition: 0.4s;
+			box-shadow: 0 0 4px rgba(#222222, 0.15);
+			align-items: center;
+			pointer-events: none;
+			justify-content: center;
+			background-color: var(--white-color);
+
+			&.show-list {
+				top: 100%;
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		padding-top: 4rem;
+
+		&__content {
+			margin-top: 2.75rem;
+		}
+	}
+
+	@media screen and (max-width: 460px) {
+		&__list {
+			width: 100%;
+			overflow-x: auto;
+			justify-content: flex-start;
+
+			&::-webkit-scrollbar {
+				height: 0.2rem;
+			}
 		}
 	}
 }

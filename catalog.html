@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- normalize -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- boxicons -->
+		<link
+			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- styles -->
+		<link rel="stylesheet" href="./assets/css/catalog.css" id="styles" />
+
+		<!-- scripts -->
+		<script defer src="./assets/js/catalog.js"></script>
+
+		<title>E-Commerce Sello | Catalog</title>
+	</head>
+	<body class="no-scroll">
+		<!-- preloader -->
+		<div class="preloader" id="preloader">
+			<i class="bx bx-loader-alt preloader__icon"></i>
+		</div>
+		<!-- header -->
+		<header class="header" id="header">
+			<nav class="nav menu container">
+				<a href="#" class="nav__logo show-logo" id="nav-logo">
+					<img src="./assets/img/logo.svg" alt="img: logo" />
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<ul class="nav__list menu__list">
+						<li class="nav__item menu__iten">
+							<a href="#home" class="nav__link menu__link active-link">Home</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="#products" class="nav__link menu__link">Product</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="#blog" class="nav__link menu__link">Blog</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="#contact" class="nav__link menu__link">Contact</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="nav__actions">
+					<button class="nav__btn nav__favorites favorites-toggle">
+						<i class="bx bxs-heart"></i>
+					</button>
+
+					<button class="nav__btn nav__shopcart cart-toggle">
+						<i class="bx bxs-shopping-bag-alt"></i>
+					</button>
+				</div>
+
+				<button class="nav__toggle menu__toggle" id="nav-toggle">
+					<i class="bx bx-menu nav__toggle-icon"></i>
+				</button>
+
+				<!-- modal favorites list -->
+				<div class="modal__window modal-favorites">
+					<div class="modal-favorites__wrapper">
+						<h2 class="modal-favorites__title">Favorites List</h2>
+
+						<ul class="modal-favorites__list">
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- modal shopping cart -->
+				<div class="modal__window modal-cart">
+					<div class="modal-cart__wrapper">
+						<h2 class="modal-cart__title">Shopping Cart</h2>
+
+						<ul class="modal-cart__list">
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$46.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<span class="modal-cart__content-price">$36.00</span>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<span class="modal-cart__content-price">$36.00</span>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+						</ul>
+
+						<div class="modal-cart__footer">
+							<div class="modal-cart__amount">
+								<span class="modal-cart__amount-text">Total Amount:</span>
+								<span class="modal-cart__amount-price">$450.00</span>
+							</div>
+							<a href="#" class="modal-cart__link">
+								<span class="modal-cart__link-text">Order</span>
+								<i class="bx bx-right-arrow-alt modal-cart__link-icon"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__wrapper">
+					<div class="footer__data info">
+						<a href="#" class="footer__logo" id="footer-logo">
+							<img src="./assets/img/logo.svg" alt="img: logo" />
+						</a>
+						<div class="info__contact">
+							<a href="" class="info__link">
+								<i class="bx bx-map info__icon"></i>
+								<span class="info__text">
+									184 Main Rd E, St Albans VIC 3021, Australia
+								</span>
+							</a>
+							<a href="mailto:contact@company.com" class="info__link">
+								<i class="bx bx-envelope info__icon"></i>
+								<span class="info__text">contact@company.com</span>
+							</a>
+							<a href="tel:+0012233456" class="info__link">
+								<i class="bx bx-phone info__icon"></i>
+								<span class="info__text" id="footer-phone">+12345678900</span>
+							</a>
+						</div>
+						<div class="info__social">
+							<a
+								href="https://www.facebook.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-facebook"></i>
+							</a>
+							<a
+								href="https://twitter.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-twitter"></i>
+							</a>
+							<a
+								href="https://www.linkedin.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-linkedin"></i>
+							</a>
+							<a
+								href="https://www.instagram.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-instagram"></i>
+							</a>
+							<a
+								href="https://www.pinterest.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-pinterest-alt"></i>
+							</a>
+						</div>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">information</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">About Us</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Contact Us</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Terms & Conditions</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Returns & Exchanges</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Shipping & Delivery</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Privacy Policy</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">quick links</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">Store Location</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">My Account</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Orders Tracking</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Size Guide</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">FAQs</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">payment</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">Account</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Free Shipping</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Support 24/7</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">30 Days Product Returns</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">100% Payment Secure</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Supported All Cards</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<nav class="footer__nav container">
+					<span class="footer__copy">
+						Copyright © 2021 Sello all rights reserved. Powered by Mirror
+					</span>
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="#home" class="footer__nav-link">Home</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#products" class="footer__nav-link">Product</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#blog" class="footer__nav-link">Blog</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="#contact" class="footer__nav-link">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+
+		<!-- scroll up -->
+		<button class="scroll-up" id="scroll-up">
+			<i class="bx bx-up-arrow-alt scroll-up__icon"></i>
+		</button>
+	</body>
+</html>

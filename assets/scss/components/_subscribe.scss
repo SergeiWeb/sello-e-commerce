@@ -37,6 +37,20 @@
 		&-right {
 			right: 3.75rem;
 		}
+
+		@media screen and (max-width: 1024px) {
+			&-left {
+				left: -4rem;
+			}
+
+			&-right {
+				right: -3rem;
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
 	}
 
 	&__title {
@@ -86,15 +100,15 @@
 
 		&:active,
 		&:focus {
-			border-color: var(--border-color)
+			border-color: var(--border-color);
 		}
 
 		&.invalid {
-			border-color: var(--invalid-color)
+			border-color: var(--invalid-color);
 		}
 
 		&.success {
-			border-color: var(--success-color)
+			border-color: var(--success-color);
 		}
 	}
 
@@ -113,6 +127,55 @@
 			color: var(--body-color);
 			background-color: var(--white-color);
 			border-color: var(--body-color);
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		&__container {
+			grid-template-rows: auto;
+		}
+
+		&__form {
+			grid-template-columns: minmax(200px, 350px) minmax(50px, max-content);
+			grid-template-rows: 50px;
+			margin-top: 1.57rem;
+		}
+
+		&__input {
+			width: 100%;
+			padding: 1rem 1.5rem;
+		}
+
+		&__submit {
+			padding: 1rem;
+
+			&-text {
+				display: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 460px) {
+		&__wrapper {
+			padding: 1.5rem 1rem;
+		}
+	}
+
+	@media screen and (max-width: 340px) {
+		&__form {
+			grid-template-columns: 1fr;
+			row-gap: 1rem;
+			grid-template-rows: repeat(2, 50px);
+		}
+
+		&__input {
+			padding: 0.85rem;
+		}
+
+		&__submit {
+			&-text {
+				display: inline-block;
+			}
 		}
 	}
 }

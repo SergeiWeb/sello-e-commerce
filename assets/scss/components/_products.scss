@@ -5,6 +5,11 @@
 		grid-template-columns: repeat(3, minmax(350px, 1fr));
 		column-gap: 1.875rem;
 		row-gap: 2.5rem;
+
+		@media screen and (max-width: 1100px) {
+			justify-content: center;
+			grid-template-columns: repeat(2, minmax(150px, 45%));
+		}
 	}
 
 	&__card {
@@ -143,6 +148,10 @@
 
 		&-icon {
 			font-size: 0.75rem;
+
+			@media screen and (max-width: 968px) {
+				font-size: 0.9rem;
+			}
 		}
 
 		&-like {
@@ -165,6 +174,23 @@
 			&:hover {
 				color: var(--border-color);
 			}
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		&__wrapper {
+			grid-template-columns: 0.9fr;
+			row-gap: 1.875rem;
+		}
+
+		&__img {
+			height: 380px;
+		}
+	}
+
+	@media screen and (max-width: 460px) {
+		&__wrapper {
+			grid-template-columns: 1fr;
 		}
 	}
 }

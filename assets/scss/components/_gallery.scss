@@ -41,4 +41,32 @@
 			background-color: rgba(#ffffff, 0.6);
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+		&__container {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(2, 200px);
+		}
+
+		&__link {
+			width: 270px;
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		&__container {
+			grid-template-rows: repeat(2, 130px);
+		}
+
+		&__link {
+			width: 230px;
+			height: 60px;
+		}
+	}
+
+	@media screen and (max-width: 340px) {
+		&__container {
+			grid-template-rows: repeat(2, 100px);
+		}
+	}
 }
