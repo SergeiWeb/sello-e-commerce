@@ -1,0 +1,27 @@
+/* breadcrumbs */
+.breadcrumbs {
+	&__list {
+		display: flex;
+		align-items: center;
+		column-gap: 0.25rem;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		column-gap: 0.25rem;
+		color: var(--text-color);
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		column-gap: 0.25rem;
+		color: var(--text-color);
+
+		&.active-link {
+			color: var(--body-color);
+			text-decoration: underline;
+		}
+	}
+}

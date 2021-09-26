@@ -1,0 +1,35 @@
+/* intro */
+.intro {
+	display: flex;
+	align-items: center;
+	padding: 2rem 0;
+
+	&__category {
+		margin-top: 1.875rem;
+		background-color: var(--white-color);
+
+		&-list {
+			display: flex;
+			align-items: center;
+			column-gap: 0.875rem;
+			overflow-x: auto;
+			scrollbar-width: none;
+			background-color: var(--body-color);
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		&-link {
+			padding: 0.5rem 0.625rem;
+			color: var(--white-color);
+			transition: 0.4s;
+
+			&:hover {
+				color: var(--body-color);
+				background-color: var(--white-color);
+			}
+		}
+	}
+}

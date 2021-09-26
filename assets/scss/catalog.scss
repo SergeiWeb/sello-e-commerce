@@ -1,9 +1,16 @@
 @import './config/variables';
 @import './base/base';
+
+body {
+	margin: var(--header-height) 0 0 0;
+}
+
 @import './layout/layout';
 @import './components/scroll';
 @import './components/header';
-// @import './components/products';
-// @import './components/catalog';
+@import './components/products';
+@import './components/goods/intro';
+@import './components/goods/cover';
+@import './components/breadcrumbs';
 @import './components/footer';
 @import './components/modal';

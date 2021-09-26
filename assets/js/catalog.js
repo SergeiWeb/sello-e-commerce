@@ -1,0 +1,116 @@
+window.addEventListener('load', () => {
+	const header = document.getElementById('header')
+
+	const navMenu = document.getElementById('nav-menu')
+	const navLogo = document.getElementById('nav-logo')
+	const navToggle = document.getElementById('nav-toggle')
+	const toggleIcon = navToggle.querySelector('.nav__toggle-icon')
+
+	const modalItems = header.querySelectorAll('.modal__window')
+	const buttonNavItems = header.querySelectorAll('.nav__btn')
+	const counterAction = document.querySelectorAll('.counter-action')
+
+	const range = document.getElementById('range')
+
+	const scrollUpLink = document.getElementById('scroll-up')
+
+	const productsLikeBtns = document.querySelectorAll('.products__btn-like')
+	const productsBuyBtns = document.querySelectorAll('.products__btn-buy')
+
+	const subscribeEmailInput = document.getElementById('subscribe-email-input')
+
+	const preloader = document.getElementById('preloader')
+
+	const footerItems = document.querySelectorAll('.footer__data-item')
+
+	const footerPhoneNumber = document.getElementById('footer-phone')
+
+	/* preloader */
+	if (preloader) {
+		setTimeout(() => {
+			changesClasses(document.body, 'remove', 'no-scroll')
+			changesClasses(preloader, 'add', 'hide')
+			load = false
+		}, 1000)
+		setTimeout(() => preloader.remove(), 1200)
+	}
+
+	/* navbar */
+	if (navMenu && navToggle && navLogo) {
+		openCloseNavMenu(
+			navMenu,
+			navToggle,
+			navLogo,
+			toggleIcon,
+			modalItems,
+			buttonNavItems
+		)
+	}
+
+	/* modal cart && modal favorites */
+	if (modalItems) {
+		actionsModal(buttonNavItems, modalItems, '.active-nav-btn', '.open-modal')
+	}
+
+	if (counterAction) {
+		counterFunc(counterAction)
+	}
+
+	if ($('.filter__select')) {
+		$('.filter__select').niceSelect()
+	}
+
+	if (range) {
+
+	}
+
+	/* products button */
+	if (productsLikeBtns && productsBuyBtns) {
+		productsBtnChange(
+			productsLikeBtns,
+			'.products-liked',
+			'in-liked', //! if there is this class, then the product should be added to Favorites
+			'heart'
+		)
+
+		productsBtnChange(
+			productsBuyBtns,
+			'.products-shop-bag',
+			'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
+			'shopping-bag'
+		)
+	}
+
+	/* subscribe email */
+	// if (subscribeEmailInput) {
+	// 	subscribeEmail(subscribeEmailInput)
+	// }
+
+	/* format footer phone */
+	if (footerPhoneNumber) {
+		footerPhoneNumber.textContent = formatPhoneNumber(
+			footerPhoneNumber.textContent
+		)
+	}
+
+	/* footer accordion */
+	if (footerItems) {
+		accordionItems(
+			footerItems,
+			'.footer__header',
+			'.footer-open',
+			'.footer__list'
+		)
+	}
+
+	/* scroll up */
+	if (scrollUpLink) {
+		scrollLink(scrollUpLink)
+	}
+
+	/* scroll */
+	window.addEventListener('scroll', () => {
+		scrollHeader()
+		scrollUp(scrollUpLink)
+	})
+})

@@ -31,10 +31,35 @@
 			rel="stylesheet"
 		/>
 
+		<!-- jquery nice select css -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
+			integrity="sha512-uHuCigcmv3ByTqBQQEwngXWk7E/NaPYP+CFglpkXPnRQbSubJmEENgh+itRDYbWV0fUZmUz7fD/+JDdeQFD5+A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
 		<!-- styles -->
 		<link rel="stylesheet" href="./assets/css/catalog.css" id="styles" />
 
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- jquery nice select js -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+			integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
 		<!-- scripts -->
+		<script defer src="./assets/js/modules/function.js"></script>
 		<script defer src="./assets/js/catalog.js"></script>
 
 		<title>E-Commerce Sello | Catalog</title>
@@ -44,6 +69,7 @@
 		<div class="preloader" id="preloader">
 			<i class="bx bx-loader-alt preloader__icon"></i>
 		</div>
+
 		<!-- header -->
 		<header class="header" id="header">
 			<nav class="nav menu container">
@@ -54,16 +80,15 @@
 				<div class="nav__menu" id="nav-menu">
 					<ul class="nav__list menu__list">
 						<li class="nav__item menu__iten">
-							<a href="#home" class="nav__link menu__link active-link">Home</a>
+							<a href="/index.html" class="nav__link menu__link">
+								Home
+							</a>
 						</li>
 						<li class="nav__item menu__iten">
-							<a href="#products" class="nav__link menu__link">Product</a>
+							<a href="/blog.html" class="nav__link menu__link">Blog</a>
 						</li>
 						<li class="nav__item menu__iten">
-							<a href="#blog" class="nav__link menu__link">Blog</a>
-						</li>
-						<li class="nav__item menu__iten">
-							<a href="#contact" class="nav__link menu__link">Contact</a>
+							<a href="/contact.html" class="nav__link menu__link">Contact</a>
 						</li>
 					</ul>
 				</div>
@@ -424,6 +449,655 @@
 			</nav>
 		</header>
 
+		<!-- main -->
+		<main class="main">
+			<!-- intro -->
+			<section class="intro section">
+				<div class="intro__container container">
+					<div class="intro__wrapper">
+						<div class="breadcrumbs intro__breadcrumbs">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="./index.html" class="breadcrumbs__link">Home</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<i class="bx bx-chevron-right"></i>
+									<a class="breadcrumbs__link active-link">Catalog</a>
+								</li>
+							</ul>
+						</div>
+						<div class="intro__category">
+							<ul class="intro__category-list">
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- cover -->
+			<section class="cover section">
+				<div class="container">
+					<div class="cover__wrapper">
+						<div class="cover__filter filter">
+							<h4 class="filter__title">Filter</h4>
+
+							<div class="filter__wrapper">
+								<div class="filter__sort">
+									<select class="filter__select" id="sort">
+										<option value="default" disabled selected>Sort by</option>
+										<option value="ascending">Ascending</option>
+										<option value="descending">Descending</option>
+										<option value="popularity">Popularity</option>
+									</select>
+								</div>
+
+								<div class="filter__price">
+									<label class="filter__price-label" for="price-from">
+										<span class="filter__price-text">From:</span>
+										<input
+											type="number"
+											class="filter__price-input"
+											name=""
+											id="price-from"
+											min="0"
+											max="10000"
+											value="0"
+										/>
+									</label>
+									<label class="filter__price-label" for="price-to">
+										<span class="filter__price-text">To:</span>
+										<input
+											type="number"
+											class="filter__price-input"
+											name=""
+											id="price-to"
+											min="0"
+											max="10000"
+											value="10000"
+										/>
+									</label>
+								</div>
+
+								<div class="filter__sort">
+									<select class="filter__select" id="category">
+										<option value="default" disabled selected>Category</option>
+										<option value="men">Men</option>
+										<option value="women">Women</option>
+										<option value="kids">Kids</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="cover__goods goods">
+							<div class="goods__container">
+								<div class="goods__wrapper">
+									<div class="goods__content products__wrapper">
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/denim-shell-top-ruffle"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-1.jpg"
+														alt="img: goods 1"
+													/>
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/denim-shell-top-ruffle"
+													class="products__title"
+												>
+													Denim Shell Top Ruffle
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/cluse-la-bohème-rose"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-2.jpg"
+														alt="img: goods 2"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													-30%
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/cluse-la-bohème-rose"
+													class="products__title"
+												>
+													Cluse La Bohème Rose
+												</a>
+												<div class="products-prices">
+													<span class="products__price">$36.00</span>
+													<span class="products__price-old">$45.00</span>
+												</div>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/asos-ridley-high-waist"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-3.jpg"
+														alt="img: goods 3"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													Sale
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/asos-ridley-high-waist"
+													class="products__title"
+												>
+													Asos Ridley High Waist
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/analogue-resin-strap"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-4.jpg"
+														alt="img: goods 4"
+													/>
+												</a>
+												<a href="/feature" class="products__blank sale">
+													Feature
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/analogue-resin-strap"
+													class="products__title"
+												>
+													Analogue Resin Strap
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/ridley-high-waist"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-5.jpg"
+														alt="img: goods 5"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													Sale
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/ridley-high-waist"
+													class="products__title"
+												>
+													Ridley High Waist
+												</a>
+												<div class="products-prices">
+													<span class="products__price">$36.00</span>
+													<span class="products__price-old">$45.00</span>
+												</div>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/shell-top-with-ruffle-front"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-6.jpg"
+														alt="img: goods 6"
+													/>
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/shell-top-with-ruffle-front"
+													class="products__title"
+												>
+													Shell Top with Ruffle Front
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/denim-shell-top-ruffle"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-1.jpg"
+														alt="img: goods 1"
+													/>
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/denim-shell-top-ruffle"
+													class="products__title"
+												>
+													Denim Shell Top Ruffle
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/cluse-la-bohème-rose"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-2.jpg"
+														alt="img: goods 2"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													-30%
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/cluse-la-bohème-rose"
+													class="products__title"
+												>
+													Cluse La Bohème Rose
+												</a>
+												<div class="products-prices">
+													<span class="products__price">$36.00</span>
+													<span class="products__price-old">$45.00</span>
+												</div>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/asos-ridley-high-waist"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-3.jpg"
+														alt="img: goods 3"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													Sale
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/asos-ridley-high-waist"
+													class="products__title"
+												>
+													Asos Ridley High Waist
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/analogue-resin-strap"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-4.jpg"
+														alt="img: goods 4"
+													/>
+												</a>
+												<a href="/feature" class="products__blank sale">
+													Feature
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/analogue-resin-strap"
+													class="products__title"
+												>
+													Analogue Resin Strap
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/ridley-high-waist"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-5.jpg"
+														alt="img: goods 5"
+													/>
+												</a>
+												<a href="/sale" class="products__blank sale">
+													Sale
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/ridley-high-waist"
+													class="products__title"
+												>
+													Ridley High Waist
+												</a>
+												<div class="products-prices">
+													<span class="products__price">$36.00</span>
+													<span class="products__price-old">$45.00</span>
+												</div>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="products__card border">
+											<div class="products__img">
+												<a
+													href="/products/shell-top-with-ruffle-front"
+													class="products__img-link"
+												>
+													<img
+														src="./assets/img/featured/featured-6.jpg"
+														alt="img: goods 6"
+													/>
+												</a>
+											</div>
+											<div class="products__content">
+												<a
+													href="/products/shell-top-with-ruffle-front"
+													class="products__title"
+												>
+													Shell Top with Ruffle Front
+												</a>
+												<span class="products__price">$36.00</span>
+												<div class="products__footer">
+													<button class="products__btn products__btn-like">
+														<i
+															class="bx bx-heart products__btn-icon products-liked"
+														></i>
+													</button>
+													<span class="products__btn products__btn-rating">
+														<i class="bx bxs-star products__btn-icon"></i>
+														<span class="products__btn-text">1250</span>
+													</span>
+													<button class="products__btn products__btn-buy">
+														<i
+															class="bx bx-shopping-bag products__btn-icon products-shop-bag"
+														></i>
+														<span class="products__btn-text">Add to cart</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
 		<!-- footer -->
 		<footer class="footer">
 			<div class="footer__container container">
@@ -570,16 +1244,13 @@
 					</span>
 					<ul class="footer__nav-list">
 						<li class="footer__nav-item">
-							<a href="#home" class="footer__nav-link">Home</a>
+							<a href="/index.html" class="footer__nav-link">Home</a>
 						</li>
 						<li class="footer__nav-item">
-							<a href="#products" class="footer__nav-link">Product</a>
+							<a href="/blog.html" class="footer__nav-link">Blog</a>
 						</li>
 						<li class="footer__nav-item">
-							<a href="#blog" class="footer__nav-link">Blog</a>
-						</li>
-						<li class="footer__nav-item">
-							<a href="#contact" class="footer__nav-link">Contact</a>
+							<a href="/contact.html" class="footer__nav-link">Contact</a>
 						</li>
 					</ul>
 				</nav>
