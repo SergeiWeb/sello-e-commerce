@@ -2008,6 +2008,7 @@ button {
 .modal-favorites__title, .modal-cart__title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-bold);
+  line-height: normal;
 }
 
 .modal-favorites__list, .modal-cart__list {
