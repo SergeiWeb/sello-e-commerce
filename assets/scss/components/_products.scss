@@ -123,8 +123,9 @@
 		font-weight: var(--font-light);
 
 		&-old {
-			font-size: var(--smaller-font-size);
 			color: var(--text-color);
+			font-size: var(--smaller-font-size);
+			font-weight: var(--font-light);
 			text-decoration: line-through;
 		}
 	}

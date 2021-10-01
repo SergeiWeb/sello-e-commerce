@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- favicon -->
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+		<!-- google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- normalize -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- boxicons -->
+		<link
+			href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- jquery nice select css -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
+			integrity="sha512-uHuCigcmv3ByTqBQQEwngXWk7E/NaPYP+CFglpkXPnRQbSubJmEENgh+itRDYbWV0fUZmUz7fD/+JDdeQFD5+A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- swiper css -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
+
+		<!-- styles -->
+		<link rel="stylesheet" href="./assets/css/card.css" id="styles" />
+
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+
+		<!-- jquery nice select js -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+			integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- swiper js -->
+		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+		<!-- scripts -->
+		<script defer src="./assets/js/modules/function.js"></script>
+		<script defer src="./assets/js/product.js"></script>
+
+		<title>E-Commerce Sello | Denim Shell Top Ruffle Black</title>
+	</head>
+	<body class="no-scroll">
+		<!-- preloader -->
+		<div class="preloader" id="preloader">
+			<i class="bx bx-loader-alt preloader__icon"></i>
+		</div>
+
+		<!-- header -->
+		<header class="header" id="header">
+			<nav class="nav menu container">
+				<a href="#" class="nav__logo show-logo" id="nav-logo">
+					<img src="./assets/img/logo.svg" alt="img: logo" />
+				</a>
+
+				<div class="nav__menu" id="nav-menu">
+					<ul class="nav__list menu__list">
+						<li class="nav__item menu__iten">
+							<a href="/index.html" class="nav__link menu__link">
+								Home
+							</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="/catalog.html" class="nav__link menu__link">Product</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="/blog.html" class="nav__link menu__link">Blog</a>
+						</li>
+						<li class="nav__item menu__iten">
+							<a href="/contact.html" class="nav__link menu__link">Contact</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="nav__actions">
+					<button class="nav__btn nav__favorites favorites-toggle">
+						<i class="bx bxs-heart"></i>
+					</button>
+
+					<button class="nav__btn nav__shopcart cart-toggle">
+						<i class="bx bxs-shopping-bag-alt"></i>
+					</button>
+				</div>
+
+				<button class="nav__toggle menu__toggle" id="nav-toggle">
+					<i class="bx bx-menu nav__toggle-icon"></i>
+				</button>
+
+				<!-- modal favorites list -->
+				<div class="modal__window modal-favorites">
+					<div class="modal-favorites__wrapper">
+						<h2 class="modal-favorites__title">Favorites List</h2>
+
+						<ul class="modal-favorites__list">
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+							<li class="modal-favorites__item">
+								<a href="#" class="modal-favorites__link">
+									<span class="modal-favorites__link-text">Category name</span>
+									<span class="modal-favorites__link-count">10</span>
+									<i
+										class="bx bx-right-arrow-alt modal-favorites__link-icon"
+									></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- modal shopping cart -->
+				<div class="modal__window modal-cart">
+					<div class="modal-cart__wrapper">
+						<h2 class="modal-cart__title">Shopping Cart</h2>
+
+						<ul class="modal-cart__list">
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$46.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<span class="modal-cart__content-price">$36.00</span>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/tranding/tranding-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<span class="modal-cart__content-price">$36.00</span>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-1.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+
+							<li class="modal-cart__item">
+								<div class="modal-cart__img">
+									<img
+										src="./assets/img/featured/featured-5.jpg"
+										alt="img: product 1"
+									/>
+								</div>
+								<div class="modal-cart__content">
+									<a href="#" class="modal-cart__content-title">
+										Title Product
+									</a>
+									<div class="modal-cart__prices">
+										<span class="modal-cart__content-price">$36.00</span>
+										<span class="modal-cart__content-price-old">$45.00</span>
+									</div>
+								</div>
+								<div class="modal-cart__counter counter-action">
+									<button
+										class="modal-cart__counter-btn counter-minus"
+										disabled
+									>
+										<i class="bx bx-minus"></i>
+									</button>
+									<input
+										readonly
+										min="1"
+										max="50"
+										type="number"
+										class="modal-cart__counter-input counter-input"
+										value="1"
+									/>
+									<button class="modal-cart__counter-btn counter-plus">
+										<i class="bx bx-plus"></i>
+									</button>
+								</div>
+								<button class="modal-cart__delete">
+									<i class="bx bx-x-circle"></i>
+								</button>
+							</li>
+						</ul>
+
+						<div class="modal-cart__footer">
+							<div class="modal-cart__amount">
+								<span class="modal-cart__amount-text">Total Amount:</span>
+								<span class="modal-cart__amount-price">$450.00</span>
+							</div>
+							<a href="#" class="modal-cart__link">
+								<span class="modal-cart__link-text">Order</span>
+								<i class="bx bx-right-arrow-alt modal-cart__link-icon"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- main -->
+		<main class="main">
+			<!-- intro -->
+			<section class="intro section">
+				<div class="intro__container container">
+					<div class="intro__wrapper">
+						<div class="breadcrumbs intro__breadcrumbs">
+							<ul class="breadcrumbs__list">
+								<li class="breadcrumbs__item">
+									<a href="./index.html" class="breadcrumbs__link">Home</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<i class="bx bx-chevron-right"></i>
+									<a href="./catalog.html" class="breadcrumbs__link">Catalog</a>
+								</li>
+								<li class="breadcrumbs__item">
+									<i class="bx bx-chevron-right"></i>
+									<a class="breadcrumbs__link active-breadcrumbs-link">
+										Denim Shell Top Ruffle
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="intro__category">
+							<ul class="intro__category-list">
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Men</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Women</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Kids</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Feature</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Sale</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+								<li class="intro__category-item">
+									<a href="" class="intro__category-link">Category</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- card -->
+			<section class="card section">
+				<div class="card__wrapper container">
+					<h3 class="card__title">Denim Shell Top Ruffle Black</h3>
+
+					<div class="card__content">
+						<div class="card-header">
+							<!-- card slider -->
+							<div class="card-header__left">
+								<div class="card-header__thumbs thumbs swiper">
+									<div class="thumbs__wrapper swiper-wrapper">
+										<div class="thumbs__slide swiper-slide">
+											<img
+												src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+												alt="img: thumb 1"
+											/>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-2.jpg"
+												alt="img: thumb 2"
+											/>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-3.jpg"
+												alt="img: thumb 3"
+											/>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-4.jpg"
+												alt="img: thumb 4"
+											/>
+										</div>
+										<div class="thumbs__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-5.jpg"
+												alt="img: thumb 5"
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div class="card-header__slider slider swiper">
+									<div class="slider__wrapper swiper-wrapper">
+										<div class="slider__slide swiper-slide">
+											<img
+												src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+												data-zoom-image="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+												alt="img: slider 1"
+											/>
+										</div>
+										<div class="slider__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-2.jpg"
+												alt="img: slider 2"
+											/>
+										</div>
+										<div class="slider__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-3.jpg"
+												alt="img: slider 3"
+											/>
+										</div>
+										<div class="slider__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-4.jpg"
+												alt="img: slider 4"
+											/>
+										</div>
+										<div class="slider__slide swiper-slide">
+											<img
+												src="./assets/img/tranding/tranding-5.jpg"
+												alt="img: slider 5"
+											/>
+										</div>
+									</div>
+									<div class="slider__buttons">
+										<button class="slider__btn slider__btn-prev">
+											<i class="bx bx-chevron-left slider__btn-icon"></i>
+										</button>
+
+										<button class="slider__btn slider__btn-next">
+											<i class="bx bx-chevron-right slider__btn-icon"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- card content -->
+							<div class="card-header__right">
+								<form action="#" class="card-header__form">
+									<div class="card__block">
+										<h4 class="card__subtitle">Price</h4>
+										<div class="card__prices">
+											<span class="card__price">$45.00</span>
+											<spab class="card__price-old">$65.00</spab>
+										</div>
+									</div>
+
+									<div class="card__block">
+										<h4 class="card__subtitle">Rating</h4>
+										<span class="card__rating">
+											<i class="bx bxs-star card__rating-icon"></i>
+											<span class="card__rating-text">1250</span>
+										</span>
+									</div>
+
+									<div class="card__block">
+										<h4 class="card__subtitle">Colors</h4>
+										<ul class="card__list">
+											<li class="card__item selected" data-name="Black">
+												Black
+											</li>
+											<li class="card__item" data-name="Yellow">Yellow</li>
+											<li class="card__item" data-name="Blue">Blue</li>
+											<li class="card__item" data-name="Red">Red</li>
+										</ul>
+									</div>
+
+									<div class="card__block size">
+										<h4 class="card__subtitle">Size</h4>
+										<ul class="card__list">
+											<li class="card__item size__item" data-name="xs">xs</li>
+											<li class="card__item size__item selected" data-name="m">
+												m
+											</li>
+											<li class="card__item size__item" data-name="l">l</li>
+											<li class="card__item size__item" data-name="xxl">xxl</li>
+										</ul>
+									</div>
+
+									<div class="card__block">
+										<h4 class="card__subtitle">Count</h4>
+										<div class="card__counter card-counters">
+											<button
+												class="card__counter-btn card__counter-minus"
+												type="button"
+												disabled
+											>
+												<i class="bx bx-minus"></i>
+											</button>
+											<input
+												readonly
+												min="1"
+												max="50"
+												type="number"
+												class="card__counter-input card-input"
+												value="1"
+											/>
+											<button
+												class="card__counter-btn card__counter-plus"
+												type="button"
+											>
+												<i class="bx bx-plus"></i>
+											</button>
+										</div>
+									</div>
+
+									<div class="card__footer">
+										<button class="card__submit" type="submit">
+											<i class="bx bx-shopping-bag"></i>
+											<span class="card__submit-text">Add to cart</span>
+										</button>
+
+										<a href="#" class="card__favorites is-liked">
+											<!-- if the product is not in the favorites, then delete the class "is-liked" -->
+											<i class="bx bx-heart"></i>
+											<span class="card__favorites-text">
+												Add to favorites
+											</span>
+										</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__wrapper">
+					<div class="footer__data info">
+						<a href="#" class="footer__logo" id="footer-logo">
+							<img src="./assets/img/logo.svg" alt="img: logo" />
+						</a>
+						<div class="info__contact">
+							<a href="" class="info__link">
+								<i class="bx bx-map info__icon"></i>
+								<span class="info__text">
+									184 Main Rd E, St Albans VIC 3021, Australia
+								</span>
+							</a>
+							<a href="mailto:contact@company.com" class="info__link">
+								<i class="bx bx-envelope info__icon"></i>
+								<span class="info__text">contact@company.com</span>
+							</a>
+							<a href="tel:+0012233456" class="info__link">
+								<i class="bx bx-phone info__icon"></i>
+								<span class="info__text" id="footer-phone">+12345678900</span>
+							</a>
+						</div>
+						<div class="info__social">
+							<a
+								href="https://www.facebook.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-facebook"></i>
+							</a>
+							<a
+								href="https://twitter.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-twitter"></i>
+							</a>
+							<a
+								href="https://www.linkedin.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-linkedin"></i>
+							</a>
+							<a
+								href="https://www.instagram.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-instagram"></i>
+							</a>
+							<a
+								href="https://www.pinterest.com/"
+								target="_blank"
+								class="info__social-link"
+							>
+								<i class="bx bxl-pinterest-alt"></i>
+							</a>
+						</div>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">information</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">About Us</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Contact Us</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Terms & Conditions</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Returns & Exchanges</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Shipping & Delivery</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Privacy Policy</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">quick links</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">Store Location</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">My Account</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Orders Tracking</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Size Guide</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">FAQs</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__data footer__data-item">
+						<div class="footer__header">
+							<h3 class="footer__title">payment</h3>
+							<i class="bx bx-chevron-down footer__icon"></i>
+						</div>
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a href="#" class="footer__link">Account</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Free Shipping</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Support 24/7</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">30 Days Product Returns</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">100% Payment Secure</a>
+							</li>
+							<li class="footer__item">
+								<a href="#" class="footer__link">Supported All Cards</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<nav class="footer__nav container">
+					<span class="footer__copy">
+						Copyright © 2021 Sello all rights reserved. Powered by Mirror
+					</span>
+					<ul class="footer__nav-list">
+						<li class="footer__nav-item">
+							<a href="/index.html" class="footer__nav-link">Home</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/blog.html" class="footer__nav-link">Product</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/blog.html" class="footer__nav-link">Blog</a>
+						</li>
+						<li class="footer__nav-item">
+							<a href="/contact.html" class="footer__nav-link">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+
+		<!-- scroll up -->
+		<button class="scroll-up" id="scroll-up">
+			<i class="bx bx-up-arrow-alt scroll-up__icon"></i>
+		</button>
+	</body>
+</html>

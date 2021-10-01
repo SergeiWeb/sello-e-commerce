@@ -462,7 +462,7 @@
 								</li>
 								<li class="breadcrumbs__item">
 									<i class="bx bx-chevron-right"></i>
-									<a class="breadcrumbs__link active-link">Catalog</a>
+									<a class="breadcrumbs__link active-breadcrumbs-link">Catalog</a>
 								</li>
 							</ul>
 						</div>
@@ -524,84 +524,86 @@
 							<h3 class="filter__title">Filter</h3>
 
 							<div class="filter__content">
-								<ul class="filter__active">
-									<li class="filter__active-item">
-										<i class="bx bx-x filter__active-icon"></i>
-										<span class="filter__active-text">ascending</span>
-									</li>
+								<div class="filter__head">
+									<ul class="filter__active">
+										<li class="filter__active-item">
+											<i class="bx bx-x filter__active-icon"></i>
+											<span class="filter__active-text">ascending</span>
+										</li>
 
-									<li class="filter__active-item">
-										<i class="bx bx-x filter__active-icon"></i>
-										<span class="filter__active-text">from 500 to 3500</span>
-									</li>
+										<li class="filter__active-item">
+											<i class="bx bx-x filter__active-icon"></i>
+											<span class="filter__active-text">from 500 to 3500</span>
+										</li>
 
-									<li class="filter__active-item">
-										<i class="bx bx-x filter__active-icon"></i>
-										<span class="filter__active-text">women</span>
-									</li>
+										<li class="filter__active-item">
+											<i class="bx bx-x filter__active-icon"></i>
+											<span class="filter__active-text">women</span>
+										</li>
 
-									<li class="filter__active-item">
-										<i class="bx bx-x filter__active-icon"></i>
-										<span class="filter__active-text">up to 30%</span>
-									</li>
-								</ul>
+										<li class="filter__active-item">
+											<i class="bx bx-x filter__active-icon"></i>
+											<span class="filter__active-text">up to 30%</span>
+										</li>
+									</ul>
 
-								<button class="filter__clear">Clear filter</button>
-							</div>
-
-							<div class="filter__wrapper">
-								<div class="filter__sort">
-									<select class="filter__select" id="sort">
-										<option value="default" disabled>Sort by</option>
-										<option value="ascending" selected>Ascending</option>
-										<option value="descending">Descending</option>
-										<option value="popularity">Popularity</option>
-										<option value="rating">Rating</option>
-									</select>
+									<button class="filter__clear">Clear filter</button>
 								</div>
 
-								<div class="filter__price">
-									<label class="filter__price-label" for="price-from">
-										<span class="filter__price-text">From:</span>
-										<input
-											type="number"
-											class="filter__price-input"
-											id="price-from"
-											min="0"
-											max="10000"
-											value="500"
-										/>
-									</label>
-									<label class="filter__price-label" for="price-to">
-										<span class="filter__price-text">To:</span>
-										<input
-											type="number"
-											class="filter__price-input"
-											id="price-to"
-											min="0"
-											max="10000"
-											value="3500"
-										/>
-									</label>
-								</div>
+								<div class="filter__wrapper">
+									<div class="filter__sort">
+										<select class="filter__select" id="sort">
+											<option value="default" disabled>Sort by</option>
+											<option value="ascending" selected>Ascending</option>
+											<option value="descending">Descending</option>
+											<option value="popularity">Popularity</option>
+											<option value="rating">Rating</option>
+										</select>
+									</div>
 
-								<div class="filter__sort">
-									<select class="filter__select" id="category">
-										<option value="default" disabled>Category</option>
-										<option value="men">Men</option>
-										<option value="women" selected>Women</option>
-										<option value="kids">Kids</option>
-									</select>
-								</div>
+									<div class="filter__price">
+										<label class="filter__price-label" for="price-from">
+											<span class="filter__price-text">From:</span>
+											<input
+												type="number"
+												class="filter__price-input"
+												id="price-from"
+												min="0"
+												max="10000"
+												value="500"
+											/>
+										</label>
+										<label class="filter__price-label" for="price-to">
+											<span class="filter__price-text">To:</span>
+											<input
+												type="number"
+												class="filter__price-input"
+												id="price-to"
+												min="0"
+												max="10000"
+												value="3500"
+											/>
+										</label>
+									</div>
 
-								<div class="filter__sort">
-									<select class="filter__select" id="promotion">
-										<option value="default" disabled>Discount</option>
-										<option value="80%">Up to 80%</option>
-										<option value="55">Up to 55%</option>
-										<option value="30%" selected>Up to 30%</option>
-										<option value="15%">Up to 15%</option>
-									</select>
+									<div class="filter__sort">
+										<select class="filter__select" id="category">
+											<option value="default" disabled>Category</option>
+											<option value="men">Men</option>
+											<option value="women" selected>Women</option>
+											<option value="kids">Kids</option>
+										</select>
+									</div>
+
+									<div class="filter__sort">
+										<select class="filter__select" id="promotion">
+											<option value="default" disabled>Discount</option>
+											<option value="80%">Up to 80%</option>
+											<option value="55">Up to 55%</option>
+											<option value="30%" selected>Up to 30%</option>
+											<option value="15%">Up to 15%</option>
+										</select>
+									</div>
 								</div>
 							</div>
 						</div>

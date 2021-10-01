@@ -202,11 +202,11 @@ const actionsModal = (btns, modals, activeBtn, activeModal) => {
 }
 
 /* counter */
-const counterFunc = counters => {
+const counterFunc = (counters, plus, minus, input) => {
 	counters.forEach(item => {
-		const itemPlus = item.querySelector('.counter-plus')
-		const itemMinus = item.querySelector('.counter-minus')
-		const itemInput = item.querySelector('.counter-input')
+		const itemPlus = item.querySelector(plus)
+		const itemMinus = item.querySelector(minus)
+		const itemInput = item.querySelector(input)
 
 		itemMinus.addEventListener('click', () => {
 			itemInput.stepDown()

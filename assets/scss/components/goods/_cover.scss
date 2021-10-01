@@ -1,13 +1,16 @@
-/* civer */
+/* cover */
 .cover {
+	padding-top: 2rem;
+
 	&__wrapper {
 		display: grid;
+		row-gap: 3rem;
 	}
 
 	& .filter,
 	& .goods {
 		display: grid;
-		row-gap: 1rem;
+		row-gap: 2rem;
 
 		&__title {
 			font-size: var(--h3-font-size);
@@ -17,6 +20,21 @@
 	}
 
 	& .filter {
+		&__content {
+			display: grid;
+			row-gap: 1rem;
+		}
+
+		&__head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			@media screen and (max-width: 460px) {
+				align-items: flex-start;
+			}
+		}
+
 		&__wrapper {
 			display: grid;
 			align-items: center;
@@ -33,16 +51,6 @@
 			@media screen and (max-width: 576px) {
 				grid-template-columns: 1fr;
 				grid-template-rows: auto;
-			}
-		}
-
-		&__content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-
-			@media screen and (max-width: 460px) {
-				align-items: flex-start;
 			}
 		}
 
@@ -194,10 +202,6 @@
 		}
 	}
 
-	&__goods {
-		margin-top: 2rem;
-	}
-
 	& .goods {
 		&__container {
 			display: grid;
@@ -215,7 +219,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			text-transform: lowercase;
+			text-transform: uppercase;
 			font-weight: var(--font-light);
 			font-size: var(--small-font-size);
 			position: relative;

@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
 	const modalItems = header.querySelectorAll('.modal__window')
 	const buttonNavItems = header.querySelectorAll('.nav__btn')
-	const counterAction = document.querySelectorAll('.counter-action')
+	const modalCounter = document.querySelectorAll('.counter-action')
 
 	const navLinks = document.querySelectorAll('.nav__link')
 	const sections = document.querySelectorAll('section[id]')
@@ -71,8 +71,14 @@ window.addEventListener('load', () => {
 		actionsModal(buttonNavItems, modalItems, '.active-nav-btn', '.open-modal')
 	}
 
-	if (counterAction) {
-		counterFunc(counterAction)
+	/* modal counter */
+	if (modalCounter) {
+		counterFunc(
+			modalCounter,
+			'.counter-plus',
+			'.counter-minus',
+			'.counter-input'
+		)
 	}
 
 	/* tranding list */

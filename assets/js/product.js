@@ -11,8 +11,9 @@ window.addEventListener('load', () => {
 	const modalCounter = document.querySelectorAll('.counter-action')
 	const scrollUpLink = document.getElementById('scroll-up')
 
-	const productsLikeBtns = document.querySelectorAll('.products__btn-like')
-	const productsBuyBtns = document.querySelectorAll('.products__btn-buy')
+	const cardCounters = document.querySelectorAll('.card-counters')
+
+	const subscribeEmailInput = document.getElementById('subscribe-email-input')
 
 	const preloader = document.getElementById('preloader')
 
@@ -57,32 +58,72 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* filter select */
-	if ($('.filter__select')) {
-		$('.filter__select').niceSelect()
-	}
-
-	/* products button */
-	if (productsLikeBtns && productsBuyBtns) {
-		productsBtnChange(
-			productsLikeBtns,
-			'.products-liked',
-			'in-liked', //! if there is this class, then the product should be added to Favorites
-			'heart'
-		)
-
-		productsBtnChange(
-			productsBuyBtns,
-			'.products-shop-bag',
-			'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
-			'shopping-bag'
+	/* card counter */
+	if (cardCounters) {
+		counterFunc(
+			cardCounters,
+			'.card__counter-plus',
+			'.card__counter-minus',
+			'.card-input'
 		)
 	}
 
-	/* subscribe email */
-	// if (subscribeEmailInput) {
-	// 	subscribeEmail(subscribeEmailInput)
-	// }
+	/* slider */
+	const cardThumbs = new Swiper('.card-header__thumbs', {
+		loop: true,
+		spaceBetween: 10,
+		slidesPerView: 4,
+		direction: 'vertical',
+		freeMode: true,
+		watchSlidesProgress: true,
+	})
+
+	const cardSlider = new Swiper('.card-header__slider', {
+		loop: true,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.slider__btn-next',
+			prevEl: '.slider__btn-prev',
+		},
+		thumbs: {
+			swiper: cardThumbs,
+		},
+		effect: 'creative',
+		creativeEffect: {
+			prev: {
+				translate: [0, 0, -400],
+				opacity: '0',
+			},
+			next: {
+				translate: ['100%', 0, 0],
+				opacity: '1',
+			},
+		},
+
+		on: {
+		},
+	})
+
+	/* zoom img */
+	const sliderImg = document.querySelectorAll('.slider__slide img')
+
+	sliderImg.forEach(img => {
+		img.addEventListener('mousemove', event => {
+			let width = img.offsetWidth
+			let height = img.offsetHeight
+			let mouseX = event.offsetX
+			let mouseY = event.offsetY
+
+			let bgPosX = (mouseX / width * 100)
+			let bgPosY = (mouseY / height * 100)
+
+			img.style.transform = `translate(-${bgPosX}%, -${bgPosY}%) scale(2)`
+		})
+
+		img.addEventListener('mouseleave', () => {
+			img.style.transform = 'translate(-50%, -50%) scale(1)'
+		})
+	})
 
 	/* format footer phone */
 	if (footerPhoneNumber) {

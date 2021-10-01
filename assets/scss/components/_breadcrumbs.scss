@@ -18,8 +18,15 @@
 		align-items: center;
 		column-gap: 0.25rem;
 		color: var(--text-color);
+		transition: 0.4s;
 
-		&.active-link {
+		&:hover {
+			&:not(.active-breadcrumbs-link) {
+				color: var(--body-color);
+			}
+		}
+
+		&.active-breadcrumbs-link {
 			color: var(--body-color);
 			text-decoration: underline;
 		}
