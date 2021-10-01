@@ -76,6 +76,7 @@ window.addEventListener('load', () => {
 		direction: 'vertical',
 		freeMode: true,
 		watchSlidesProgress: true,
+		allowTouchMove: false,
 	})
 
 	const cardSlider = new Swiper('.card-header__slider', {
