@@ -69,10 +69,16 @@ window.addEventListener('load', () => {
 	}
 
 	/* slider */
+	const sliderSlides = document.querySelectorAll('.slider__slide')
+	const looping = sliderSlides.length > 1
+	const slidePerView = sliderSlides.length < 4 ? sliderSlides.length : 4
+
+	console.log(slidePerView)
+
 	const cardThumbs = new Swiper('.card-header__thumbs', {
-		loop: true,
+		loop: looping,
 		spaceBetween: 10,
-		slidesPerView: 4,
+		slidesPerView: slidePerView,
 		direction: 'vertical',
 		freeMode: true,
 		watchSlidesProgress: true,
@@ -80,7 +86,7 @@ window.addEventListener('load', () => {
 	})
 
 	const cardSlider = new Swiper('.card-header__slider', {
-		loop: true,
+		loop: looping,
 		spaceBetween: 10,
 		navigation: {
 			nextEl: '.slider__btn-next',
@@ -102,6 +108,9 @@ window.addEventListener('load', () => {
 		},
 
 		on: {
+			init(swiper) {
+				console.log(swiper)
+			},
 		},
 	})
 
@@ -115,8 +124,8 @@ window.addEventListener('load', () => {
 			let mouseX = event.offsetX
 			let mouseY = event.offsetY
 
-			let bgPosX = (mouseX / width * 100)
-			let bgPosY = (mouseY / height * 100)
+			let bgPosX = (mouseX / width) * 100
+			let bgPosY = (mouseY / height) * 100
 
 			img.style.transform = `translate(-${bgPosX}%, -${bgPosY}%) scale(2)`
 		})
