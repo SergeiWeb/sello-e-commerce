@@ -53,25 +53,25 @@
 
 		& .slider {
 			&__slide {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: relative;
-				width: 100%;
 				transition: 0.4s;
 				pointer-events: none;
 
-				& img {
-					position: absolute;
+				&-link {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
 					width: 100%;
 					height: 100%;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					pointer-events: none;
 
-					&:hover {
-						cursor: zoom-in;
+					& img {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						pointer-events: none;
 					}
 				}
 
@@ -127,13 +127,14 @@
 		}
 
 		&__right {
-			padding: 2rem 0 0 1rem;
+			padding: 1rem 0 0 1rem;
 		}
 
 		&__form {
 			display: flex;
+			justify-content: center;
 			flex-direction: column;
-			row-gap: 2rem;
+			row-gap: 1.625rem;
 		}
 	}
 

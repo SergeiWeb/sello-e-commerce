@@ -73,12 +73,11 @@ window.addEventListener('load', () => {
 	const looping = sliderSlides.length > 1
 	const slidePerView = sliderSlides.length < 4 ? sliderSlides.length : 4
 
-	console.log(slidePerView)
-
 	const cardThumbs = new Swiper('.card-header__thumbs', {
 		loop: looping,
 		spaceBetween: 10,
 		slidesPerView: slidePerView,
+		slidesPerGroup: 1,
 		direction: 'vertical',
 		freeMode: true,
 		watchSlidesProgress: true,
@@ -106,34 +105,30 @@ window.addEventListener('load', () => {
 				opacity: '1',
 			},
 		},
-
-		on: {
-			init(swiper) {
-				console.log(swiper)
-			},
-		},
 	})
 
-	/* zoom img */
-	const sliderImg = document.querySelectorAll('.slider__slide img')
+	if (!window.navigator.userAgentData.mobile) {
+		/* zoom img */
+		const sliderImg = document.querySelectorAll('.slider__slide img')
 
-	sliderImg.forEach(img => {
-		img.addEventListener('mousemove', event => {
-			let width = img.offsetWidth
-			let height = img.offsetHeight
-			let mouseX = event.offsetX
-			let mouseY = event.offsetY
+		sliderImg.forEach(img => {
+			img.addEventListener('mousemove', event => {
+				let width = img.offsetWidth
+				let height = img.offsetHeight
+				let mouseX = event.offsetX
+				let mouseY = event.offsetY
 
-			let bgPosX = (mouseX / width) * 100
-			let bgPosY = (mouseY / height) * 100
+				let bgPosX = (mouseX / width) * 100
+				let bgPosY = (mouseY / height) * 100
 
-			img.style.transform = `translate(-${bgPosX}%, -${bgPosY}%) scale(2)`
+				img.style.transform = `translate(-${bgPosX}%, -${bgPosY}%) scale(2)`
+			})
+
+			img.addEventListener('mouseleave', () => {
+				img.style.transform = 'translate(-50%, -50%) scale(1)'
+			})
 		})
-
-		img.addEventListener('mouseleave', () => {
-			img.style.transform = 'translate(-50%, -50%) scale(1)'
-		})
-	})
+	}
 
 	/* format footer phone */
 	if (footerPhoneNumber) {
