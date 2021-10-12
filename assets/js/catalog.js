@@ -79,11 +79,6 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* subscribe email */
-	// if (subscribeEmailInput) {
-	// 	subscribeEmail(subscribeEmailInput)
-	// }
-
 	/* format footer phone */
 	if (footerPhoneNumber) {
 		footerPhoneNumber.textContent = formatPhoneNumber(
@@ -91,14 +86,16 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* footer accordion */
-	if (footerItems) {
-		accordionItems(
-			footerItems,
-			'.footer__header',
-			'.footer-open',
-			'.footer__list'
-		)
+	if (window.navigator.userAgentData.mobile) {
+		if (footerItems) {
+			/* footer accordion */
+			accordionItems(
+				footerItems,
+				'.footer__header',
+				'.footer-open',
+				'.footer__list'
+			)
+		}
 	}
 
 	/* scroll up */

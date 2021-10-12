@@ -21,6 +21,8 @@ window.addEventListener('load', () => {
 
 	const footerPhoneNumber = document.getElementById('footer-phone')
 
+	const sliderWrapper = document.getElementById('slider-wrapper')
+
 	/* preloader */
 	if (preloader) {
 		setTimeout(() => {
@@ -107,6 +109,16 @@ window.addEventListener('load', () => {
 		},
 	})
 
+	if (sliderWrapper) {
+		lightGallery(sliderWrapper, {
+			selector:
+				'.slider__slide:not(.swiper-slide-duplicate) .slider__slide-link',
+			plugins: [lgZoom, lgThumbnail],
+			download: false,
+			mode: 'lg-slide',
+		})
+	}
+
 	if (!window.navigator.userAgentData.mobile) {
 		/* zoom img */
 		const sliderImg = document.querySelectorAll('.slider__slide img')
@@ -137,14 +149,16 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* footer accordion */
-	if (footerItems) {
-		accordionItems(
-			footerItems,
-			'.footer__header',
-			'.footer-open',
-			'.footer__list'
-		)
+	if (window.navigator.userAgentData.mobile) {
+		/* footer accordion */
+		if (footerItems) {
+			accordionItems(
+				footerItems,
+				'.footer__header',
+				'.footer-open',
+				'.footer__list'
+			)
+		}
 	}
 
 	/* scroll up */

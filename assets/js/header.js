@@ -142,14 +142,16 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	/* footer accordion */
-	if (footerItems) {
-		accordionItems(
-			footerItems,
-			'.footer__header',
-			'.footer-open',
-			'.footer__list'
-		)
+	if (window.navigator.userAgentData.mobile) {
+		/* footer accordion */
+		if (footerItems) {
+			accordionItems(
+				footerItems,
+				'.footer__header',
+				'.footer-open',
+				'.footer__list'
+			)
+		}
 	}
 
 	/* footer links */

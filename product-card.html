@@ -31,7 +31,7 @@
 			rel="stylesheet"
 		/>
 
-		<!-- jquery nice select css -->
+		<!-- nice select jquery css -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
@@ -46,10 +46,13 @@
 			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
 		/>
 
-		<!-- fancybox css -->
+		<!-- lightgallery css -->
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/css/lightgallery-bundle.min.css"
+			integrity="sha512-rYeyP/7l5e89ap2He13nzhq2ksCEvohMZOdbMVTodaAkkQjDKXd4PVgkHy4AOLlFoJarfc8F2H854DjOQa5qdg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
 		/>
 
 		<!-- styles -->
@@ -62,7 +65,7 @@
 			crossorigin="anonymous"
 		></script>
 
-		<!-- jquery nice select js -->
+		<!-- nice select jquery -->
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
 			integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
@@ -73,8 +76,27 @@
 		<!-- swiper js -->
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-		<!-- fancybox js -->
-		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+		<!-- lightgallery js -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/lightgallery.umd.min.js"
+			integrity="sha512-fVnQmnX3zdVecEkmtmiCAVp95E9ISiupQAUnhYPhh+JL/jrV0bRLHgF2mJaBEaFO6QU0CGkqXRwx++VmNonxyQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/plugins/thumbnail/lg-thumbnail.min.js"
+			integrity="sha512-wmnYlU0dJBHofmlz4UloFCz/k39StVgxOAVMr5HYHPEbEYNGbgvGoD5yLMln07hvbDYpDJyW0sHU2BVjDgiIXw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/plugins/zoom/lg-zoom.min.js"
+			integrity="sha512-0mtVOmUIpVwfDhhqVsG6tbynJh6BSKhw4WTNGB9GAhQrpy/4ZmB6KO/5hY70VRV7i8SRCXUkohPsqxPguEh9Lw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 
 		<!-- scripts -->
 		<script defer src="./assets/js/modules/function.js"></script>
@@ -600,12 +622,14 @@
 								</div>
 
 								<div class="card-header__slider slider swiper">
-									<div class="slider__wrapper swiper-wrapper">
+									<div
+										class="slider__wrapper swiper-wrapper"
+										id="slider-wrapper"
+									>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+												data-src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
@@ -615,9 +639,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/tranding/tranding-2.jpg"
+												data-src="./assets/img/tranding/tranding-2.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/tranding/tranding-2.jpg"
@@ -627,9 +650,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/tranding/tranding-3.jpg"
+												data-src="./assets/img/tranding/tranding-3.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/tranding/tranding-3.jpg"
@@ -639,9 +661,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/tranding/tranding-4.jpg"
+												data-src="./assets/img/tranding/tranding-4.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/tranding/tranding-4.jpg"
@@ -651,9 +672,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/tranding/tranding-5.jpg"
+												data-src="./assets/img/tranding/tranding-5.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/tranding/tranding-5.jpg"
@@ -663,9 +683,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/gallery/gallery-2.jpg"
+												data-src="./assets/img/gallery/gallery-2.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/gallery/gallery-2.jpg"
@@ -675,9 +694,8 @@
 										</div>
 										<div class="slider__slide swiper-slide">
 											<a
-												href="./assets/img/featured/featured-2.jpg"
+												data-src="./assets/img/featured/featured-2.jpg"
 												class="slider__slide-link"
-												data-fancybox="gal"
 											>
 												<img
 													src="./assets/img/featured/featured-2.jpg"
