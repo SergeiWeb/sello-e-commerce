@@ -1,0 +1,56 @@
+/* light gallery */
+.lg {
+	&-backdrop {
+		background-color: var(--white-color);
+	}
+
+	&-outer {
+		& .lg {
+			&-counter {
+				height: auto;
+				font-weight: var(--font-medium);
+				font-size: var(--big-font-size);
+			}
+
+			&-counter,
+			&-toolbar .lg-icon {
+				color: var(--body-color);
+			}
+
+			&-prev, &-next {
+				padding: 0.5rem;
+				border: 0.5px solid transparent;
+				font-size: var(--h3-font-size);
+				border-radius: 0;
+				color: var(--white-color);
+				background-color: var(--body-color);
+				transition: 0.4s;
+
+				&:hover {
+					color: var(--body-color);
+					background-color: var(--white-color);
+					border-color: var(--body-color);
+				}
+			}
+
+			&-thumb {
+				&-outer {
+					background-color: var(--white-color);
+				}
+
+				&-item {
+					border-radius: 0;
+					opacity: 0.5;
+					border: 0.5px solid transparent;
+					transition: 0.4s;
+
+					&.active,
+					&:hover {
+						opacity: 1;
+						border-color: rgba(#222222, 0.3);
+					}
+				}
+			}
+		}
+	}
+}

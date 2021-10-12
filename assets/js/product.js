@@ -116,6 +116,7 @@ window.addEventListener('load', () => {
 			plugins: [lgZoom, lgThumbnail],
 			download: false,
 			mode: 'lg-slide',
+			getCaptionFromTitleOrAlt: false,
 		})
 	}
 
