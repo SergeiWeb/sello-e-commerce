@@ -933,6 +933,10 @@ button {
   }
 }
 
+.products__btn-like.in-liked i:before {
+  content: '\ead5';
+}
+
 .products__btn-like .products__btn-icon {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
@@ -946,6 +950,10 @@ button {
 .products__btn-buy {
   margin-left: auto;
   text-transform: uppercase;
+}
+
+.products__btn-buy.in-shop-bag i:before {
+  content: '\eb9b';
 }
 
 .products__btn-buy:hover {

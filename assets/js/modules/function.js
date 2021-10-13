@@ -235,21 +235,15 @@ const counterFunc = (counters, plus, minus, input) => {
 }
 
 /* products btn */
-const productsBtnChange = (btns, iconClass, activeClass, iconClassChange) => {
+const productsBtnChange = (btns, activeClass) => {
 	btns.forEach(btn => {
-		const icon = btn.querySelector(iconClass)
-
 		btn.addEventListener('click', event => {
 			event.preventDefault()
 
 			if (!btn.classList.contains(activeClass)) {
 				changesClasses(btn, 'add', activeClass)
-				changesClasses(icon, 'remove', `bx-${iconClassChange}`)
-				changesClasses(icon, 'add', `bxs-${iconClassChange}`)
 			} else {
 				changesClasses(btn, 'remove', activeClass)
-				changesClasses(icon, 'add', `bx-${iconClassChange}`)
-				changesClasses(icon, 'remove', `bxs-${iconClassChange}`)
 			}
 		})
 	})

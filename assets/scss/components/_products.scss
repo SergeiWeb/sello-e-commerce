@@ -156,6 +156,14 @@
 		}
 
 		&-like {
+			&.in-liked {
+				& i {
+					&:before {
+						content: '\ead5';
+					}
+				}
+			}
+
 			& .products__btn-icon {
 				transition: 0.4s;
 			}
@@ -171,6 +179,14 @@
 		&-buy {
 			margin-left: auto;
 			text-transform: uppercase;
+
+			&.in-shop-bag {
+				& i {
+					&:before {
+						content: '\eb9b';
+					}
+				}
+			}
 
 			&:hover {
 				color: var(--border-color);

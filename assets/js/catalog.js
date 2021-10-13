@@ -66,16 +66,12 @@ window.addEventListener('load', () => {
 	if (productsLikeBtns && productsBuyBtns) {
 		productsBtnChange(
 			productsLikeBtns,
-			'.products-liked',
-			'in-liked', //! if there is this class, then the product should be added to Favorites
-			'heart'
+			'in-liked' //! if there is this class, then the product should be added to Favorites
 		)
 
 		productsBtnChange(
 			productsBuyBtns,
-			'.products-shop-bag',
-			'in-shop-bag', //! if there is this class, then the product should be added to the Shopping cart
-			'shopping-bag'
+			'in-shop-bag' //! if there is this class, then the product should be added to the Shopping cart
 		)
 	}
 
