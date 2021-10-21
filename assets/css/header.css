@@ -916,11 +916,16 @@ button {
           align-items: center;
   -webkit-column-gap: 0.5rem;
           column-gap: 0.5rem;
+  color: var(--body-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-light);
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+}
+
+.products__btn:hover {
+  color: var(--border-color);
 }
 
 .products__btn-icon {
@@ -2008,10 +2013,6 @@ button {
 }
 
 /* modal */
-.modal {
-  /* modal shopping cart */
-}
-
 .modal-favorites, .modal-cart {
   position: absolute;
   top: 110%;

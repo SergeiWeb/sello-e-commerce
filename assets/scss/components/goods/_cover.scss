@@ -30,6 +30,10 @@
 			align-items: center;
 			justify-content: space-between;
 
+			&.hidden-block {
+				display: none;
+			}
+
 			@media screen and (max-width: 460px) {
 				align-items: flex-start;
 			}

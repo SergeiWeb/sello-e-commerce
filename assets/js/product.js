@@ -72,42 +72,45 @@ window.addEventListener('load', () => {
 
 	/* slider */
 	const sliderSlides = document.querySelectorAll('.slider__slide')
-	const looping = sliderSlides.length > 1
-	const slidePerView = sliderSlides.length < 4 ? sliderSlides.length : 4
 
-	const cardThumbs = new Swiper('.card-header__thumbs', {
-		loop: looping,
-		spaceBetween: 10,
-		slidesPerView: slidePerView,
-		slidesPerGroup: 1,
-		direction: 'vertical',
-		freeMode: true,
-		watchSlidesProgress: true,
-		allowTouchMove: false,
-	})
+	if (sliderSlides) {
+		const looping = sliderSlides.length > 1
+		const slidePerView = sliderSlides.length < 4 ? sliderSlides.length : 4
 
-	const cardSlider = new Swiper('.card-header__slider', {
-		loop: looping,
-		spaceBetween: 10,
-		navigation: {
-			nextEl: '.slider__btn-next',
-			prevEl: '.slider__btn-prev',
-		},
-		thumbs: {
-			swiper: cardThumbs,
-		},
-		effect: 'creative',
-		creativeEffect: {
-			prev: {
-				translate: [0, 0, -400],
-				opacity: '0',
+		const cardThumbs = new Swiper('.card-header__thumbs', {
+			loop: looping,
+			spaceBetween: 10,
+			slidesPerView: slidePerView,
+			slidesPerGroup: 1,
+			direction: 'vertical',
+			// freeMode: true,
+			watchSlidesProgress: true,
+			// allowTouchMove: false,
+		})
+
+		const cardSlider = new Swiper('.card-header__slider', {
+			loop: looping,
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.slider__btn-next',
+				prevEl: '.slider__btn-prev',
 			},
-			next: {
-				translate: ['100%', 0, 0],
-				opacity: '1',
+			thumbs: {
+				swiper: cardThumbs,
 			},
-		},
-	})
+			effect: 'creative',
+			creativeEffect: {
+				prev: {
+					translate: [0, 0, -400],
+					opacity: '0',
+				},
+				next: {
+					translate: ['100%', 0, 0],
+					opacity: '1',
+				},
+			},
+		})
+	}
 
 	if (sliderWrapper) {
 		lightGallery(sliderWrapper, {
@@ -120,7 +123,25 @@ window.addEventListener('load', () => {
 		})
 	}
 
-	if (!window.navigator.userAgentData.mobile) {
+	// const slider = document.querySelector('.card-reviews__slider')
+
+	const reviewsSlider = new Swiper('.card-reviews__slider', {
+		loop: true,
+		spaceBetween: 15,
+		slidesPerView: 3,
+		slidesPerGroup: 1,
+		centerMode: true,
+		navigation: {
+			nextEl: '.card-reviews__btn-next',
+			prevEl: '.card-reviews__btn-prev',
+		},
+	})
+
+	const userMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	)
+
+	if (!userMobile) {
 		/* zoom img */
 		const sliderImg = document.querySelectorAll('.slider__slide img')
 
@@ -150,7 +171,7 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	if (window.navigator.userAgentData.mobile) {
+	if (userMobile) {
 		/* footer accordion */
 		if (footerItems) {
 			accordionItems(
@@ -167,9 +188,76 @@ window.addEventListener('load', () => {
 		scrollLink(scrollUpLink)
 	}
 
+	/* description */
+	function cardProductOpenBlock(block, elClass, linkClass, spanClass) {
+		const content = block.querySelector(elClass)
+		const link = block.querySelector(linkClass)
+		const linkSpan = link.querySelector(spanClass)
+
+		linkSpan.textContent = linkSpan.dataset.defaultText
+
+		link.addEventListener('click', event => {
+			event.preventDefault()
+
+			if (!block.classList.contains('open-block')) {
+				linkSpan.textContent = linkSpan.dataset.changeText
+				changesClasses(block, 'add', 'open-block')
+				changesClasses(content, 'add', 'open-el')
+			} else {
+				linkSpan.textContent = linkSpan.dataset.defaultText
+				changesClasses(block, 'remove', 'open-block')
+				changesClasses(content, 'remove', 'open-el')
+			}
+		})
+	}
+
+	const cardDescription = document.getElementById('card-description')
+
+	if (cardDescription) {
+		cardProductOpenBlock(
+			cardDescription,
+			'.card-description__text',
+			'.card-description__link',
+			'.card-description__link-text'
+		)
+	}
+
+	const cardDetails = document.getElementById('card-details')
+
+	if (cardDetails) {
+		cardProductOpenBlock(
+			cardDetails,
+			'.card-details__list',
+			'.card-details__link',
+			'.card-details__link-text'
+		)
+	}
+
 	/* scroll */
 	window.addEventListener('scroll', () => {
 		scrollHeader()
 		scrollUp(scrollUpLink)
 	})
 })
+
+// const descriptionText = cardDescription.querySelector('.card-description__text')
+// const descriptionLink = cardDescription.querySelector('.card-description__link')
+// const descriptionSpan = descriptionLink.querySelector(
+// 	'.card-description__link-text'
+// )
+
+// descriptionSpan.textContent = descriptionSpan.dataset.defaultText
+
+// descriptionLink.addEventListener('click', event => {
+// 	event.preventDefault()
+
+// 	if (!cardDescription.classList.contains('open-block')) {
+// 		descriptionSpan.textContent = descriptionSpan.dataset.changeText
+// 		changesClasses(descriptionText, 'add', 'open-text')
+// 		changesClasses(cardDescription, 'add', 'open-block')
+// 	} else {
+// 		descriptionSpan.textContent = descriptionSpan.dataset.defaultText
+// 		changesClasses(descriptionText, 'remove', 'open-text')
+// 		changesClasses(cardDescription, 'remove', 'open-block')
+// 	}
+// })

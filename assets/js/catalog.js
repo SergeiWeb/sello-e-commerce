@@ -62,6 +62,66 @@ window.addEventListener('load', () => {
 		$('.filter__select').niceSelect()
 	}
 
+	const filterSelects = document.querySelectorAll('select.filter__select')
+	const filtersPriceInputs = document.querySelectorAll(
+		'input.filter__price-input'
+	)
+	const filterClear = document.querySelector('.filter__clear')
+
+	if (filterSelects) {
+		function clearFilterFunc() {
+			/* select */
+			filterSelects.forEach(select => {
+				const selectItems = Array.from(select.children)
+
+				selectItems.forEach(item => {
+					item.selected = false
+					item.removeAttribute('selected')
+
+					if (item.value === 'default') {
+						item.selected = true
+						item.setAttribute('selected', true)
+					}
+
+					$('.filter__select').niceSelect('update')
+				})
+			})
+
+			/* input price */
+			filtersPriceInputs.forEach(input => {
+				if (input.id === 'price-from') {
+					input.value = input.min
+				}
+
+				if (input.id === 'price-to') {
+					input.value = input.max
+				}
+			})
+		}
+
+		filterClear.addEventListener('click', () => {
+			// ajax_clear_filters()
+			clearFilterFunc()
+		})
+	}
+
+	/* filter labels */
+	const filterHead = document.querySelector('.filter__head')
+
+	if (filterHead) {
+		function checkFilterItems() {
+			const filterItems = filterHead.querySelectorAll('.filter__active-item')
+
+			if (!filterItems.length) {
+				changesClasses(filterHead, 'add', 'hidden-block')
+			} else {
+				changesClasses(filterHead, 'remove', 'hidden-block')
+			}
+		}
+
+		checkFilterItems()
+	}
+
 	/* products button */
 	if (productsLikeBtns && productsBuyBtns) {
 		productsBtnChange(
@@ -82,7 +142,11 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	if (window.navigator.userAgentData.mobile) {
+	const userMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	)
+
+	if (userMobile) {
 		if (footerItems) {
 			/* footer accordion */
 			accordionItems(

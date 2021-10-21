@@ -142,7 +142,11 @@ window.addEventListener('load', () => {
 		)
 	}
 
-	if (window.navigator.userAgentData.mobile) {
+	const userMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	)
+
+	if (userMobile) {
 		/* footer accordion */
 		if (footerItems) {
 			accordionItems(

@@ -805,11 +805,16 @@ body {
           align-items: center;
   -webkit-column-gap: 0.5rem;
           column-gap: 0.5rem;
+  color: var(--body-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-light);
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+}
+
+.products__btn:hover {
+  color: var(--border-color);
 }
 
 .products__btn-icon {
@@ -956,6 +961,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.cover .filter__head.hidden-block {
+  display: none;
 }
 
 @media screen and (max-width: 460px) {
@@ -1641,10 +1650,6 @@ body {
 }
 
 /* modal */
-.modal {
-  /* modal shopping cart */
-}
-
 .modal-favorites, .modal-cart {
   position: absolute;
   top: 110%;
