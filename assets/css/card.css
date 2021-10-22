@@ -1414,7 +1414,7 @@ body {
   -webkit-column-gap: 0.25rem;
           column-gap: 0.25rem;
   padding: 0.25rem 0.625rem;
-  padding-right: 0.75rem;
+  padding-right: 0.875rem;
   color: var(--white-color);
   background-color: var(--body-color);
   border: 0.5px solid var(--body-color);

@@ -239,25 +239,3 @@ window.addEventListener('load', () => {
 		scrollUp(scrollUpLink)
 	})
 })
-
-// const descriptionText = cardDescription.querySelector('.card-description__text')
-// const descriptionLink = cardDescription.querySelector('.card-description__link')
-// const descriptionSpan = descriptionLink.querySelector(
-// 	'.card-description__link-text'
-// )
-
-// descriptionSpan.textContent = descriptionSpan.dataset.defaultText
-
-// descriptionLink.addEventListener('click', event => {
-// 	event.preventDefault()
-
-// 	if (!cardDescription.classList.contains('open-block')) {
-// 		descriptionSpan.textContent = descriptionSpan.dataset.changeText
-// 		changesClasses(descriptionText, 'add', 'open-text')
-// 		changesClasses(cardDescription, 'add', 'open-block')
-// 	} else {
-// 		descriptionSpan.textContent = descriptionSpan.dataset.defaultText
-// 		changesClasses(descriptionText, 'remove', 'open-text')
-// 		changesClasses(cardDescription, 'remove', 'open-block')
-// 	}
-// })
