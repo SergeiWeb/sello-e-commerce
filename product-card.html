@@ -901,7 +901,7 @@
 							</div>
 						</div>
 
-						<div class="card-reviews">
+						<div class="card-reviews" data-word-count="200">
 							<div class="card-reviews__header">
 								<h4 class="card-reviews__title">reviews</h4>
 								<div class="card-reviews__actions">
@@ -914,7 +914,7 @@
 										</button>
 									</div>
 
-									<button class="card-reviews__add">
+									<button class="card-reviews__add" id="modal-card-open">
 										<i class="bx bx-plus card-reviews__add-icon"></i>
 										<span class="card-reviews__add-text">Add a review</span>
 									</button>
@@ -932,12 +932,11 @@
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
-											<i class="bx bxs-star-half slider__rating-icon"></i>
+											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bx-star slider__rating-icon"></i>
 										</div>
 										<p class="slider__text">
-											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-											Debitis iure nostrum tempore, eum harum eligendi.
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illo, distinctio totam soluta, facilis saepe hic assumenda autem quas possimus cupiditate minus nam provident pariatur voluptatum molestiae
 										</p>
 									</div>
 
@@ -950,12 +949,11 @@
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
-											<i class="bx bxs-star-half slider__rating-icon"></i>
+											<i class="bx bx-star slider__rating-icon"></i>
 											<i class="bx bx-star slider__rating-icon"></i>
 										</div>
 										<p class="slider__text">
-											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-											Debitis iure nostrum tempore, eum harum eligendi.
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illo, distinctio totam soluta, facilis saepe hic assumenda autem quas possimus cupiditate minus nam provident pariatur voluptatum molestiae
 										</p>
 									</div>
 
@@ -968,12 +966,11 @@
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
 											<i class="bx bxs-star slider__rating-icon"></i>
-											<i class="bx bxs-star-half slider__rating-icon"></i>
-											<i class="bx bx-star slider__rating-icon"></i>
+											<i class="bx bxs-star slider__rating-icon"></i>
+											<i class="bx bxs-star slider__rating-icon"></i>
 										</div>
 										<p class="slider__text">
-											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-											Debitis iure nostrum tempore, eum harum eligendi.
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta illo, distinctio totam soluta, facilis saepe hic assumenda autem quas possimus cupiditate minus nam provident pariatur voluptatum molestiae
 										</p>
 									</div>
 								</div>
@@ -1145,6 +1142,101 @@
 				</nav>
 			</div>
 		</footer>
+
+		<!-- modal windows -->
+		<div class="modal-card" id="modal-card">
+			<div class="modal-card__window">
+				<div class="modal-card-header">
+					<h3 class="modal-card__title">Write your review</h3>
+					<button class="modal-card__close" id="modal-card-close">
+						<i class="bx bx-x modal-card__close-icon"></i>
+					</button>
+				</div>
+				<form class="modal-card__form">
+					<h4 class="modal-card__subtitle">Denim Shell Top Ruffle Black</h4>
+					<div class="modal-card-rating">
+						<input
+							type="radio"
+							id="modal-card-rating-input-5"
+							class="modal-card-rating__input"
+							name="modal-card-rating"
+							value="5"
+						/>
+						<label
+							for="modal-card-rating-input-5"
+							class="bx bx-star modal-card-rating__label"
+						></label>
+						<input
+							type="radio"
+							id="modal-card-rating-input-4"
+							class="modal-card-rating__input"
+							name="modal-card-rating"
+							value="4"
+						/>
+						<label
+							for="modal-card-rating-input-4"
+							class="bx bx-star modal-card-rating__label"
+						></label>
+						<input
+							type="radio"
+							id="modal-card-rating-input-3"
+							class="modal-card-rating__input"
+							name="modal-card-rating"
+							value="3"
+						/>
+						<label
+							for="modal-card-rating-input-3"
+							class="bx bx-star modal-card-rating__label"
+						></label>
+						<input
+							type="radio"
+							id="modal-card-rating-input-2"
+							class="modal-card-rating__input"
+							name="modal-card-rating"
+							value="2"
+						/>
+						<label
+							for="modal-card-rating-input-2"
+							class="bx bx-star modal-card-rating__label"
+						></label>
+						<input
+							type="radio"
+							id="modal-card-rating-input-1"
+							class="modal-card-rating__input"
+							name="modal-card-rating"
+							value="1"
+						/>
+						<label
+							for="modal-card-rating-input-1"
+							class="bx bx-star modal-card-rating__label"
+						></label>
+					</div>
+					<input
+						type="text"
+						name="name"
+						class="modal-card__input modal-card__name"
+						id="modal-card-name"
+						placeholder="Enter your name"
+					/>
+					<input
+						type="email"
+						name="email"
+						class="modal-card__input modal-card__email"
+						id="modal-card-email"
+						placeholder="Enter your email"
+					/>
+					<textarea
+						class="modal-card__text"
+						id="modal-card-text"
+						name="text"
+						maxlength="200"
+						resize="none"
+						placeholder="Enter your review"
+					></textarea>
+					<button class="modal-card__submit">Leave feedback</button>
+				</form>
+			</div>
+		</div>
 
 		<!-- scroll up -->
 		<button class="scroll-up" id="scroll-up">

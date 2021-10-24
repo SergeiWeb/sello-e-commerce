@@ -518,6 +518,15 @@ button {
 }
 
 .nav__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: var(--text-color);
   font-size: 1.25rem;
   -webkit-transition: 0.4s;
@@ -529,7 +538,7 @@ button {
 .nav__btn::after {
   content: '';
   left: 50%;
-  bottom: -0.125rem;
+  bottom: -0.25rem;
   opacity: 0;
   width: 0.25rem;
   height: 0.25rem;
@@ -1362,10 +1371,6 @@ button {
 
 .subscribe__input.invalid {
   border-color: var(--invalid-color);
-}
-
-.subscribe__input.success {
-  border-color: var(--success-color);
 }
 
 .subscribe__submit {

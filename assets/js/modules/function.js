@@ -255,15 +255,13 @@ const subscribeEmail = emailInputs => {
 		const emailValue = emailInputs.value
 
 		if (emailValue.length <= 0) {
-			changesClasses(emailInputs, 'remove', ['success', 'invalid'])
+			changesClasses(emailInputs, 'remove', 'invalid')
 		} else {
 			if (validateEmail(emailValue)) {
 				changesClasses(emailInputs, 'remove', 'invalid')
-				changesClasses(emailInputs, 'add', 'success')
 
-				setTimeout(() => changesClasses(emailInputs, 'remove', 'success'), 1500)
+				setTimeout(() => changesClasses(emailInputs, 'remove', 'success'), 2000)
 			} else if (!validateEmail(emailValue)) {
-				changesClasses(emailInputs, 'remove', 'success')
 				changesClasses(emailInputs, 'add', 'invalid')
 			}
 		}

@@ -83,7 +83,6 @@ window.addEventListener('load', () => {
 			slidesPerView: slidePerView,
 			slidesPerGroup: 1,
 			direction: 'vertical',
-			// freeMode: true,
 			watchSlidesProgress: true,
 			// allowTouchMove: false,
 		})
@@ -123,19 +122,88 @@ window.addEventListener('load', () => {
 		})
 	}
 
-	// const slider = document.querySelector('.card-reviews__slider')
+	const reviewsSlider = document.querySelector('.card-reviews__slider')
 
-	const reviewsSlider = new Swiper('.card-reviews__slider', {
-		loop: true,
-		spaceBetween: 15,
-		slidesPerView: 3,
-		slidesPerGroup: 1,
-		centerMode: true,
-		navigation: {
-			nextEl: '.card-reviews__btn-next',
-			prevEl: '.card-reviews__btn-prev',
-		},
-	})
+	if (reviewsSlider) {
+		new Swiper(reviewsSlider, {
+			loop: true,
+			spaceBetween: 15,
+			slidesPerView: 3,
+			slidesPerGroup: 1,
+			centerMode: true,
+			navigation: {
+				nextEl: '.card-reviews__btn-next',
+				prevEl: '.card-reviews__btn-prev',
+			},
+		})
+	}
+
+	const reviewsTextAll = reviewsSlider.querySelectorAll('.slider__text')
+	const reviewsWordCount =
+		document.querySelector('.card-reviews').dataset.wordCount || 150
+
+	if (reviewsTextAll) {
+		const kitcut = (text, limit) => {
+			text = text.trim()
+
+			if (text.length <= limit) return text
+
+			text.slice(0, limit)
+
+			return `${text}...`
+		}
+
+		reviewsTextAll.forEach(text => {
+			text.textContent = kitcut(text.textContent, reviewsWordCount)
+		})
+	}
+
+	const modalCardEmail = document.getElementById('modal-card-email')
+
+	if (modalCardEmail) {
+		subscribeEmail(modalCardEmail)
+	}
+
+	const modalCardText = document.getElementById('modal-card-text')
+
+	if (modalCardText) {
+		modalCardText.addEventListener('keypress', event => {
+			let text = modalCardText.value
+
+			text.trim()
+
+			if (text.length === reviewsWordCount) {
+				event.preventDefault()
+			}
+		})
+	}
+
+	const modalCard = document.getElementById('modal-card')
+	const modalCardOpen = document.getElementById('modal-card-open')
+	const modalCardClose = document.getElementById('modal-card-close')
+
+	if ((modalCard, modalCardOpen, modalCardClose)) {
+		const modalAction = {
+			open(modal) {
+				changesClasses(document.body, 'add', 'no-scroll')
+				changesClasses(modal, 'add', 'open-modal')
+			},
+			close(modal) {
+				changesClasses(document.body, 'remove', 'no-scroll')
+				changesClasses(modal, 'remove', 'open-modal')
+			},
+		}
+
+		modalCardOpen.addEventListener('click', () => modalAction.open(modalCard))
+
+		modalCardClose.addEventListener('click', () => modalAction.close(modalCard))
+
+		modalCard.addEventListener('click', event => {
+			if (event.target.matches('.modal-card')){
+				modalAction.close(modalCard)
+			}
+		})
+	}
 
 	const userMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
 		navigator.userAgent
