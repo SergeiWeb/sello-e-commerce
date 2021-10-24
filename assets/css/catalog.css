@@ -1395,6 +1395,10 @@ body {
 }
 
 .breadcrumbs__link.active-breadcrumbs-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   color: var(--body-color);
   text-decoration: underline;
 }

@@ -13,8 +13,6 @@ window.addEventListener('load', () => {
 
 	const cardCounters = document.querySelectorAll('.card-counters')
 
-	const subscribeEmailInput = document.getElementById('subscribe-email-input')
-
 	const preloader = document.getElementById('preloader')
 
 	const footerItems = document.querySelectorAll('.footer__data-item')
@@ -80,11 +78,16 @@ window.addEventListener('load', () => {
 		const cardThumbs = new Swiper('.card-header__thumbs', {
 			loop: looping,
 			spaceBetween: 10,
-			slidesPerView: slidePerView,
+			slidesPerView: 3,
 			slidesPerGroup: 1,
 			direction: 'vertical',
 			watchSlidesProgress: true,
 			// allowTouchMove: false,
+			breakpoints: {
+				480: {
+					slidesPerView: slidePerView,
+				},
+			},
 		})
 
 		const cardSlider = new Swiper('.card-header__slider', {
@@ -134,6 +137,17 @@ window.addEventListener('load', () => {
 			navigation: {
 				nextEl: '.card-reviews__btn-next',
 				prevEl: '.card-reviews__btn-prev',
+			},
+			breakpoints: {
+				200: {
+					slidesPerView: 1,
+				},
+				640: {
+					slidesPerView: 2,
+				},
+				1000: {
+					slidesPerView: 3,
+				},
 			},
 		})
 	}
