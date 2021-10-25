@@ -1932,6 +1932,18 @@ body {
   border-color: var(--body-color);
 }
 
+@media screen and (max-width: 320px) {
+  .lg-outer .lg-prev {
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .lg-outer .lg-next {
+    right: 10px;
+  }
+}
+
 .lg-outer .lg-thumb-outer {
   background-color: var(--white-color);
 }

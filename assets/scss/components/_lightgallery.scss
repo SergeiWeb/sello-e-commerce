@@ -33,6 +33,18 @@
 				}
 			}
 
+			&-prev {
+				@media screen and (max-width: 320px) {
+					left: 10px;
+				}
+			}
+
+			&-next {
+				@media screen and (max-width: 320px) {
+					right: 10px;
+				}
+			}
+
 			&-thumb {
 				&-outer {
 					background-color: var(--white-color);
