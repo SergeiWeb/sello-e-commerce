@@ -890,7 +890,21 @@
 				grid-template-rows: 15rem;
 			}
 		}
+	}
 
+	.modal-card {
+		&__window {
+			padding: 0.75rem;
+		}
+
+		&__title {
+			font-size: var(--h4-font-size);
+		}
+	}
+}
+
+@media screen and (max-width: 270px) {
+	.card {
 		&__footer {
 			display: grid;
 			justify-content: space-between;
@@ -902,16 +916,6 @@
 			&-text {
 				display: none;
 			}
-		}
-	}
-
-	.modal-card {
-		&__window {
-			padding: 0.75rem;
-		}
-
-		&__title {
-			font-size: var(--h4-font-size);
 		}
 	}
 }

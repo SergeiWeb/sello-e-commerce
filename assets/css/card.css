@@ -1875,6 +1875,15 @@ body {
     -ms-grid-rows: 15rem;
         grid-template-rows: 15rem;
   }
+  .modal-card__window {
+    padding: 0.75rem;
+  }
+  .modal-card__title {
+    font-size: var(--h4-font-size);
+  }
+}
+
+@media screen and (max-width: 270px) {
   .card__footer {
     display: -ms-grid;
     display: grid;
@@ -1886,12 +1895,6 @@ body {
   }
   .card__submit-text, .card__favorites-text {
     display: none;
-  }
-  .modal-card__window {
-    padding: 0.75rem;
-  }
-  .modal-card__title {
-    font-size: var(--h4-font-size);
   }
 }
 
