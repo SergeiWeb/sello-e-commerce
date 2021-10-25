@@ -1750,6 +1750,10 @@ body {
   font-weight: var(--font-light);
 }
 
+.modal-card__text::-webkit-scrollbar {
+  width: 0.313rem;
+}
+
 .modal-card__text:active, .modal-card__text:focus {
   outline: none;
   border-color: var(--border-color);

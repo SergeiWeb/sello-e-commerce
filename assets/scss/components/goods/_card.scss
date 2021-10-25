@@ -743,6 +743,10 @@
 			font-weight: var(--font-light);
 		}
 
+		&::-webkit-scrollbar {
+			width: 0.313rem;
+		}
+
 		&:active,
 		&:focus {
 			outline: none;
